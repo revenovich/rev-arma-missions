@@ -10,7 +10,7 @@
 */
 
 [_this#0, { 
-	_this addAction ["<t color='#FF0000'>Lovely snowman want a hug <3</t>", {  
+	_this addAction ["<t color='#FF0000'>Lovely snowman want a hug &lt;3</t>", {  
 		params ["_target", "_caller", "_actionId", "_arguments"];  
 		"R_80mm_HE" createVehicle (position _target);
 		deleteVehicle _target;

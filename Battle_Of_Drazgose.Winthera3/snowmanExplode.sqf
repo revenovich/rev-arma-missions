@@ -14,5 +14,5 @@
 		params ["_target", "_caller", "_actionId", "_arguments"];  
 		"R_80mm_HE" createVehicle (position _target);
 		deleteVehicle _target;
-	}, nil, 1.5, true, true, "", "true", 5];
+	}, nil, 1.5, true, true, "", "true", 1];
 }] remoteExec ['call', 0 , _this#0]

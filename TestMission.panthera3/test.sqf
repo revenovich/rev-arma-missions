@@ -33,3 +33,11 @@
 	private _tempTarget = createSimpleObject ["Land_HelipadEmpty_F", getPosASL _veh];
 	[_tempTarget, nil, true] spawn BIS_fnc_moduleLightning;
 }] remoteExec ['call', 0 , _this]
+
+
+[] spawn 
+{
+	while {true} do {
+		s1 playMove "AmovPercMrunSlowWrflDf";
+	};
+};

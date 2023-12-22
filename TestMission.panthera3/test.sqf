@@ -41,3 +41,13 @@
 		s1 playMove "AmovPercMrunSlowWrflDf";
 	};
 };
+
+[] spawn 
+{
+	sleep 10;
+	mb1D enableAI "Move";
+	doGetOut mb1D;
+	doGetOut mb1C;
+
+	grp1 addWaypoint [getPosASL wp1, 0];
+};

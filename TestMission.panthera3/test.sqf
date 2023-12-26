@@ -146,6 +146,51 @@ this addAction
 	sci2 globalChat "Professor Nikolai Volkov: I hope this will work.";
 }
 
+[] spawn {
+	sci2 sideChat "Hello, there is a problem and we need your help.";
+	sleep 3;
+	sci2 sideChat "The power is out and we need to turn it back on.";
+	sleep 3;
+	sci2 sideChat "The generator located between the armory and the communications building";
+	sleep 4;
+	sci2 sideChat "Turn it on and then come here to start the experiment.";
+	[west, "generator_on", ["Turn on the generator to start the experiment", "Turn on the generator", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+
+	power_box1 addAction  
+	[  
+		"Turn On",  
+		{  
+			params ["_target", "_caller", "_actionId", "_arguments"];  
+			_target animateSource ["switchposition",-1];  
+			_target animateSource ["light",1];  
+			_target setDamage 0;  
+
+			missionNamespace setVariable ["isPowerOn", true, true];
+
+			["generator_on", "SUCCEEDED"] call BIS_fnc_taskSetState;
+
+			sci3 sideChat "We have power, get back here";
+		},  
+		[],  
+		1.5,  
+		true,  
+		true,  
+		"",  
+		"!alive _target",  
+		3,  
+		true,  
+		"",  
+		""  
+	];
+
+	sleep 3;
+	sci3 sideChat "Do you think this will work?";
+	sleep 2;
+	sci1 sideChat "I don't know, but we have to try.";
+	sleep 2;
+	sci2 sideChat "I hope this will work.";
+}
+
 isPowerOn = false;
 publicVariable "isPowerOn";
 
@@ -169,4 +214,33 @@ publicVariable "isPowerOn";
 	sci1 globalChat "Dr. Benjamin Shaw: I will let you know when the accumulator is fully charged.";
 	sleep 1;
 	sci1 globalChat "Dr. Benjamin Shaw: The accumulator is fully charged.";
+}
+
+[] spawn {
+	sci1 sideChat "I think we are ready to start the experiment.";
+	sleep 2;
+	sci1 sideChat "Booting up the system.";
+	sleep 2;
+	sci2 sideChat "System is online.";
+	sleep 2;
+	sci3 sideChat "System is stable.";
+	sleep 2;
+	sci1 sideChat "Start charging the accumulator.";
+	sleep 2;
+	sci1 sideChat "Charging the accumulator will take about 10 minutes.";
+	sleep 2;
+	sc1 sideChat "I know it's a long time, but we have to wait.";
+	sleep 2;
+	sci1 sideChat "In the meantime, try to defend the area.";
+	sleep 2;
+	sci1 sideChat "I will let you know when the accumulator is fully charged.";
+	sleep 1;
+	sci1 sideChat "The accumulator is fully charged.";
+}
+
+["setUnitSide.sqf"] remoteExec ["call", -2, true]
+
+if (isPowerOn) then {
+	["scriptStartExperiment.sqf"] remoteExec ["execVM", 0, true];
+	deleteVehicle trigStartExperiment;
 }

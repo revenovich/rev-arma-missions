@@ -16,6 +16,10 @@
 	sci1 sideChat "In the meantime, try to defend the area."; 
 	sleep 2; 
 	sci1 sideChat "I will let you know when the accumulator is fully charged."; 
-	sleep 1; 
-	sci1 sideChat "The accumulator is fully charged."; 
+	sleep 10;
+	sci1 sideChat "The accumulator is fully charged.";
+	sleep 2;
+	sci1 sideChat "Hey we need a hand to press the keyboard.";
+
+	missionNamespace setVariable ["isFull", true, true];
 }

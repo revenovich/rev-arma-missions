@@ -244,3 +244,5 @@ if (isPowerOn) then {
 	["scriptStartExperiment.sqf"] remoteExec ["execVM", 0, true];
 	deleteVehicle trigStartExperiment;
 }
+
+[independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;

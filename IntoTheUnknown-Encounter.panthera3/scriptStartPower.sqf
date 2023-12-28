@@ -1,11 +1,13 @@
 [] spawn { 
-	sci2 sideChat "Hello, there is a problem and we need your help.";
-	sleep 3; 
-	sci2 sideChat "The power is out and we need to turn it back on."; 
-	sleep 3; 
+	sci2 sideChat "Hello, did you guys clear the area?";
+	sleep 3;
+	sci2 sideChat "Anyways, we need to start the experiment.";
+	sleep 3;
+	sci2 sideChat "But first we need to turn on the power.";
+	sleep 3;
 	sci2 sideChat "The generator located between the armory and the communications building"; 
-	sleep 4; 
-	sci2 sideChat "Turn it on and then come here to start the experiment."; 
+	sleep 4;
+	sci2 sideChat "Turn it on and we can start the experiment."; 
 	[independent, "generator_on", ["Turn on the generator to start the experiment", "Turn on the generator", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate; 
 	
 	power_box1 addAction [
@@ -20,7 +22,7 @@
 		
 		["generator_on", "SUCCEEDED"] call BIS_fnc_taskSetState; 
 		
-		[sci3, "We have power, get back here"] remoteExec ["sideChat", 0];
+		[sci3, "We have power!"] remoteExec ["sideChat", 0];
 	},   
 	[],   
 	1.5,   

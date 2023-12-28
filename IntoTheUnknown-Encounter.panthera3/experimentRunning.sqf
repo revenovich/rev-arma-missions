@@ -16,85 +16,74 @@ sleep 2;
 [sci3, "Started"] remoteExec ["sideChat", 0];
 
 sleep 5;
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
+
+_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13, strikePos_14, strikePos_15, strikePos_16, strikePos_17, strikePos_18, strikePos_19, strikePos_20, strikePos_21, strikePos_22, strikePos_23, strikePos_24, strikePos_25, strikePos_26, strikePos_27, strikePos_28, strikePos_29, strikePos_30, strikePos_31, strikePos_32, strikePos_33, strikePos_34, strikePos_35, strikePos_36, strikePos_37, strikePos_38, strikePos_39, strikePos_40, strikePos_41, strikePos_42, strikePos_43, strikePos_44];
+
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
@@ -135,25 +124,21 @@ sleep 4;
 [sci1, "I don't know, I'll try..."] remoteExec ["sideChat", 0];
 sleep 5;
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [1, 2, 3];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [1, 2, 3];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [3, 4, 5];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
@@ -171,7 +156,7 @@ sleep 2;
 sleep 2;
 [sci3, "So weird, what are we going to do?"] remoteExec ["sideChat", 0];
 sleep 2;
-[sci1, "I don't know, I'll try to reduce the power again..."] remoteExec ["sideChat", 0];
+[sci1, "I'll try to reduce the power again..."] remoteExec ["sideChat", 0];
 sleep 5;
 
 [[mainPos_1], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
@@ -213,211 +198,176 @@ sleep 5;
 
 [sci2, "All of you must get out of here too!"] remoteExec ["sideChat", 0];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];
 sleep random [randomMin, randomMid, randomMax];
 
-_posVarArray = [strikePos_1, strikePos_2, strikePos_3, strikePos_4, strikePos_5, strikePos_6, strikePos_7, strikePos_8, strikePos_9, strikePos_10, strikePos_11, strikePos_12, strikePos_13];
 _randomStrikePos = selectRandom _posVarArray;
 // Call the function remotely
 [[_randomStrikePos], fn_executeRandomStrikePos] remoteExec ['call', -2, true];

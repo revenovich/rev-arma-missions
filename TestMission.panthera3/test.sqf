@@ -246,3 +246,15 @@ if (isPowerOn) then {
 }
 
 [independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+
+[independent, "ambush", ["Fight back the ambush and figure out who done it", "Fight back the ambush", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+["ambush", "SUCCEEDED"] call BIS_fnc_taskSetState;
+
+[sci1, "lalalala"] remoteExec ["sideChat", 0];
+[_this, "SIT_U1", "ASIS"] call BIS_fnc_ambientAnim;
+[_this, "SIT_U1", "LIGHT"] call BIS_fnc_ambientAnim;
+[_this, "LEAN_ON_TABLE", "LIGHT"] call BIS_fnc_ambientAnim;
+[_this, "WATCH2", "ASIS"] call BIS_fnc_ambientAnim;
+[_this, "GUARD", "ASIS"] call BIS_fnc_ambientAnim;
+
+while {true} do { _this engineOn true;}

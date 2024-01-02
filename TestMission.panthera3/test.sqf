@@ -258,3 +258,4 @@ if (isPowerOn) then {
 [_this, "GUARD", "ASIS"] call BIS_fnc_ambientAnim;
 
 while {true} do { _this engineOn true;}
+

@@ -246,6 +246,7 @@ if (isPowerOn) then {
 }
 
 [independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+[independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "AUTOASSIGNED", 1, true] call BIS_fnc_taskCreate;
 
 [independent, "ambush", ["Fight back the ambush and figure out who done it", "Fight back the ambush", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
 ["ambush", "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -258,4 +259,7 @@ if (isPowerOn) then {
 [_this, "GUARD", "ASIS"] call BIS_fnc_ambientAnim;
 
 while {true} do { _this engineOn true;}
+
+[Nik, "Testing"] remoteExec ["sideChat", 0];
+[radioMan_1, "Jammed Message: Testing"] remoteExec ["sideChat", 0];
 

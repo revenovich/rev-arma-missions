@@ -246,12 +246,21 @@ if (isPowerOn) then {
 }
 
 [independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
-[independent, "destroyPole", ["Destroy transmitter pole to reestablish with HQ", "Destroy transmitter", "cookiemarker"], objNull, "AUTOASSIGNED", 1, true] call BIS_fnc_taskCreate;
 
 [independent, "ambush", ["Fight back the ambush and figure out who done it", "Fight back the ambush", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
 ["ambush", "SUCCEEDED"] call BIS_fnc_taskSetState;
 
+[independent, "passCk", ["Try to pass checkpoint and move into NU controlled zone", "Pass checkpoint", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+["passCk", "SUCCEEDED"] call BIS_fnc_taskSetState;
+
 [sci1, "lalalala"] remoteExec ["sideChat", 0];
+[sci10, "AH BLYAT, equipment error snow storm in 1 minutes"] remoteExec ["sideChat", 0];
+[sci10, "Snow storm will last in 1 minute"] remoteExec ["sideChat", 0];
+[sci10, "Snow storm over, next one may be in 34 minute"] remoteExec ["sideChat", 0];
+
+[Nik, "Charge completed, ready guys"] remoteExec ["sideChat", 0];
+
+[radioMan_1, "Jammed Messages: Recon team report!"] remoteExec ["sideChat", 0];
 [_this, "SIT_U1", "ASIS"] call BIS_fnc_ambientAnim;
 [_this, "SIT_U1", "LIGHT"] call BIS_fnc_ambientAnim;
 [_this, "LEAN_ON_TABLE", "LIGHT"] call BIS_fnc_ambientAnim;
@@ -260,6 +269,6 @@ if (isPowerOn) then {
 
 while {true} do { _this engineOn true;}
 
-[Nik, "Testing"] remoteExec ["sideChat", 0];
-[radioMan_1, "Jammed Message: Testing"] remoteExec ["sideChat", 0];
+["experimentRunning.sqf"] remoteExec ["execVM", 0, true];
 
+[[_this, 5, 7, 10], "randomTeleport.sqf"] remoteExec ["execVM", 0, false];

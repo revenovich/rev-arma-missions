@@ -1,0 +1,12 @@
+class CfgIdentities
+{
+	class Test1
+	{
+		face = "WhiteHead_10";
+		glasses = "G_Tactical_Clear";
+		name = "Adams";
+		nameSound = "Adams";
+		pitch = 1.0;
+		speaker = "Male01ENG";
+	};
+};

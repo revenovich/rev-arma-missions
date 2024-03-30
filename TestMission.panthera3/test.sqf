@@ -230,3 +230,5 @@ while {true} do { _this engineOn true;}
 
 // Infinity ammo
 this addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]
+
+missionNamespace setVariable ["1_labTotalTimeToCharge", 12, true];

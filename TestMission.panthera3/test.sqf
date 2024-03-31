@@ -232,3 +232,20 @@ while {true} do { _this engineOn true;}
 this addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]
 
 missionNamespace setVariable ["1_labTotalTimeToCharge", 12, true];
+
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	_unit setWeaponReloadingTime [_gunner, _muzzle, 0.1];
+	_unit setVehicleAmmo 1;
+}];
+
+[] spawn {
+	sleep 5;
+	[truck_1, 1] spawn rhs_fnc_ss21_AI_prepare;
+	sleep 3;
+	[truck_2, 1] spawn rhs_fnc_ss21_AI_prepare;
+	sleep 5;
+	[truck_1, getPosATL missile_target_1] spawn rhs_fnc_ss21_AI_launch;
+	sleep 5;
+	[truck_2, getPosATL missile_target_2] spawn rhs_fnc_ss21_AI_launch;
+}

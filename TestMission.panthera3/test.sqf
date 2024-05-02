@@ -249,3 +249,12 @@ _this addEventHandler ["Fired", {
 	sleep 5;
 	[truck_2, getPosATL missile_target_2] spawn rhs_fnc_ss21_AI_launch;
 }
+
+(unitBackpack player) setMaxLoad 999999999999;
+
+[_this] spawn {
+	while {true} do {
+		sleep 1;
+		_this#0 setFuel 1;
+	};
+}

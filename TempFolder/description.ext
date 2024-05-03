@@ -1,0 +1,90 @@
+class CfgRespawnInventory
+{
+	class PMC_PltLeader
+	{
+		displayName = "1. Platoon Leader";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_GRN";
+		backpack = "UK3CB_LNM_I_B_CARRYALL_RADIO_WDL_02";
+		weapons[] = {"rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"SmokeShell", "MiniGrenade", "MiniGrenade", "SmokeShellGreen", "SmokeShellBlue", "SmokeShellOrange", "Chemlight_green", "Chemlight_green"};
+		items[] = {"FirstAidKit"};
+		linkedItems[] = {"V_TacVest_oli", "H_Beret_Colonel", "G_Aviator", "ItemMap", "ItemCompass", "TFAR_microdagr", "TFAR_anprc152", "ItemGPS", "", "", "", "", "", "", "", ""};
+	};
+
+	class PMC_SLeader
+	{
+		displayName = "2. Squad Leader";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_GRN";
+		backpack = "UK3CB_LNM_I_B_CARRYALL_RADIO_WDL_02";
+		weapons[] = {"rhs_weap_m4a1_blockII_M203_bk", "rhsusf_weap_glock17g4", "rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"Chemlight_green", "Chemlight_green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m18_red", "rhs_mag_m18_red", "rhs_mag_mk84", "rhs_mag_mk84", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhsusf_mag_17Rnd_9x19_JHP", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP", "rhs_mag_M433_HEDP"};
+		items[] = {"ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_EarPlugs", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_EntrenchingTool", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "rhsusf_acc_g33_xps3"};
+		linkedItems[] = {"UK3CB_V_Falcon_9", "H_Cap_oli_hs", "G_Bandanna_beast", "ItemMap", "ItemCompass", "ACE_Altimeter", "TFAR_anprc152", "ItemGPS", "rhsusf_acc_nt4_black", "rhsusf_acc_wmx_bk", "", "", "", "", "", ""};
+	};
+	
+	class PMC_Rifleman
+	{
+		displayName = "3. Rifleman";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_FLK_GRN";
+		backpack = "UK3CB_LSM_B_B_CARRYALL_OLI";
+		weapons[] = {"rhs_weap_m4a1_blockII_bk", "rhsusf_weap_glock17g4", "rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "Chemlight_green", "Chemlight_green", "rhs_mag_m67", "rhs_mag_m67", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP"};
+		items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_EarPlugs", "ACE_EntrenchingTool", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet"};
+		linkedItems[] = {"UK3CB_AAF_I_V_Falcon_1_DIGI_GRN", "H_Booniehat_oli", "G_Bandanna_oli", "ItemMap", "ItemCompass", "ACE_Altimeter", "TFAR_anprc152", "ItemGPS", "rhsusf_acc_nt4_black", "rhsusf_acc_wmx_bk", "rhsusf_acc_ACOG_USMC", "", "", "", "", ""};
+	};
+
+	class PMC_Medic
+	{
+		displayName = "4. Medic";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_WDL_BLK";
+		backpack = "UK3CB_LSM_B_B_CARRYALL_TIG_STRIPE_02";
+		weapons[] = {"rhs_weap_m4a1_blockII_bk", "rhsusf_weap_glock17g4", "Binocular", "Throw", "Put"};
+		magazines[] = {"Chemlight_green", "Chemlight_green", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_m67", "rhs_mag_m67", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP"};
+		items[] = {"ACE_EarPlugs", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_personalAidKit", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV_500", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_bodyBag", "ACE_bodyBag", "ACE_bodyBag", "ACE_bodyBag"};
+		linkedItems[] = {"UK3CB_V_Falcon_2", "H_Bandanna_camo", "G_Bandanna_aviator", "ItemMap", "ItemCompass", "ACE_Altimeter", "TFAR_anprc152", "ItemGPS", "rhsusf_acc_nt4_black", "rhsusf_acc_wmx_bk", "rhsusf_acc_ACOG_USMC", "", "", "", "", ""};
+	};
+
+	class PMC_Marksman
+	{
+		displayName = "7. Marksman";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_FLK_GRN";
+		backpack = "UK3CB_LDF_B_B_ASS_OLI";
+		weapons[] = {"rhs_weap_sr25", "rhsusf_weap_glock17g4", "rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"Chemlight_green", "Chemlight_green", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_m18_red", "rhs_mag_m18_red", "rhs_mag_m67", "rhs_mag_m67", "SmokeShellGreen", "SmokeShellGreen", "SmokeShellBlue", "SmokeShellBlue", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP"};
+		items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_EarPlugs", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_EntrenchingTool", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine"};
+		linkedItems[] = {"V_BandollierB_oli", "H_Bandanna_khk", "rhsusf_shemagh2_grn", "ItemMap", "ItemCompass", "ACE_Altimeter", "TFAR_anprc152", "ItemGPS", "rhsusf_acc_SR25S", "rhsusf_acc_anpeq15side_bk", "rhsusf_acc_premier_low", "rhsusf_acc_harris_bipod", "", "", "", ""};
+	};
+
+	class PMC_Engineer
+	{
+		displayName = "6. Engineer";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_GRN_BLK";
+		backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";
+		weapons[] = {"rhs_weap_m4a1_blockII_bk", "rhsusf_weap_glock17g4", "rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"Chemlight_green", "Chemlight_green", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "SmokeShellRed", "SmokeShellRed", "SatchelCharge_Remote_Mag", "SatchelCharge_Remote_Mag", "DemoCharge_Remote_Mag", "DemoCharge_Remote_Mag", "ATMine_Range_Mag", "ClaymoreDirectionalMine_Remote_Mag", "ClaymoreDirectionalMine_Remote_Mag"};
+		items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_EarPlugs", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_EntrenchingTool", "ACE_DefusalKit", "ACE_M26_Clacker"};
+		linkedItems[] = {"UK3CB_V_Falcon_7", "UK3CB_TKA_B_H_WDL", "G_Balaclava_oli", "ItemMap", "ItemCompass", "TFAR_microdagr", "TFAR_anprc152", "ItemGPS", "", "rhsusf_acc_wmx_bk", "rhsusf_acc_su230a_mrds", "", "", "", "", ""};
+	};
+
+	class PMC_AT_Rifleman
+	{
+		displayName = "5. AT Rifleman";
+		uniformClass = "UK3CB_NAP_B_U_Officer_Uniform_GRN_BLK";
+		backpack = "UK3CB_LNM_B_B_CARRYALL_WDL_01";
+		weapons[] = {"rhs_weap_m4a1_blockII_bk", "rhs_weap_maaws", "rhsusf_weap_glock17g4", "rhsusf_bino_lrf_Vector21", "Throw", "Put"};
+		magazines[] = {"Chemlight_green", "Chemlight_green", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP", "rhsusf_mag_17Rnd_9x19_JHP", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_maaws_HEAT", "rhs_mag_maaws_HEAT", "rhs_mag_maaws_HEDP", "rhs_mag_maaws_HE"};
+		items[] = {"ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_tourniquet", "ACE_splint", "ACE_splint", "ACE_splint", "ACE_epinephrine", "ACE_epinephrine", "ACE_epinephrine", "ACE_EarPlugs", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_EntrenchingTool", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_morphine"};
+		linkedItems[] = {"UK3CB_AAF_I_V_Falcon_3_DIGI_GRN", "H_Cap_blk_Raven", "G_Bandanna_sport", "ItemMap", "ItemCompass", "TFAR_microdagr", "TFAR_anprc152", "ItemGPS", "", "rhsusf_acc_wmx_bk", "rhsusf_acc_g33_xps3", "", "", "", "rhs_optic_maaws", ""};
+	};
+	//Biki: https://community.bistudio.com/wiki/Arma_3_Respawn#Loadouts_and_Roles
+};
+
+class CfgLeaflets
+{
+	class Custom_01
+	{
+		text = "Luoi vcl aaaaaaaa";
+		texture = "img\docGuide.jpg"; // leaflet texture shown when previewing the leaflet full-screen
+		model = "";
+	}
+};

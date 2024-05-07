@@ -7,6 +7,11 @@ loadScreen = "files\150DefaultImg.jpg";
 onLoadName = "150th Training";
 author = "Revernomad";
 
+////////////////////////////////////////////////
+//       EDITABLE VARIABLES END HERE          //
+// BELOW STILL EDITABLE BUT MUST KNOW HOW TO  //
+////////////////////////////////////////////////
+
 class CfgSounds
 {
 	sounds[] = {};

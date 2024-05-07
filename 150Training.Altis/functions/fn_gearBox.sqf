@@ -172,7 +172,11 @@ fn_addArsenal = {
 	if (missionNameSpace getVariable ["fullArsenal", false]) then {
 		[_object, true] call ace_arsenal_fnc_initBox;
 		["AmmoboxInit", [_object, true]] call BIS_fnc_arsenal;
-	};
+	} else {
+		_allPlayableUnitsItens = missionNamespace getVariable "allPlayableUnitsItens";
+		[_object, _allPlayableUnitsItens, true] call ace_arsenal_fnc_initBox;
+		[_object, _allPlayableUnitsItens, true] call ace_arsenal_fnc_addVirtualItems;
+	}
 };
 
 ////////////////////////////////////////////////

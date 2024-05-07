@@ -570,8 +570,19 @@ fn_loadoutSave = {
 
 	// save loadout
 	_loadout = [_items, _linkedItems, _uniform, _vest, _backpack, _primary, _secondary, _handgun];
-	missionNameSpace setVariable [_loadoutName, _loadout, false];
+	missionNameSpace setVariable [_loadoutName, _loadout, true];
 
+	if ((missionNameSpace getVariable ["LoadoutNameList", []] isEqualTo [])) then {
+		_loadoutNameList = [_loadoutName];
+		missionNameSpace setVariable ["LoadoutNameList", _loadoutNameList, true];
+	} else {
+		_loadoutNameList = missionNameSpace getVariable "LoadoutNameList";
+		_loadoutNameList pushback _loadoutName;
+		missionNameSpace setVariable ["LoadoutNameList", _loadoutNameList, true];
+	};
+};
+
+fn_setLoadoutByRole = {
 	// Get player role and save default loadout
 	// Role example: Team Leader@CO so we need to split it
 	_role = (roleDescription player) splitString "@";
@@ -579,24 +590,6 @@ fn_loadoutSave = {
 
 	// Upercase role
 	_role = toUpper _role;
-
-	// Split loadout name
-	// Loadout name example: LOADOUT AT RIFLEMAN so we need to split it
-	_loadoutName = _loadoutName splitString " ";
-	
-	// Check if loadout name is more than 2 words, concat from 2nd word
-	if (count _loadoutName > 2) then {
-		_tempName = "";
-		{
-			// Current result is saved in variable _x
-			if (_x != "LOADOUT") then {
-				_tempName = _tempName + _x;
-			};
-		} forEach _loadoutName;
-		_loadoutName = _tempName;
-	} else {
-		_loadoutName = _loadoutName select 1;
-	};
 
 	// Check if role name is more than 1 word, concat all words
 	_role = _role splitString " ";
@@ -611,10 +604,38 @@ fn_loadoutSave = {
 		_role = _role select 0;
 	};
 
-	if (_role == _loadoutName) then {
-		missionNameSpace setVariable ["playerGear", _loadout, false];
-	};
+	// Get loadout name list
+	_loadoutNameList = missionNameSpace getVariable "LoadoutNameList";
 
+	{
+		// Current result is saved in variable _x
+		_loadoutName = _x;
+		_trueLoadoutName = _loadoutName;
+
+		// Split loadout name
+		// Loadout name example: LOADOUT AT RIFLEMAN so we need to split it
+		_loadoutName = _loadoutName splitString " ";
+		
+		// Check if loadout name is more than 2 words, concat from 2nd word
+		if (count _loadoutName > 2) then {
+			_tempName = "";
+			{
+				// Current result is saved in variable _x
+				if (_x != "LOADOUT") then {
+					_tempName = _tempName + _x;
+				};
+			} forEach _loadoutName;
+			_loadoutName = _tempName;
+		} else {
+			_loadoutName = _loadoutName select 1;
+		};
+
+		if (_role == _loadoutName) then {
+			_loadout = missionNameSpace getVariable _trueLoadoutName;
+			missionNameSpace setVariable ["playerGear", _loadout, false];
+		};
+
+	} forEach _loadoutNameList;
 };
 
 fn_loadoutLoad = {
@@ -871,5 +892,9 @@ switch (_request) do {
 		_unit = (_this select 1);
 		_loadoutName = (_this select 2);
 		[_unit, _loadoutName] call fn_loadoutSave;
+	};
+
+	case 6: {
+		[] call fn_setLoadoutByRole;
 	};
 };

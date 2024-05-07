@@ -30,6 +30,8 @@ fn_gearSnitch = {
 };
 
 fn_gearLoad = {
+	if (isServer) exitWith {};
+
 	_loadout = missionNameSpace getVariable "playerGear";
 
 	if (_loadout isEqualTo []) exitWith {};
@@ -159,6 +161,8 @@ fn_gearLoad = {
 };
 
 fn_gearLoadout = {
+	if (isServer) exitWith {};
+
 	_loadout = _this;
 	_isUseUnit = missionNamespace getVariable "gearIsUseUnit";
 
@@ -441,6 +445,8 @@ fn_gearLoadout = {
 };
 
 fn_gearSave = {
+	if (isServer) exitWith {};
+
 	_items = [];
 	_linkedItems = [];
 
@@ -572,6 +578,8 @@ fn_loadoutSave = {
 	_loadout = [_items, _linkedItems, _uniform, _vest, _backpack, _primary, _secondary, _handgun];
 	missionNameSpace setVariable [_loadoutName, _loadout, false];
 
+	if (isServer) exitWith {};
+
 	// Get player role and save default loadout
 	// Role example: Team Leader@CO so we need to split it
 	_role = (roleDescription player) splitString "@";
@@ -623,6 +631,7 @@ fn_loadoutLoad = {
 	_loadout = missionNameSpace getVariable _loadoutName;
 
 	if (_loadout isEqualTo []) exitWith {};
+	if (isServer) exitWith {};
 
 	// remove current container contents
 	removeUniform player;

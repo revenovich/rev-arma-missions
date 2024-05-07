@@ -12,8 +12,17 @@ _fullArsenal = false;  // Set to false if you've manually set up a limited arsen
 
 missionNameSpace setVariable ["initDone", false, true];
 
+systemChat "Loading mission...";
+diag_log "Loading mission...";
+
 _handle = execVM format["factions\%1.sqf", _faction];
+
+waitUntil {isNull _handle};
+
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
+
+systemChat "Mission loaded!";
+diag_log "Mission loaded!";
 
 missionNameSpace setVariable ["initDone", true, true];

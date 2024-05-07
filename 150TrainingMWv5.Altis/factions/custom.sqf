@@ -106,7 +106,7 @@ if (_isUseUnit) then {
 	_notNullUnits = [];
 
 	// AT Rifleman
-	if (isNull oft_atrifleman) then {
+	if (isNil "oft_atrifleman") then {
 		_nullUnits pushBack "AT Rifleman";
 	} else {
 		[5, oft_atrifleman, "LOADOUT AT RIFLEMAN"] call OFT_fnc_gearHandle;
@@ -114,7 +114,7 @@ if (_isUseUnit) then {
 	};
 
 	// Autorifleman
-	if (isNull oft_autorifleman) then {
+	if (isNil "oft_autorifleman") then {
 		_nullUnits pushBack "Autorifleman";
 	} else {
 		[5, oft_autorifleman, "LOADOUT AUTORIFLEMAN"] call OFT_fnc_gearHandle;
@@ -122,7 +122,7 @@ if (_isUseUnit) then {
 	};
 
 	// Machinegunner
-	if (isNull oft_machinegunner) then {
+	if (isNil "oft_machinegunner") then {
 		_nullUnits pushBack "Machinegunner";
 	} else {
 		[5, oft_machinegunner, "LOADOUT MACHINEGUNNER"] call OFT_fnc_gearHandle;
@@ -130,7 +130,7 @@ if (_isUseUnit) then {
 	};
 
 	// Ammo Bearer
-	if (isNull oft_ammobearer) then {
+	if (isNil "oft_ammobearer") then {
 		_nullUnits pushBack "Ammo Bearer";
 	} else {
 		[5, oft_ammobearer, "LOADOUT AMMO BEARER"] call OFT_fnc_gearHandle;
@@ -138,7 +138,7 @@ if (_isUseUnit) then {
 	};
 
 	// Engineer
-	if (isNull oft_engineer) then {
+	if (isNil "oft_engineer") then {
 		_nullUnits pushBack "Engineer";
 	} else {
 		[5, oft_engineer, "LOADOUT ENGINEER"] call OFT_fnc_gearHandle;
@@ -146,7 +146,7 @@ if (_isUseUnit) then {
 	};
 
 	// Grenadier
-	if (isNull oft_grenadier) then {
+	if (isNil "oft_grenadier") then {
 		_nullUnits pushBack "Grenadier";
 	} else {
 		[5, oft_grenadier, "LOADOUT GRENADIER"] call OFT_fnc_gearHandle;
@@ -154,7 +154,7 @@ if (_isUseUnit) then {
 	};
 
 	// Marksman
-	if (isNull oft_marksman) then {
+	if (isNil "oft_marksman") then {
 		_nullUnits pushBack "Marksman";
 	} else {
 		[5, oft_marksman, "LOADOUT MARKSMAN"] call OFT_fnc_gearHandle;
@@ -162,7 +162,7 @@ if (_isUseUnit) then {
 	};
 
 	// Medic
-	if (isNull oft_medic) then {
+	if (isNil "oft_medic") then {
 		_nullUnits pushBack "Medic";
 	} else {
 		[5, oft_medic, "LOADOUT MEDIC"] call OFT_fnc_gearHandle;
@@ -170,7 +170,7 @@ if (_isUseUnit) then {
 	};
 
 	// Rifleman
-	if (isNull oft_rifleman) then {
+	if (isNil "oft_rifleman") then {
 		_nullUnits pushBack "Rifleman";
 	} else {
 		[5, oft_rifleman, "LOADOUT RIFLEMAN"] call OFT_fnc_gearHandle;
@@ -178,7 +178,7 @@ if (_isUseUnit) then {
 	};
 
 	// Teamleader
-	if (isNull oft_teamleader) then {
+	if (isNil "oft_teamleader") then {
 		_nullUnits pushBack "Teamleader";
 	} else {
 		[5, oft_teamleader, "LOADOUT TEAMLEADER"] call OFT_fnc_gearHandle;
@@ -186,7 +186,7 @@ if (_isUseUnit) then {
 	};
 
 	// Sniper
-	if (isNull oft_sniper) then {
+	if (isNil "oft_sniper") then {
 		_nullUnits pushBack "Sniper";
 	} else {
 		[5, oft_sniper, "LOADOUT SNIPER"] call OFT_fnc_gearHandle;
@@ -194,7 +194,7 @@ if (_isUseUnit) then {
 	};
 
 	// Spotter
-	if (isNull oft_spotter) then {
+	if (isNil "oft_spotter") then {
 		_nullUnits pushBack "Spotter";
 	} else {
 		[5, oft_spotter, "LOADOUT SPOTTER"] call OFT_fnc_gearHandle;
@@ -202,7 +202,7 @@ if (_isUseUnit) then {
 	};
 
 	// Commander
-	if (isNull oft_commander) then {
+	if (isNil "oft_commander") then {
 		_nullUnits pushBack "Commander";
 	} else {
 		[5, oft_commander, "LOADOUT COMMANDER"] call OFT_fnc_gearHandle;
@@ -210,7 +210,7 @@ if (_isUseUnit) then {
 	};
 
 	// Second Commander
-	if (isNull oft_seccommander) then {
+	if (isNil "oft_seccommander") then {
 		_nullUnits pushBack "Second Commander";
 	} else {
 		[5, oft_seccommander, "LOADOUT SECOND COMMANDER"] call OFT_fnc_gearHandle;
@@ -218,7 +218,7 @@ if (_isUseUnit) then {
 	};
 
 	// Helicopter Pilot
-	if (isNull oft_helipilot) then {
+	if (isNil "oft_helipilot") then {
 		_nullUnits pushBack "Helicopter Pilot";
 	} else {
 		[5, oft_helipilot, "LOADOUT HELICOPTER PILOT"] call OFT_fnc_gearHandle;
@@ -226,7 +226,7 @@ if (_isUseUnit) then {
 	};
 
 	// Helicopter Co-Pilot
-	if (isNull oft_helicopilot) then {
+	if (isNil "oft_helicopilot") then {
 		_nullUnits pushBack "Helicopter Co-Pilot";
 	} else {
 		[5, oft_helicopilot, "LOADOUT HELICOPTER CO-PILOT"] call OFT_fnc_gearHandle;
@@ -234,7 +234,7 @@ if (_isUseUnit) then {
 	};
 
 	// Fixed Wing Pilot
-	if (isNull oft_fwpilot) then {
+	if (isNil "oft_fwpilot") then {
 		_nullUnits pushBack "Fixed Wing Pilot";
 	} else {
 		[5, oft_fwpilot, "LOADOUT FIXED WING PILOT"] call OFT_fnc_gearHandle;
@@ -242,7 +242,7 @@ if (_isUseUnit) then {
 	};
 
 	// Fixed Wing Co-Pilot
-	if (isNull oft_fwcopilot) then {
+	if (isNil "oft_fwcopilot") then {
 		_nullUnits pushBack "Fixed Wing Co-Pilot";
 	} else {
 		[5, oft_fwcopilot, "LOADOUT FIXED WING CO-PILOT"] call OFT_fnc_gearHandle;
@@ -250,7 +250,7 @@ if (_isUseUnit) then {
 	};
 
 	// Crewman
-	if (isNull oft_crewman) then {
+	if (isNil "oft_crewman") then {
 		_nullUnits pushBack "Crewman";
 	} else {
 		[5, oft_crewman, "LOADOUT CREWMAN"] call OFT_fnc_gearHandle;
@@ -258,7 +258,7 @@ if (_isUseUnit) then {
 	};
 
 	// Driver
-	if (isNull oft_vdriver) then {
+	if (isNil "oft_vdriver") then {
 		_nullUnits pushBack "Driver";
 	} else {
 		[5, oft_vdriver, "LOADOUT DRIVER"] call OFT_fnc_gearHandle;
@@ -266,7 +266,7 @@ if (_isUseUnit) then {
 	};
 
 	// Gunner
-	if (isNull oft_vgunner) then {
+	if (isNil "oft_vgunner") then {
 		_nullUnits pushBack "Gunner";
 	} else {
 		[5, oft_vgunner, "LOADOUT GUNNER"] call OFT_fnc_gearHandle;
@@ -274,7 +274,7 @@ if (_isUseUnit) then {
 	};
 
 	// Loader
-	if (isNull oft_vloader) then {
+	if (isNil "oft_vloader") then {
 		_nullUnits pushBack "Loader";
 	} else {
 		[5, oft_vloader, "LOADOUT LOADER"] call OFT_fnc_gearHandle;
@@ -282,7 +282,7 @@ if (_isUseUnit) then {
 	};
 
 	// Commander
-	if (isNull oft_vcommander) then {
+	if (isNil "oft_vcommander") then {
 		_nullUnits pushBack "Commander";
 	} else {
 		[5, oft_vcommander, "LOADOUT COMMANDER"] call OFT_fnc_gearHandle;
@@ -290,7 +290,7 @@ if (_isUseUnit) then {
 	};
 
 	// Radio Operator
-	if (isNull oft_radiooperator) then {
+	if (isNil "oft_radiooperator") then {
 		_nullUnits pushBack "Radio Operator";
 	} else {
 		[5, oft_radiooperator, "LOADOUT RADIO OPERATOR"] call OFT_fnc_gearHandle;
@@ -298,7 +298,7 @@ if (_isUseUnit) then {
 	};
 
 	// Mortar Operator
-	if (isNull oft_mortaroperator) then {
+	if (isNil "oft_mortaroperator") then {
 		_nullUnits pushBack "Mortar Operator";
 	} else {
 		[5, oft_mortaroperator, "LOADOUT MORTAR OPERATOR"] call OFT_fnc_gearHandle;
@@ -306,7 +306,7 @@ if (_isUseUnit) then {
 	};
 
 	// Mortar Assistant
-	if (isNull oft_mortarassistant) then {
+	if (isNil "oft_mortarassistant") then {
 		_nullUnits pushBack "Mortar Assistant";
 	} else {
 		[5, oft_mortarassistant, "LOADOUT MORTAR ASSISTANT"] call OFT_fnc_gearHandle;
@@ -314,7 +314,7 @@ if (_isUseUnit) then {
 	};
 
 	// Mortar Commander
-	if (isNull oft_mortarcommander) then {
+	if (isNil "oft_mortarcommander") then {
 		_nullUnits pushBack "Mortar Commander";
 	} else {
 		[5, oft_mortarcommander, "LOADOUT MORTAR COMMANDER"] call OFT_fnc_gearHandle;
@@ -322,7 +322,7 @@ if (_isUseUnit) then {
 	};
 
 	// Mortar Spotter
-	if (isNull oft_mortarspotter) then {
+	if (isNil "oft_mortarspotter") then {
 		_nullUnits pushBack "Mortar Spotter";
 	} else {
 		[5, oft_mortarspotter, "LOADOUT MORTAR SPOTTER"] call OFT_fnc_gearHandle;
@@ -330,7 +330,7 @@ if (_isUseUnit) then {
 	};
 
 	// Mortar Ammo Bearer
-	if (isNull oft_mortarammobearer) then {
+	if (isNil "oft_mortarammobearer") then {
 		_nullUnits pushBack "Mortar Ammo Bearer";
 	} else {
 		[5, oft_mortarammobearer, "LOADOUT MORTAR AMMO BEARER"] call OFT_fnc_gearHandle;
@@ -341,6 +341,7 @@ if (_isUseUnit) then {
 		_nullUnitsString = _nullUnits joinString ", ";
 		_nullUnitsString = format ["%1 not found in mission, loadout not applied", _nullUnitsString];
 		systemChat _nullUnitsString;
+		diag_log _nullUnitsString;
 	};
 
 	AllPlayableUnitsItens = [];

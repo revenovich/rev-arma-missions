@@ -264,3 +264,10 @@ _this addEventHandler ["Fired", {
 		_this#0 setFuel 1;
 	};
 }
+
+[this] spawn {
+	if (isServer) then {
+		waitUntil { missionNameSpace getVariable ["initDone", false] };
+		[2, _this#0] spawn OFT_fnc_gearBox;  
+	};
+}

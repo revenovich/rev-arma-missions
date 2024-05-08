@@ -5,6 +5,7 @@
 _faction = "custom"; // All factions are in the factions folder, use custom to edit your own.
 _nightvision = true; // Set to true if you want players to spawn with nightvision
 _fullArsenal = false;  // Set to false if you've manually set up a limited arsenal in the editor
+_playerSideVar = "west"; // Side of the player, west, east, guer, or civilian
 
 ////////////////////////////////////////////////
 //        DO NOT EDIT BELOW THIS LINE         //
@@ -21,6 +22,7 @@ waitUntil {isNull _handle};
 
 ["init"] call OFT_fnc_respawnHandle;
 
+missionNamespace setVariable ["playerSideVar", _playerSideVar, true];
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
 

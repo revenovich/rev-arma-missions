@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=150;
+		nextID=198;
 	};
 	class Camera
 	{
-		pos[]={23368.688,67.680237,18678.672};
-		dir[]={0.60155028,-0.7856738,-0.14440979};
-		up[]={0.76396847,0.61864084,-0.18340033};
-		aside[]={-0.23343064,0,-0.97237355};
+		pos[]={23140.936,227.90744,18773.961};
+		dir[]={-0.075702608,-0.99655026,0.034010593};
+		up[]={-0.90902525,0.082991004,0.40839398};
+		aside[]={0.40980771,-1.8626451e-009,0.91217196};
 	};
 };
 binarizationWanted=0;
@@ -285,7 +285,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=339;
+									items=340;
 									class Item0
 									{
 										class data
@@ -2998,6 +2998,14 @@ class CustomAttributes
 											value="diwako_dui_indicators_icon_medic";
 										};
 									};
+									class Item339
+									{
+										class data
+										{
+											singleType="STRING";
+											value="zen_common_autoaddobjects";
+										};
+									};
 								};
 							};
 						};
@@ -3008,7 +3016,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=339;
+									items=340;
 									class Item0
 									{
 										class data
@@ -3049,7 +3057,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -9528,7 +9536,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -9555,7 +9563,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=-1;
+														value=0;
 													};
 												};
 												class Item1
@@ -12609,6 +12617,33 @@ class CustomAttributes
 										};
 									};
 									class Item338
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item339
 									{
 										class data
 										{
@@ -17347,8 +17382,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={23033.229,5.4047756,18788.975};
-				angles[]={0,3.928195,0};
+				position[]={23036.465,5.4047756,18800.527};
+				angles[]={0,2.3453841,0};
 			};
 			side="Empty";
 			flags=4;
@@ -17393,7 +17428,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={23433.145,9.1899166,18689.984};
+				position[]={23145.211,9.1899166,18882.439};
+				angles[]={0,3.1410947,0};
 			};
 			side="Empty";
 			flags=4;

@@ -309,3 +309,11 @@ _this addEventHandler ["Fired", {
 }
 
 ["setVehicleToFollow", "respawn_west_1", this] call OFT_fnc_respawnHandle;
+
+[_this] spawn {
+	_veh = _this#0;
+	while {alive _veh} do {
+		_veh setFuel 1;
+		sleep 120;
+	};
+};

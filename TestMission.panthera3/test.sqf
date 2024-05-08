@@ -271,3 +271,41 @@ _this addEventHandler ["Fired", {
 		[2, _this#0] spawn OFT_fnc_gearBox;  
 	};
 }
+
+[this] spawn {
+	if (isServer) then {
+		waitUntil { missionNameSpace getVariable ["initDone", false] };
+		["addRespawnVehicle", ""] spawn OFT_fnc_respawnVehicles;  
+	};
+}
+
+[_this] spawn {
+
+	waitUntil { missionNameSpace getVariable ["initDone", false] };
+
+}
+
+
+[_this, "mi8"] spawn {
+	var = call compile format ["%1", _this#1];
+	var = (_this#0);
+	hint format ["%1", var];
+	publicVariable (format ["%1", var]);
+	["addRespawnVehicle", (format ["%1", var]), "Mi-8 Spawn Heli"] spawn OFT_fnc_respawnVehicles;
+};
+
+["test", _this] spawn {
+	missionNamespace setVariable [_this#0, _this#1, true];
+	["addRespawnVehicle", _this#0, "Mi-8 Spawn Heli"] spawn OFT_fnc_respawnVehicles;
+};
+
+[] spawn {
+	{
+		// Current result is saved in variable _x
+		hint format ["%1", markerText _x];
+		sleep 4;
+
+	} forEach allMapMarkers;
+}
+
+["setVehicleToFollow", "respawn_west_1", this] call OFT_fnc_respawnHandle;

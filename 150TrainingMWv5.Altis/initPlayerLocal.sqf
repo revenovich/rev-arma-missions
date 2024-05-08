@@ -7,3 +7,4 @@ diag_log "Gear Handler Loaded";
 
 [6] spawn OFT_fnc_gearHandle;
 [0] spawn OFT_fnc_gearHandle;
+[-1] spawn OFT_fnc_fortificationBox;

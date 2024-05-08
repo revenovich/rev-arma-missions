@@ -1,34 +1,103 @@
-/*
-	@file_name: fn_respawnHandle.sqf
-	@file_author: Dyzalonius
-*/
+fn_initRespawn = {
+	_allRespawnMarkersWest = [];
+	_allRespawnMarkersEast = [];
+	_allRespawnMarkersGuer = [];
+	_allRespawnMarkersCiv = [];
 
-while {true} do {
-	// Set respawnNextWaveTime to respawnWaveTime
-	_time = (missionNameSpace getVariable "respawnWaveTime");
-	missionNameSpace setvariable ["respawnNextWaveTime", _time, true];
+	{
+		if (_x find "respawn_west" > -1) then {
+			_allRespawnMarkersWest pushBack _x;
+		} else {
+			if (_x find "respawn_east" > -1) then {
+				_allRespawnMarkersEast pushBack _x;
+			} else {
+				if (_x find "respawn_guer" > -1) then {
+					_allRespawnMarkersGuer pushBack _x;
+				} else {
+					if (_x find "respawn_civ" > -1) then {
+						_allRespawnMarkersCiv pushBack _x;
+					};
+				};
+			};
+		};
+	} forEach allMapMarkers;
 
-	// Wait for timer to run out or respawn to be disabled
-	while {_time > 0 && (missionNameSpace getVariable "respawnAllow")} do {
-		_time = (missionNameSpace getVariable "respawnNextWaveTime") - 1;
-		missionNameSpace setvariable ["respawnNextWaveTime", _time, true];
-		sleep 1;
+	missionNamespace setVariable ["allRespawnMarkersWest", _allRespawnMarkersWest];
+	missionNamespace setVariable ["allRespawnMarkersEast", _allRespawnMarkersEast];
+	missionNamespace setVariable ["allRespawnMarkersGuer", _allRespawnMarkersGuer];
+	missionNamespace setVariable ["allRespawnMarkersCiv", _allRespawnMarkersCiv];
+};
+
+fn_setVehicleToFollow = {
+	_respawnName = _this select 0;
+	_vehicle = _this select 1;
+
+	[_respawnName, _vehicle] spawn {
+		_respawnName = _this select 0;
+		_vehicle = _this select 1;
+		while {true} do {
+			if (!alive _vehicle && isNull _vehicle) exitWith {
+				// Remove marker
+				deleteMarker _respawnName;
+			};
+
+			_respawnName = _this select 0;
+			_vehicle = _this select 1;
+
+			_respawnName setMarkerPos _vehicle;
+			sleep 1;
+		};
+	};
+};
+
+fn_movePlayerInSpawnVics = {
+	_entity = _this select 0;
+	_vehicle = _this select 1;
+	_movePlayerToCargo = [_entity, _vehicle] spawn {
+				
+		_entity = _this select 0;
+		_vehicle = _this select 1;
+		
+		_vehEmptyPositions = _vehicle emptyPositions "CARGO";
+
+		// Try to move the unit into vehicle cargo if there is space
+		if (_vehEmptyPositions > 0) then {
+			
+			moveOut _entity;
+			_entity moveInCargo _vehicle;
+		
+		};
+	};
+};
+
+
+////////////////////////////////////////////////
+//               FUNCTION LOOP                //
+////////////////////////////////////////////////
+
+if (side player == sideLogic) exitWith {true};
+
+_request = (_this select 0);
+
+switch (_request) do {
+	// INITIALISATION
+	case "init": {
+		[] call fn_initRespawn;
 	};
 
-	// Wait for enable
-	waitUntil {(missionNameSpace getVariable "respawnAllow")};
+	// Set marker to follow vehicle
+	case "setVehicleToFollow": {
+		_respawnName = _this select 1;
+		_vehicle = _this select 2;
 
-	// Get all zeuses and notify
-	private _zeuses = [];
-	{
-		if (side _x == sideLogic) then {
-			_zeuses pushback _x;
-		};
-	} foreach allPlayers;
- 	[0, ["<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><t shadowColor='#444444'>A respawn wave was triggered</t>", "PLAIN", 0.2, true, true]] remoteExec ["cutText", _zeuses];
+		[_respawnName, _vehicle] call fn_setVehicleToFollow;
+	};
 
-	// Trigger respawn wave
-	missionNameSpace setvariable ["respawnWave", true, true];
-	sleep 3;
-	missionNameSpace setvariable ["respawnWave", false, true];
+	// Move player into vehicle cargo
+	case "movePlayerInSpawnVics": {
+		_entity = _this select 1;
+		_vehicle = _this select 2;
+
+		[_entity, _vehicle] call fn_movePlayerInSpawnVics;
+	};
 };

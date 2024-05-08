@@ -19,6 +19,8 @@ _handle = execVM format["factions\%1.sqf", _faction];
 
 waitUntil {isNull _handle};
 
+["init"] call OFT_fnc_respawnHandle;
+
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
 

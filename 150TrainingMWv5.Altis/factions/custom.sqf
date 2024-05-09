@@ -18,10 +18,6 @@
 // Each line needs to end in a ;
 // Basic info for a weapon line: ["weapon_name", "magazine_name", ["attachment1","attachment2","attachment3","attachment4"], "secondary_ammunition_if_any"];
 
-//////////////////////////////////////////////// ALL ROLES
-// AT Rifleman, Autorifleman, Engineer, Grenadier, Marksman, Medic, Rifleman, Teamleader
-////////////////////////////////////////////////
-
 //// UNIFORMS
 _uniformBasic = "U_B_CombatUniform_mcam_tshirt";
 
@@ -97,9 +93,25 @@ _leaderMasterAllSpecialist = false;
 _isUseUnit = true;
 ////
 
+//// BLACKLISTED LOADOUTS THAT WILL NOT SHOWN IN THE GEAR BOX (ARSENAL) FOR PLAYERS
+_blackListedLoadouts = ["LOADOUT COMMANDER", "LOADOUT SECOND COMMANDER"];
+// All current loadouts: LOADOUT AT RIFLEMAN, LOADOUT AUTORIFLEMAN, LOADOUT MACHINEGUNNER, 
+// LOADOUT AMMO BEARER, LOADOUT ENGINEER, LOADOUT GRENAIDER, LOADOUT MARKSMAN, LOADOUT MEDIC, 
+// LOADOUT RIFLEMAN, LOADOUT TEAMLEADER, LOADOUT SNIPER, LOADOUT SPOTTER, LOADOUT COMMANDER, 
+// LOADOUT SECOND COMMANDER, LOADOUT HELICOPTER PILOT, LOADOUT HELICOPTER CO-PILOT, LOADOUT FIXED WING PILOT, 
+// LOADOUT FIXED WING CO-PILOT, LOADOUT CREWMAN, LOADOUT DRIVER, LOADOUT GUNNER, LOADOUT LOADER, LOADOUT VEHICLE COMMANDER, 
+// LOADOUT RADIO OPERATOR, LOADOUT MORTAR OPERATOR, LOADOUT MORTAR ASSISTANT, LOADOUT MORTAR COMMANDER, 
+// LOADOUT MORTAR SPOTTER, LOADOUT MORTAR AMMO BEARER
+////
+
 ////////////////////////////////////////////////
 //        DO NOT EDIT BELOW THIS LINE         //
+//      UNLESS YOU KNOW WHAT YOU'RE DOING     //
 ////////////////////////////////////////////////
+
+missionNamespace setVariable ["BlackListedLoadouts", _blackListedLoadouts, true];
+
+_allAvailableLoadoutNames = [];
 
 if (_isUseUnit) then {
 	_nullUnits = [];
@@ -110,6 +122,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "AT Rifleman";
 	} else {
 		[5, oft_atrifleman, "LOADOUT AT RIFLEMAN"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT AT RIFLEMAN";
 		_notNullUnits pushBack oft_atrifleman;
 	};
 
@@ -118,6 +131,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Autorifleman";
 	} else {
 		[5, oft_autorifleman, "LOADOUT AUTORIFLEMAN"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT AUTORIFLEMAN";
 		_notNullUnits pushBack oft_autorifleman;
 	};
 
@@ -126,6 +140,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Machinegunner";
 	} else {
 		[5, oft_machinegunner, "LOADOUT MACHINEGUNNER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MACHINEGUNNER";
 		_notNullUnits pushBack oft_machinegunner;
 	};
 
@@ -134,6 +149,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Ammo Bearer";
 	} else {
 		[5, oft_ammobearer, "LOADOUT AMMO BEARER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT AMMO BEARER";
 		_notNullUnits pushBack oft_ammobearer;
 	};
 
@@ -142,6 +158,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Engineer";
 	} else {
 		[5, oft_engineer, "LOADOUT ENGINEER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT ENGINEER";
 		_notNullUnits pushBack oft_engineer;
 	};
 
@@ -150,6 +167,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Grenadier";
 	} else {
 		[5, oft_grenadier, "LOADOUT GRENADIER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT GRENADIER";
 		_notNullUnits pushBack oft_grenadier;
 	};
 
@@ -158,6 +176,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Marksman";
 	} else {
 		[5, oft_marksman, "LOADOUT MARKSMAN"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MARKSMAN";
 		_notNullUnits pushBack oft_marksman;
 	};
 
@@ -166,6 +185,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Medic";
 	} else {
 		[5, oft_medic, "LOADOUT MEDIC"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MEDIC";
 		_notNullUnits pushBack oft_medic;
 	};
 
@@ -174,6 +194,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Rifleman";
 	} else {
 		[5, oft_rifleman, "LOADOUT RIFLEMAN"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT RIFLEMAN";
 		_notNullUnits pushBack oft_rifleman;
 	};
 
@@ -182,6 +203,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Teamleader";
 	} else {
 		[5, oft_teamleader, "LOADOUT TEAMLEADER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT TEAMLEADER";
 		_notNullUnits pushBack oft_teamleader;
 	};
 
@@ -190,6 +212,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Sniper";
 	} else {
 		[5, oft_sniper, "LOADOUT SNIPER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT SNIPER";
 		_notNullUnits pushBack oft_sniper;
 	};
 
@@ -198,6 +221,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Spotter";
 	} else {
 		[5, oft_spotter, "LOADOUT SPOTTER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT SPOTTER";
 		_notNullUnits pushBack oft_spotter;
 	};
 
@@ -206,6 +230,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Commander";
 	} else {
 		[5, oft_commander, "LOADOUT COMMANDER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT COMMANDER";
 		_notNullUnits pushBack oft_commander;
 	};
 
@@ -214,6 +239,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Second Commander";
 	} else {
 		[5, oft_seccommander, "LOADOUT SECOND COMMANDER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT SECOND COMMANDER";
 		_notNullUnits pushBack oft_seccommander;
 	};
 
@@ -222,6 +248,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Helicopter Pilot";
 	} else {
 		[5, oft_helipilot, "LOADOUT HELICOPTER PILOT"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT HELICOPTER PILOT";
 		_notNullUnits pushBack oft_helipilot;
 	};
 
@@ -230,6 +257,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Helicopter Co-Pilot";
 	} else {
 		[5, oft_helicopilot, "LOADOUT HELICOPTER CO-PILOT"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT HELICOPTER CO-PILOT";
 		_notNullUnits pushBack oft_helicopilot;
 	};
 
@@ -238,6 +266,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Fixed Wing Pilot";
 	} else {
 		[5, oft_fwpilot, "LOADOUT FIXED WING PILOT"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT FIXED WING PILOT";
 		_notNullUnits pushBack oft_fwpilot;
 	};
 
@@ -246,6 +275,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Fixed Wing Co-Pilot";
 	} else {
 		[5, oft_fwcopilot, "LOADOUT FIXED WING CO-PILOT"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT FIXED WING CO-PILOT";
 		_notNullUnits pushBack oft_fwcopilot;
 	};
 
@@ -254,6 +284,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Crewman";
 	} else {
 		[5, oft_crewman, "LOADOUT CREWMAN"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT CREWMAN";
 		_notNullUnits pushBack oft_crewman;
 	};
 
@@ -262,6 +293,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Driver";
 	} else {
 		[5, oft_vdriver, "LOADOUT DRIVER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT DRIVER";
 		_notNullUnits pushBack oft_vdriver;
 	};
 
@@ -270,6 +302,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Gunner";
 	} else {
 		[5, oft_vgunner, "LOADOUT GUNNER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT GUNNER";
 		_notNullUnits pushBack oft_vgunner;
 	};
 
@@ -278,6 +311,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Loader";
 	} else {
 		[5, oft_vloader, "LOADOUT LOADER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT LOADER";
 		_notNullUnits pushBack oft_vloader;
 	};
 
@@ -285,7 +319,8 @@ if (_isUseUnit) then {
 	if (isNil "oft_vcommander") then {
 		_nullUnits pushBack "Commander";
 	} else {
-		[5, oft_vcommander, "LOADOUT COMMANDER"] call OFT_fnc_gearHandle;
+		[5, oft_vcommander, "LOADOUT VEHICLE COMMANDER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT VEHICLE COMMANDER";
 		_notNullUnits pushBack oft_vcommander;
 	};
 
@@ -294,6 +329,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Radio Operator";
 	} else {
 		[5, oft_radiooperator, "LOADOUT RADIO OPERATOR"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT RADIO OPERATOR";
 		_notNullUnits pushBack oft_radiooperator;
 	};
 
@@ -302,6 +338,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Mortar Operator";
 	} else {
 		[5, oft_mortaroperator, "LOADOUT MORTAR OPERATOR"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MORTAR OPERATOR";
 		_notNullUnits pushBack oft_mortaroperator;
 	};
 
@@ -310,6 +347,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Mortar Assistant";
 	} else {
 		[5, oft_mortarassistant, "LOADOUT MORTAR ASSISTANT"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MORTAR ASSISTANT";
 		_notNullUnits pushBack oft_mortarassistant;
 	};
 
@@ -318,6 +356,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Mortar Commander";
 	} else {
 		[5, oft_mortarcommander, "LOADOUT MORTAR COMMANDER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MORTAR COMMANDER";
 		_notNullUnits pushBack oft_mortarcommander;
 	};
 
@@ -326,6 +365,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Mortar Spotter";
 	} else {
 		[5, oft_mortarspotter, "LOADOUT MORTAR SPOTTER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MORTAR SPOTTER";
 		_notNullUnits pushBack oft_mortarspotter;
 	};
 
@@ -334,6 +374,7 @@ if (_isUseUnit) then {
 		_nullUnits pushBack "Mortar Ammo Bearer";
 	} else {
 		[5, oft_mortarammobearer, "LOADOUT MORTAR AMMO BEARER"] call OFT_fnc_gearHandle;
+		_allAvailableLoadoutNames pushBack "LOADOUT MORTAR AMMO BEARER";
 		_notNullUnits pushBack oft_mortarammobearer;
 	};
 
@@ -349,27 +390,36 @@ if (_isUseUnit) then {
 	AllPlayableUnitsItens = AllPlayableUnitsItens select {count _x > 0};
 	AllPlayableUnitsItens = AllPlayableUnitsItens arrayIntersect AllPlayableUnitsItens;
 
-	additionalItems = addArsenalItems call ace_arsenal_fnc_getVirtualItems;
-	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
-	additionalItems = (toArray additionalItems)#0;
+	if (!(isNil "addArsenalItems")) then {
+		additionalItems = addArsenalItems call ace_arsenal_fnc_getVirtualItems;
+		// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
+		additionalItems = (toArray additionalItems)#0;
 
-	// Get unique items
-	AllPlayableUnitsItens = AllPlayableUnitsItens + additionalItems;
+		// Get unique items
+		AllPlayableUnitsItens = AllPlayableUnitsItens + additionalItems;
 
-	itemsRemove = removeArsenalItems call ace_arsenal_fnc_getVirtualItems;
-	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
-	itemsRemove = (toArray itemsRemove)#0;
+		// Delete the box
+		deleteVehicle addArsenalItems;
+	};
 
-	// Delete the two arsenals
-	{
-		deleteVehicle _x;
-	} forEach [addArsenalItems, removeArsenalItems];
+	if (!(isNil "removeArsenalItems")) then {		
 
-	// Remove items
-	AllPlayableUnitsItens = AllPlayableUnitsItens - itemsRemove;
+		itemsRemove = removeArsenalItems call ace_arsenal_fnc_getVirtualItems;
+		// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
+		itemsRemove = (toArray itemsRemove)#0;
+
+		// Remove items
+		AllPlayableUnitsItens = AllPlayableUnitsItens - itemsRemove;
+
+		// Delete the box
+		deleteVehicle removeArsenalItems;
+	};
 
 	// Save all items to missionNamespace
 	missionNamespace setVariable ["AllPlayableUnitsItens", AllPlayableUnitsItens, true];
+
+	// Save all loadout names to missionNamespace
+	missionNamespace setVariable ["AllAvailableLoadoutNames", _allAvailableLoadoutNames, true];
 
 	// Delete template units
 	{

@@ -10,19 +10,29 @@
 fn_addAllActions = {
 	_this call fn_addRearmAction;
 	_this call fn_addSaveAction;
-	[_this, "AT RIFLEMAN"]  call fn_addLoadoutAction;
-	[_this, "AUTORIFLEMAN"] call fn_addLoadoutAction;
-	[_this, "ENGINEER"]     call fn_addLoadoutAction;
-	[_this, "GRENADIER"]    call fn_addLoadoutAction;
-	[_this, "MARKSMAN"]     call fn_addLoadoutAction;
-	[_this, "MEDIC"]        call fn_addLoadoutAction;
-	[_this, "RIFLEMAN"]     call fn_addLoadoutAction;
-	[_this, "TEAMLEADER"]   call fn_addLoadoutAction;
+
+	_blackListedLoadouts = missionNamespace getVariable "BlackListedLoadouts";
+
+	_allAvailableLoadoutNames = missionNamespace getVariable "AllAvailableLoadoutNames";
+	{
+		if (!(_x in _blackListedLoadouts)) then {
+			[_this, _x] call fn_addLoadoutAction;
+		};
+	} foreach _allAvailableLoadoutNames;
 };
 
 fn_addLoadoutAction = {
 	params ["_object", "_type"];
 
+	// Because the loadout name have "LOADOUT" prefix we need to remove it
+	// Split the string by space
+	_typeSplitted = _type splitString " ";
+
+	// Remove the first element
+	_remove = _typeSplitted deleteAt 0;
+
+	// Join the string back
+	_type = _typeSplitted joinString " ";
 
 	// Add the hold-action to the object
 	[

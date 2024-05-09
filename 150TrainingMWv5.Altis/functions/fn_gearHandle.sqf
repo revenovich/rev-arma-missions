@@ -164,20 +164,6 @@ fn_gearLoadout = {
 
 	if (_isUseUnit) then {
 		switch (_loadout) do {
-			case "AT RIFLEMAN": {
-				["LOADOUT AT RIFLEMAN"] call fn_loadoutLoad;
-
-				player setVariable ["Ace_medical_medicClass", 0, true];
-				player setVariable ["Ace_IsEngineer", 0, true];
-				player setVariable ["ACE_isEOD", 0, true];
-			};
-			case "AUTORIFLEMAN": {
-				["LOADOUT AUTORIFLEMAN"] call fn_loadoutLoad;
-
-				player setVariable ["Ace_medical_medicClass", 0, true];
-				player setVariable ["Ace_IsEngineer", 0, true];
-				player setVariable ["ACE_isEOD", 0, true];
-			};
 			case "ENGINEER": {
 				["LOADOUT ENGINEER"] call fn_loadoutLoad;
 
@@ -185,31 +171,10 @@ fn_gearLoadout = {
 				player setVariable ["ACE_IsEngineer", 1, true];
 				player setVariable ["ACE_isEOD", 1, true];
 			};
-			case "GRENADIER": {
-				["LOADOUT GRENADIER"] call fn_loadoutLoad;
-
-				player setVariable ["Ace_medical_medicClass", 0, true];
-				player setVariable ["Ace_IsEngineer", 0, true];
-				player setVariable ["ACE_isEOD", 0, true];
-			};
-			case "MARKSMAN": {
-				["LOADOUT MARKSMAN"] call fn_loadoutLoad;
-
-				player setVariable ["Ace_medical_medicClass", 0, true];
-				player setVariable ["Ace_IsEngineer", 0, true];
-				player setVariable ["ACE_isEOD", 0, true];
-			};
 			case "MEDIC": {
 				["LOADOUT MEDIC"] call fn_loadoutLoad;
 
 				player setVariable ["Ace_medical_medicClass", 1, true];
-				player setVariable ["Ace_IsEngineer", 0, true];
-				player setVariable ["ACE_isEOD", 0, true];
-			};
-			case "RIFLEMAN": {
-				["LOADOUT RIFLEMAN"] call fn_loadoutLoad;
-
-				player setVariable ["Ace_medical_medicClass", 0, true];
 				player setVariable ["Ace_IsEngineer", 0, true];
 				player setVariable ["ACE_isEOD", 0, true];
 			};
@@ -226,6 +191,13 @@ fn_gearLoadout = {
 					player setVariable ["Ace_IsEngineer", 0, true];
 					player setVariable ["ACE_isEOD", 0, true];
 				};
+			};
+			default {
+				["LOADOUT " + _loadout] call fn_loadoutLoad;
+
+				player setVariable ["Ace_medical_medicClass", 0, true];
+				player setVariable ["Ace_IsEngineer", 0, true];
+				player setVariable ["ACE_isEOD", 0, true];
 			};
 		};
 	} else {
@@ -643,6 +615,7 @@ fn_loadoutLoad = {
 
 	_loadout = missionNameSpace getVariable _loadoutName;
 
+	if (isNil "_loadout") exitWith {systemChat "Loadout not found";};
 	if (_loadout isEqualTo []) exitWith {};
 
 	// remove current container contents

@@ -263,28 +263,21 @@ _this addEventHandler ["Fired", {
 		sleep 1;
 		_this#0 setFuel 1;
 	};
-}
+};
 
 [this] spawn {
 	if (isServer) then {
 		waitUntil { missionNameSpace getVariable ["initDone", false] };
 		[2, _this#0] spawn OFT_fnc_gearBox;  
 	};
-}
+};
 
 [this] spawn {
 	if (isServer) then {
 		waitUntil { missionNameSpace getVariable ["initDone", false] };
 		["addRespawnVehicle", ""] spawn OFT_fnc_respawnVehicles;  
 	};
-}
-
-[_this] spawn {
-
-	waitUntil { missionNameSpace getVariable ["initDone", false] };
-
-}
-
+};
 
 [_this, "mi8"] spawn {
 	var = call compile format ["%1", _this#1];
@@ -306,7 +299,7 @@ _this addEventHandler ["Fired", {
 		sleep 4;
 
 	} forEach allMapMarkers;
-}
+};
 
 ["createMarkerToFollowVehicle", "UH-60 Mobile Heli Spawn", "b_air", _this] call OFT_fnc_respawnHandle;
 
@@ -348,3 +341,8 @@ _this onMapSingleClick {
 		};
 	};
 };
+
+
+
+[_this] execVM "mission_functions\initCplane.sqf";
+

@@ -650,6 +650,7 @@ fn_loadoutLoad = {
 	removeVest player;
 	removeHeadgear player;
 	removeGoggles player;
+	removeBackpack player;
 	removeAllItems player;
 	removeAllAssignedItems player;
 	removeAllWeapons player;

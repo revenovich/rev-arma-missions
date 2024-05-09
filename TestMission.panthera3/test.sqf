@@ -308,12 +308,43 @@ _this addEventHandler ["Fired", {
 	} forEach allMapMarkers;
 }
 
-["setVehicleToFollow", "respawn_west_1", this] call OFT_fnc_respawnHandle;
+["createMarkerToFollowVehicle", "UH-60 Mobile Heli Spawn", "b_air", _this] call OFT_fnc_respawnHandle;
 
 [_this] spawn {
 	_veh = _this#0;
 	while {alive _veh} do {
 		_veh setFuel 1;
 		sleep 120;
+	};
+};
+
+_this onMapSingleClick { 
+	params ["_this", "_pos", "_units", "_shift", "_alt"];
+
+	_unitSide = toUpper (missionNamespace getVariable "playerSideVar");
+	_varName = format ["allRespawnMarkers%1", _unitSide];
+
+	_nearestMarker = [missionNamespace getVariable _varName, _pos] call BIS_fnc_nearestPosition;
+
+	systemChat format ["Nearest marker is %1", _nearestMarker];
+
+	if (_pos distance (getMarkerPos _nearestMarker) > 10) exitWith {
+		systemChat "You clicked too far from the nearest marker";
+	};
+
+	_nearestMarkerVar = format ["%1_followVehicle", _nearestMarker];
+	_vehicle = missionNamespace getVariable [_nearestMarkerVar, objNull];
+
+	_currentVeh = vehicle _this;
+	if (!isNull _currentVeh) then {
+		moveOut _this;
+	};
+
+	if (!isNull _vehicle) then {
+		[_this, _vehicle] spawn {
+			_vehicle = _this#1;
+			sleep 0.5;
+			["movePlayerInSpawnVics", _this#0, _vehicle] call OFT_fnc_respawnHandle;
+		};
 	};
 };

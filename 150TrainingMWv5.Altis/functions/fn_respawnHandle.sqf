@@ -169,29 +169,31 @@ fn_setVehicleToFollow = {
 		_vehicle = _this select 1;
 		_respawnNameVar = format ["%1_followVehicle", _respawnName];
 		missionNamespace setVariable [_respawnNameVar, _vehicle, true];
-		while {true} do {
-			if (!alive _vehicle) exitWith {
+		if (isServer) then {
+			while {true} do {
+				if (!alive _vehicle) exitWith {
 
-				// Remove marker text
-				_respawnName setMarkerText "";
+					// Remove marker text
+					_respawnName setMarkerText "";
 
-				// Remove marker type
-				_respawnName setMarkerType "Empty";
+					// Remove marker type
+					_respawnName setMarkerType "Empty";
 
-				// Remove marker
-				deleteMarker _respawnName;
+					// Remove marker
+					deleteMarker _respawnName;
 
-				// Remove variable from all respawn markers list
-				_respawnNameList = missionNamespace getVariable format ["allRespawnMarkers%1", toUpper (missionNamespace getVariable "playerSideVar")];
-				_respawnNameList = _respawnNameList - [_respawnName];
-				missionNamespace setVariable [format ["allRespawnMarkers%1", toUpper (missionNamespace getVariable "playerSideVar")], _respawnNameList, true];
+					// Remove variable from all respawn markers list
+					_respawnNameList = missionNamespace getVariable format ["allRespawnMarkers%1", toUpper (missionNamespace getVariable "playerSideVar")];
+					_respawnNameList = _respawnNameList - [_respawnName];
+					missionNamespace setVariable [format ["allRespawnMarkers%1", toUpper (missionNamespace getVariable "playerSideVar")], _respawnNameList, true];
+				};
+
+				_respawnName = _this select 0;
+				_vehicle = _this select 1;
+
+				_respawnName setMarkerPos _vehicle;
+				sleep 1;
 			};
-
-			_respawnName = _this select 0;
-			_vehicle = _this select 1;
-
-			_respawnName setMarkerPos _vehicle;
-			sleep 1;
 		};
 	};
 };

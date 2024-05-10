@@ -155,6 +155,8 @@ fn_setVehicleToFollow = {
 	diag_log format ["Setting marker %1 to follow vehicle", _respawnName];
 	_vehicle = _this select 1;
 	diag_log format ["Vehicle: %1", _vehicle];
+	_isMoveOutWhenSpawn = _this select 2;
+	diag_log format ["_isMoveOutWhenSpawn: %1", _isMoveOutWhenSpawn];
 
 	_respawnNameList = missionNamespace getVariable format ["allRespawnMarkers%1", toUpper (missionNamespace getVariable "playerSideVar")];
 	// Check if _respawnName is not in the list
@@ -164,11 +166,14 @@ fn_setVehicleToFollow = {
 		true;
 	};
 
-	[_respawnName, _vehicle] spawn {
+	[_respawnName, _vehicle, _isMoveOutWhenSpawn] spawn {
 		_respawnName = _this select 0;
 		_vehicle = _this select 1;
+		_isMoveOutWhenSpawn = _this select 2;
 		_respawnNameVar = format ["%1_followVehicle", _respawnName];
+		_respawnJumpOutVar = format ["%1_jumpOut", _respawnName];
 		missionNamespace setVariable [_respawnNameVar, _vehicle, true];
+		missionNamespace setVariable [_respawnJumpOutVar, _isMoveOutWhenSpawn, true];
 		if (isServer) then {
 			while {true} do {
 				if (!alive _vehicle) exitWith {
@@ -201,10 +206,12 @@ fn_setVehicleToFollow = {
 fn_movePlayerInSpawnVics = {
 	_entity = _this select 0;
 	_vehicle = _this select 1;
-	_movePlayerToCargo = [_entity, _vehicle] spawn {
-				
+	_respawnName = _this select 2;
+	_movePlayerToCargo = [_entity, _vehicle, _respawnName] spawn {
 		_entity = _this select 0;
 		_vehicle = _this select 1;
+		_respawnName = _this select 2;
+		_isJumpOutWhenSpawn = missionNamespace getVariable [format ["%1_jumpOut", _respawnName], false];
 		
 		_vehEmptyPositions = _vehicle emptyPositions "CARGO";
 
@@ -214,6 +221,10 @@ fn_movePlayerInSpawnVics = {
 			moveOut _entity;
 			_entity moveInCargo _vehicle;
 		
+		};
+
+		if (_isJumpOutWhenSpawn) then {
+			moveOut _entity;
 		};
 	};
 };
@@ -262,9 +273,11 @@ fn_createMarkerToFollowVehicle = {
 	_markerPos = _this select 1;
 	_markerType = _this select 2;
 	_vehicle = _this select 3;
+	_isMoveOutWhenSpawn = _this select 4;
 
 	_markerName = [_markerVisibleName, _markerPos, _markerType] call fn_addRespawnMarker;
-	[_markerName, _vehicle] call fn_setVehicleToFollow;
+	diag_log format ["Visible marker name: %1 have been created with name %2", _markerVisibleName, _markerName];
+	[_markerName, _vehicle, _isMoveOutWhenSpawn] call fn_setVehicleToFollow;
 };
 
 
@@ -294,8 +307,9 @@ switch (_request) do {
 	case "movePlayerInSpawnVics": {
 		_entity = _this select 1;
 		_vehicle = _this select 2;
+		_respawnName = _this select 3;
 
-		[_entity, _vehicle] call fn_movePlayerInSpawnVics;
+		[_entity, _vehicle, _respawnName] call fn_movePlayerInSpawnVics;
 	};
 
 	// Add respawn marker
@@ -312,9 +326,14 @@ switch (_request) do {
 		_markerVisibleName = _this select 1;
 		_markerType = _this select 2;
 		_vehicle = _this select 3;
+		_isMoveOutWhenSpawn = _this select 4;
+
+		if (isNil "_isMoveOutWhenSpawn") then {
+			_isMoveOutWhenSpawn = false;
+		};
 
 		_markerPos = getPos _vehicle;
 
-		[_markerVisibleName, _markerPos, _markerType, _vehicle] call fn_createMarkerToFollowVehicle;
+		[_markerVisibleName, _markerPos, _markerType, _vehicle, _isMoveOutWhenSpawn] call fn_createMarkerToFollowVehicle;
 	};
 };

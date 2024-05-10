@@ -1,0 +1,1 @@
+["<t color='#ffffff' size = '1'>CHAPTER 1<br /><br />THE AMBUSH<br /><br /></t>",-1,-1,2,2,0,789] spawn BIS_fnc_dynamicText;

@@ -1,0 +1,1 @@
+["<t color='#ffffff' size = '1'>AN OPERATION OF 150TH LANGUARD<br /><br /><br /><br /></t>",-1,-1,2,2,0,789] spawn BIS_fnc_dynamicText;

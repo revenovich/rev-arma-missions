@@ -1,0 +1,15 @@
+class cfgMusic
+{
+        tracks[]={song1, song2};
+ 
+        class track1
+        {
+                name="song1";
+                sound[] = {\music\song1.ogg, db10, 1.0};
+        };
+        class track2
+        {
+                name="song2";
+                sound[] = {\music\song2.ogg, db10, 1.0};
+        };
+};

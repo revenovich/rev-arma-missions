@@ -344,5 +344,7 @@ _this onMapSingleClick {
 
 
 
-[_this] execVM "mission_functions\initCplane.sqf";
+[this] execVM "mission_functions\initHQTruck.sqf";
+[this] execVM "mission_functions\initInfTruck.sqf";
 
+[3, _this] call OFT_fnc_gearBox;

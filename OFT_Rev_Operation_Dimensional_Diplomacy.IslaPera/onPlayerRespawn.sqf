@@ -19,8 +19,6 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 	_vehicle = missionNamespace getVariable [_nearestMarkerVar, objNull];
 
 	if (!isNull _vehicle) then {
-		["movePlayerInSpawnVics", _newUnit, _vehicle] call OFT_fnc_respawnHandle;
+		["movePlayerInSpawnVics", _newUnit, _vehicle, _nearestMarker] call OFT_fnc_respawnHandle;
 	};
 };
-
-

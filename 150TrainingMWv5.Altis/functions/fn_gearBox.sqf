@@ -8,21 +8,23 @@
 ////////////////////////////////////////////////
 
 fn_addAllActions = {
-	_this call fn_addRearmAction;
-	_this call fn_addSaveAction;
+	params ["_object", "_distance"];
+
+	[_object, _distance] call fn_addRearmAction;
+	_object call fn_addSaveAction;
 
 	_blackListedLoadouts = missionNamespace getVariable "BlackListedLoadouts";
 
 	_allAvailableLoadoutNames = missionNamespace getVariable "AllAvailableLoadoutNames";
 	{
 		if (!(_x in _blackListedLoadouts)) then {
-			[_this, _x] call fn_addLoadoutAction;
+			[_object, _x, _distance] call fn_addLoadoutAction;
 		};
 	} foreach _allAvailableLoadoutNames;
 };
 
 fn_addLoadoutAction = {
-	params ["_object", "_type"];
+	params ["_object", "_type", "_distance"];
 
 	// Because the loadout name have "LOADOUT" prefix we need to remove it
 	// Split the string by space
@@ -40,8 +42,8 @@ fn_addLoadoutAction = {
 		/* 1 action title */                	format ["Load %1", _type],
 		/* 2 idle icon */                   	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloadDevice_ca.paa",
 		/* 3 progress icon */               	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloadDevice_ca.paa",
-		/* 4 condition to show */           	"(_this distance _target < 3)",
-		/* 5 condition for action */        	"(_this distance _target < 3)",
+		/* 4 condition to show */           	format ["(_this distance _target < %1)", _distance],
+		/* 5 condition for action */        	format ["(_this distance _target < %1)", _distance],
 		/* 6 code executed on start */      	{},
 		/* 7 code executed per tick */      	{},
 		/* 8 code executed on completion */
@@ -60,7 +62,7 @@ fn_addLoadoutAction = {
 };
 
 fn_addRearmAction = {
-	_object = _this;
+	params ["_object", "_distance"];
 
 	// Add the hold-action to the object
 	[
@@ -87,8 +89,8 @@ fn_addRearmAction = {
 		},
 		/* 2 idle icon */                   	"files\holdAction_rearm.paa",
 		/* 3 progress icon */               	"files\holdAction_rearm.paa",
-		/* 4 condition to show */           	"(_this distance _target < 3)",
-		/* 5 condition for action */        	"(_this distance _target < 3) && (_target getVariable ""rearmUses"") != 0",
+		/* 4 condition to show */           	format ["(_this distance _target < %1)", _distance],
+		/* 5 condition for action */        	format ["(_this distance _target < %1) && (_target getVariable ""rearmUses"") != 0", _distance],
 		/* 6 code executed on start */      	{},
 		/* 7 code executed per tick */      	{},
 		/* 8 code executed on completion */
@@ -201,43 +203,77 @@ switch (_request) do {
 	// START BOX
 	case 0: {
 		_position = _this select 1;
+		_distance = _this select 2;
+
+		if (isNil "_distance") then {
+			_distance = 3;
+		};
+		
 		_object = _position call fn_createBox;
 		_object setVariable ["rearmUses", -1, true];
 
 		_object call fn_clearCargo;
-		_object call fn_addAllActions;
+		[_object, _distance] call fn_addAllActions;
 		_object call fn_addArsenal;
 	};
 
 	// REARM BOX
 	case 1: {
 		_position = _this select 1;
+		_distance = _this select 2;
+		_numberOfUses = _this select 3;
 		_object = _position call fn_createBox;
+
+		if (isNil "_numberOfUses") then {
+			_numberOfUses = 1;
+		};
+
+		if (isNil "_distance") then {
+			_distance = 3;
+		};
+
 		_object setVariable ["rearmUses", 1, true];
 
 		_object call fn_clearCargo;
-		_object call fn_addRearmAction;
+		[_object, _distance] call fn_addRearmAction;
 	};
 
 	// START BOX ON OBJECT
 	case 2: {
 		_object = _this select 1;
+		_distance = _this select 2;
+
+		if (isNil "_distance") then {
+			_distance = 3;
+		};
+
 		[_object, 4] call ace_cargo_fnc_setSize;
 		_object setVariable ["rearmUses", -1, true];
 
 		_object call fn_clearCargo;
-		_object call fn_addAllActions;
+		[_object, _distance] call fn_addAllActions;
 		_object call fn_addArsenal;
 	};
 
 	// REARM BOX ON OBJECT
 	case 3: {
 		_object = _this select 1;
+		_distance = _this select 2;
+		_numberOfUses = _this select 3;
+
+		if (isNil "_numberOfUses") then {
+			_numberOfUses = 1;
+		};
+
+		if (isNil "_distance") then {
+			_distance = 3;
+		};
+
 		[_object, 4] call ace_cargo_fnc_setSize;
 
 		_alreadyRearmObject = !isNil {_object getVariable "rearmUses"};
 
-		_object setVariable ["rearmUses", 1, true];
+		_object setVariable ["rearmUses", _numberOfUses, true];
 		// TODO: - Figure out if cleaning the inventory is actually desired
 		//         when applied to an existing object
 		//       - Update zeusopsmod and make the module use case 1 instead of
@@ -246,7 +282,7 @@ switch (_request) do {
 
 
 		if (!_alreadyRearmObject) then {
-			_object call fn_addRearmAction;
+			[_object, _distance] call fn_addRearmAction;
 		};
 	};
 };

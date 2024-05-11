@@ -16,6 +16,7 @@ fn_addAllActions = {
 	_blackListedLoadouts = missionNamespace getVariable "BlackListedLoadouts";
 
 	_allAvailableLoadoutNames = missionNamespace getVariable "AllAvailableLoadoutNames";
+	if (isNil "_allAvailableLoadoutNames") exitWith {};
 	{
 		if (!(_x in _blackListedLoadouts)) then {
 			[_object, _x, _distance] call fn_addLoadoutAction;

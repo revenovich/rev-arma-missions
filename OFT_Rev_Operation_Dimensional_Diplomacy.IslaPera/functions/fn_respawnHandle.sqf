@@ -224,7 +224,11 @@ fn_movePlayerInSpawnVics = {
 		};
 
 		if (_isJumpOutWhenSpawn) then {
-			moveOut _entity;
+			[_entity] spawn {
+				_entity = _this select 0;
+				sleep 1;
+				moveOut _entity;
+			};
 		};
 	};
 };

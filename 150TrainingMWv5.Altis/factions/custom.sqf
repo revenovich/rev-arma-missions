@@ -385,10 +385,55 @@ if (_isUseUnit) then {
 		diag_log _nullUnitsString;
 	};
 
+	_uniforms = [];
+	_uniformItems = [];
+	_vests = [];
+	_vestItems = [];
+	_backpacks = [];
+	_backpackItems = [];
+	_headgear = [];
+	_goggles = [];
+	_assignedItems = [];
+	_magazines = [];
+	_weapons = [];
+	_primaryWeaponItems = [];
+	_primaryWeaponMagazine = [];
+	_handgunItems = [];
+	_handgunMagazine = [];
+	_secondaryWeaponItems = [];
+	_secondaryWeaponMagazine = [];
+
 	AllPlayableUnitsItens = [];
 	{AllPlayableUnitsItens = AllPlayableUnitsItens + [(headgear _x)] + [(goggles _x)] + (assignedItems _x) + (backpackitems _x)+ [(backpack _x)] + (uniformItems _x) + [(uniform _x)] + (vestItems _x) + [(vest _x)] + (magazines _x) + (weapons _x) + (primaryWeaponItems _x)+ (primaryWeaponMagazine _x) + (handgunMagazine _x) + (handgunItems _x) + (secondaryWeaponItems _x) + (secondaryWeaponMagazine _x)} forEach (_notNullUnits);
 	AllPlayableUnitsItens = AllPlayableUnitsItens select {count _x > 0};
 	AllPlayableUnitsItens = AllPlayableUnitsItens arrayIntersect AllPlayableUnitsItens;
+
+	{
+		_uniforms pushBack (uniform _x);
+		_vests pushBack (vest _x);
+		_backpacks pushBack (backpack _x);
+		_headgear pushBack (headgear _x);
+		_goggles pushBack (goggles _x);
+		_assignedItems pushBack (assignedItems _x);
+		_magazines pushBack (magazines _x);
+		_weapons pushBack (weapons _x);
+		_primaryWeaponItems pushBack (primaryWeaponItems _x);
+		_primaryWeaponMagazine pushBack (primaryWeaponMagazine _x);
+		_handgunItems pushBack (handgunItems _x);
+		_handgunMagazine pushBack (handgunMagazine _x);
+		_secondaryWeaponItems pushBack (secondaryWeaponItems _x);
+		_secondaryWeaponMagazine pushBack (secondaryWeaponMagazine _x);
+	} forEach _notNullUnits;
+
+	if (!(_uniforms isEqualTo [])) then {
+		["fillBox", uniform_box_1, [], 0, _uniforms, 5, [], 0, [], 0] call OFT_fnc_customFillBox;
+		["fillBox", uniform_box_2, [], 0, _uniforms, 5, [], 0, [], 0] call OFT_fnc_customFillBox;
+	};
+
+	if (!(_assignedItems isEqualTo [])) then {
+		["fillBox", equipment_box_1, [], 0, _assignedItems, 5, [], 0, [], 0] call OFT_fnc_customFillBox;
+		["fillBox", equipment_box_2, [], 0, _assignedItems, 5, [], 0, [], 0] call OFT_fnc_customFillBox;
+	};
 
 	if (!(isNil "addArsenalItems")) then {
 		additionalItems = addArsenalItems call ace_arsenal_fnc_getVirtualItems;

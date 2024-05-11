@@ -31,6 +31,7 @@ class cfgFunctions {
 		{
 			file = "functions";
 			class coverMap;
+			class customFillBox;
 			class fortificationBox;
 			class gearBox;
 			class gearHandle;

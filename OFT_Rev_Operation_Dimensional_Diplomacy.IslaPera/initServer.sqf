@@ -16,6 +16,8 @@ missionNameSpace setVariable ["initDone", false, true];
 systemChat "Loading mission...";
 diag_log "Loading mission...";
 
+["init"] call OFT_fnc_customFillBox;
+
 _handle = execVM format["factions\%1.sqf", _faction];
 
 waitUntil {isNull _handle};

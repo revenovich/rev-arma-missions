@@ -348,3 +348,8 @@ _this onMapSingleClick {
 [this] execVM "mission_functions\initInfTruck.sqf";
 
 [3, _this] call OFT_fnc_gearBox;
+
+[this] execVM "mission_functions\initHQTruck.sqf";
+[this] execVM "mission_functions\initInfTruck.sqf";
+
+[3, _this] call OFT_fnc_gearBox;

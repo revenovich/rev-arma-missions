@@ -23,26 +23,6 @@ class CfgSounds
 	};
 };
 
-class cfgFunctions {
-	class onefiftythlanguard
-	{
-		tag = "OFT";
-		class functions
-		{
-			file = "functions";
-			class coverMap;
-			class customFillBox;
-			class fortificationBox;
-			class gearBox;
-			class gearHandle;
-			class holdActionAdd;
-			class holdActionAddFortification;
-			class respawnHandle;
-			class showFPS;
-		};
-	};
-};
-
 class header {
 	gameType = Zeus;
 	minPlayers = 1;

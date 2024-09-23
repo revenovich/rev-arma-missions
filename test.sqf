@@ -407,6 +407,8 @@ this forceFlagTexture "textures\vietnam-flag.jpg";
 	sleep 5;
 
 	hint "";
+};
+
 [] spawn {
 	while {true} do {
 		hint format ["Server fps: %1", diag_fps];

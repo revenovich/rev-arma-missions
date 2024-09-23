@@ -265,6 +265,13 @@ _this addEventHandler ["Fired", {
 	};
 };
 
+[_this] spawn {
+	while {true} do {
+		sleep 10;
+		_this#0 setVehicleAmmo 1;
+	};
+};
+
 [this] spawn {
 	if (isServer) then {
 		waitUntil { missionNameSpace getVariable ["initDone", false] };
@@ -353,3 +360,51 @@ _this onMapSingleClick {
 [this] execVM "mission_functions\initInfTruck.sqf";
 
 [3, _this] call OFT_fnc_gearBox;
+
+
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	_unit setWeaponReloadingTime [_gunner, _muzzle, 0.1];
+	_unit setVehicleAmmo 1;
+}];
+
+this forceFlagTexture "textures\vietnam-flag.jpg";
+
+
+[true] execVM "missions\shockwave.sqf";
+
+[] spawn {
+	_allCivUnits = allUnits select {side _x isEqualTo sideEmpty};
+	
+	while {true} do {
+		{
+			if (!alive _x) then {
+				deleteVehicle _x;
+			};
+		} forEach _allCivUnits;
+
+		sleep 10;
+	};
+};
+
+[] spawn {
+	while {true} do {
+		{
+			if (side _x isEqualTo civilian) then {
+				if (["zombie", str (typeOf _x)] call BIS_fnc_inString) then {
+					deleteVehicle _x;
+				};
+			};
+		} forEach allMissionObjects "Land";
+		sleep 10;
+	};
+};
+
+[] spawn {
+	hint format ["Server fps: %1", diag_fps];
+	diag_log format ["Server fps: %1", diag_fps];
+
+	sleep 5;
+
+	hint "";
+};

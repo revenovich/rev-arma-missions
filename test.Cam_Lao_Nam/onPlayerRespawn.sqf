@@ -1,0 +1,1 @@
+[] execVM "scripts\fn_init.sqf";

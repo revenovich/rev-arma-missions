@@ -353,3 +353,24 @@ _this onMapSingleClick {
 [this] execVM "mission_functions\initInfTruck.sqf";
 
 [3, _this] call OFT_fnc_gearBox;
+
+[] spawn {
+	while {true} do {
+		hint format ["Server fps: %1", diag_fps];
+		diag_log format ["Server fps: %1", diag_fps];
+
+		sleep 5;
+
+		hint "";
+	};
+};
+
+[3, this] call OFT_fnc_fortificationBox;
+
+[this] execVM "mission_functions\initHQTruck.sqf"; [this] spawn { 
+ 	if (isServer) then { 
+		waitUntil { missionNameSpace getVariable ["initDone", false] }; 
+		[2, _this#0, 10] spawn OFT_fnc_gearBox;
+		[3, _this#0] call OFT_fnc_fortificationBox;
+	};
+};

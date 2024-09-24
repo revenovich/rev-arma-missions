@@ -240,6 +240,7 @@ this addEventHandler ["Fired", {
 
 missionNamespace setVariable ["1_labTotalTimeToCharge", 12, true];
 
+// Infinity ammo with fast reload
 _this addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 	_unit setWeaponReloadingTime [_gunner, _muzzle, 0.1];

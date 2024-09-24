@@ -1,8 +1,3 @@
-/*
-	@file_name: fn_fortificationBox.sqf
-	@file_author: Dyzalonius
-*/
-
 ////////////////////////////////////////////////
 //               SUB-FUNCTIONS                //
 ////////////////////////////////////////////////
@@ -403,7 +398,11 @@ switch (_request) do {
 	// BIG FORTIFICATIONS ON EXISTING OBJECT
 	case 3: {
         _object = _this select 1;
-        _materialCount = 1500000;
+        _materialCount = _this select 2;
+
+		if (isNil "_materialCount") then {
+        	_materialCount = 800000;
+		};
         _interactionDistance = 10;
         _object setVariable ["materialCount", _materialCount, true];
         _object setVariable ["interactionDistance", _interactionDistance, true];

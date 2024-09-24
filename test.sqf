@@ -1,25 +1,29 @@
 [_this, {
 	_this allowDamage false;
-	{ _x allowDamage false } forEach crew _this;
+	{
+		_x allowDamage false
+	} forEach crew _this;
 
 	private _tempTarget = createSimpleObject ["Land_HelipadEmpty_F", getPosASL _this];
 	[_tempTarget, nil, true] spawn BIS_fnc_moduleLightning;
-	
+
 	deleteVehicleCrew _this;
 	deleteVehicle _this;
-}] remoteExec ['call', 0 , _this]
+}] remoteExec ['call', 0, _this]
 
 [_this, {
 	_this allowDamage false;
-	{ _x allowDamage false } forEach crew _this;
+	{
+		_x allowDamage false
+	} forEach crew _this;
 
 	private _tempTarget = createSimpleObject ["Land_HelipadEmpty_F", getPosASL _this];
 	[_tempTarget, nil, true] spawn BIS_fnc_moduleLightning;
-}] remoteExec ['call', 0 , _this]
+}] remoteExec ['call', 0, _this]
 
 [_this, {
 	[_this, nil, true] spawn BIS_fnc_moduleLightning;
-}] remoteExec ['call', 0 , _this]
+}] remoteExec ['call', 0, _this]
 
 [_this, {
 	private _position = getPosASL _this;
@@ -32,17 +36,16 @@
 	_veh setVehicleLock "LOCKED";
 	private _tempTarget = createSimpleObject ["Land_HelipadEmpty_F", getPosASL _veh];
 	[_tempTarget, nil, true] spawn BIS_fnc_moduleLightning;
-}] remoteExec ['call', 0 , _this]
+}] remoteExec ['call', 0, _this]
 
-
-[] spawn 
+[] spawn
 {
-	while {true} do {
+	while { true } do {
 		s1 playMove "AmovPercMrunSlowWrflDf";
 	};
 };
 
-[] spawn 
+[] spawn
 {
 	sleep 10;
 	mb1D enableAI "Move";
@@ -54,51 +57,51 @@
 
 DistanceToReach = 300;
 this addAction
-[  
-    "Turn Off",  
-    {  
-        params ["_target", "_caller", "_actionId", "_arguments"];  
-		_target animateSource ["switchposition",1];  
-		_target animateSource ["light",0];  
-		_target setDamage 1;  
-    },  
-    [],
-    1.5,  
-    true,  
-    true,  
-    "",  
-    "alive _target",  
-    3,  
-    false,  
-    "",  
-    ""  
+[
+	"Turn Off",
+	{
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_target animateSource ["switchposition", 1];
+		_target animateSource ["light", 0];
+		_target setDamage 1;
+	},
+	[],
+	1.5,
+	true,
+	true,
+	"",
+	"alive _target",
+	3,
+	false,
+	"",
+	""
 ];
 
-this animateSource ["switchposition",1];
-this animateSource ["light",0];
+this animateSource ["switchposition", 1];
+this animateSource ["light", 0];
 this setDamage 1;
 
-this addAction  
-[  
-    "Turn On",  
-    {  
-        params ["_target", "_caller", "_actionId", "_arguments"];  
-		_target animateSource ["switchposition",-1];  
-		_target animateSource ["light",1];  
-		_target setDamage 0;  
+this addAction
+[
+	"Turn On",
+	{
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_target animateSource ["switchposition", -1];
+		_target animateSource ["light", 1];
+		_target setDamage 0;
 
 		["generator_on", "SUCCEEDED"] call BIS_fnc_taskSetState;
-    },  
-    [],  
-    1.5,  
-    true,  
-    true,  
-    "",  
-    "!alive _target",  
-    3,  
-    true,  
-    "",  
-    ""  
+	},
+	[],
+	1.5,
+	true,
+	true,
+	"",
+	"!alive _target",
+	3,
+	true,
+	"",
+	""
 ];
 
 [] spawn {
@@ -111,31 +114,31 @@ this addAction
 	sci2 sideChat "Turn it on and then come here to start the experiment.";
 	[west, "generator_on", ["Turn on the generator to start the experiment", "Turn on the generator", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
 
-	power_box1 addAction  
-	[  
-		"Turn On",  
-		{  
-			params ["_target", "_caller", "_actionId", "_arguments"];  
-			_target animateSource ["switchposition",-1];  
-			_target animateSource ["light",1];  
-			_target setDamage 0;  
+	power_box1 addAction
+	[
+		"Turn On",
+		{
+			params ["_target", "_caller", "_actionId", "_arguments"];
+			_target animateSource ["switchposition", -1];
+			_target animateSource ["light", 1];
+			_target setDamage 0;
 
 			missionNamespace setVariable ["isPowerOn", true, true];
 
 			["generator_on", "SUCCEEDED"] call BIS_fnc_taskSetState;
 
 			sci3 sideChat "We have power, get back here";
-		},  
-		[],  
-		1.5,  
-		true,  
-		true,  
-		"",  
-		"!alive _target",  
-		3,  
-		true,  
-		"",  
-		""  
+		},
+		[],
+		1.5,
+		true,
+		true,
+		"",
+		"!alive _target",
+		3,
+		true,
+		"",
+		""
 	];
 
 	sleep 3;
@@ -222,14 +225,18 @@ if (isPowerOn) then {
 [_this, "WATCH2", "ASIS"] call BIS_fnc_ambientAnim;
 [_this, "GUARD", "ASIS"] call BIS_fnc_ambientAnim;
 
-while {true} do { _this engineOn true;}
+while { true } do {
+	_this engineOn true;
+}
 
 ["experimentRunning.sqf"] remoteExec ["execVM", 0, true];
 
 [[_this, 5, 7, 10], "randomTeleport.sqf"] remoteExec ["execVM", 0, false];
 
 // Infinity ammo
-this addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]
+this addEventHandler ["Fired", {
+	(_this select 0) setVehicleAmmo 1
+}]
 
 missionNamespace setVariable ["1_labTotalTimeToCharge", 12, true];
 
@@ -251,22 +258,22 @@ _this addEventHandler ["Fired", {
 }
 
 {
-    if (side _x isEqualTo west) then {
-        deleteGroup group _x;
-    }
+	if (side _x isEqualTo west) then {
+		deleteGroup group _x;
+	}
 } forEach allGroups;
 
 (unitBackpack player) setMaxLoad 999999999999;
 
 [_this] spawn {
-	while {true} do {
+	while { true } do {
 		sleep 1;
 		_this#0 setFuel 1;
 	};
 };
 
 [_this] spawn {
-	while {true} do {
+	while { true } do {
 		sleep 10;
 		_this#0 setVehicleAmmo 1;
 	};
@@ -274,15 +281,19 @@ _this addEventHandler ["Fired", {
 
 [this] spawn {
 	if (isServer) then {
-		waitUntil { missionNameSpace getVariable ["initDone", false] };
-		[2, _this#0] spawn OFT_fnc_gearBox;  
+		waitUntil {
+			missionNameSpace getVariable ["initDone", false]
+		};
+		[2, _this#0] spawn OFT_fnc_gearBox;
 	};
 };
 
 [this] spawn {
 	if (isServer) then {
-		waitUntil { missionNameSpace getVariable ["initDone", false] };
-		["addRespawnVehicle", ""] spawn OFT_fnc_respawnVehicles;  
+		waitUntil {
+			missionNameSpace getVariable ["initDone", false]
+		};
+		["addRespawnVehicle", ""] spawn OFT_fnc_respawnVehicles;
 	};
 };
 
@@ -304,7 +315,6 @@ _this addEventHandler ["Fired", {
 		// Current result is saved in variable _x
 		hint format ["%1", markerText _x];
 		sleep 4;
-
 	} forEach allMapMarkers;
 };
 
@@ -312,13 +322,13 @@ _this addEventHandler ["Fired", {
 
 [_this] spawn {
 	_veh = _this#0;
-	while {alive _veh} do {
+	while { alive _veh } do {
 		_veh setFuel 1;
 		sleep 120;
 	};
 };
 
-_this onMapSingleClick { 
+_this onMapSingleClick {
 	params ["_this", "_pos", "_units", "_shift", "_alt"];
 
 	_unitSide = toUpper (missionNamespace getVariable "playerSideVar");
@@ -349,8 +359,6 @@ _this onMapSingleClick {
 	};
 };
 
-
-
 [this] execVM "mission_functions\initHQTruck.sqf";
 [this] execVM "mission_functions\initInfTruck.sqf";
 
@@ -360,7 +368,6 @@ _this onMapSingleClick {
 [this] execVM "mission_functions\initInfTruck.sqf";
 
 [3, _this] call OFT_fnc_gearBox;
-
 
 _this addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
@@ -370,13 +377,14 @@ _this addEventHandler ["Fired", {
 
 this forceFlagTexture "textures\vietnam-flag.jpg";
 
-
 [true] execVM "missions\shockwave.sqf";
 
 [] spawn {
-	_allCivUnits = allUnits select {side _x isEqualTo sideEmpty};
-	
-	while {true} do {
+	_allCivUnits = allUnits select {
+		side _x isEqualTo sideEmpty
+	};
+
+	while { true } do {
 		{
 			if (!alive _x) then {
 				deleteVehicle _x;
@@ -388,7 +396,7 @@ this forceFlagTexture "textures\vietnam-flag.jpg";
 };
 
 [] spawn {
-	while {true} do {
+	while { true } do {
 		{
 			if (side _x isEqualTo civilian) then {
 				if (["zombie", str (typeOf _x)] call BIS_fnc_inString) then {
@@ -410,7 +418,7 @@ this forceFlagTexture "textures\vietnam-flag.jpg";
 };
 
 [] spawn {
-	while {true} do {
+	while { true } do {
 		hint format ["Server fps: %1", diag_fps];
 		diag_log format ["Server fps: %1", diag_fps];
 
@@ -422,10 +430,19 @@ this forceFlagTexture "textures\vietnam-flag.jpg";
 
 [3, this] call OFT_fnc_fortificationBox;
 
-[this] execVM "mission_functions\initHQTruck.sqf"; [this] spawn { 
- 	if (isServer) then { 
-		waitUntil { missionNameSpace getVariable ["initDone", false] }; 
+[this] execVM "mission_functions\initHQTruck.sqf";
+[this] spawn {
+	if (isServer) then {
+		waitUntil {
+			missionNameSpace getVariable ["initDone", false]
+		};
 		[2, _this#0, 10] spawn OFT_fnc_gearBox;
 		[3, _this#0] call OFT_fnc_fortificationBox;
 	};
 };
+
+// get count of all opfor units
+_opforUnits = allUnits select {
+	side _x isEqualTo east
+};
+count _opforUnits;

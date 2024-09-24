@@ -6,7 +6,25 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 	[3] call OFT_fnc_gearHandle;
 };
 
+[_oldUnit] spawn {
+	if (isNil "_oldUnit" || !hasInterface) exitWith {};
+
+	params ["_oldUnit"];
+
+	_healActionId = _oldUnit getVariable ["healActionId", -1];
+	if (_healActionId > -1) then {
+		_oldUnit removeAction _healActionId;
+	};
+
+	_unconsciousId = _oldUnit getVariable ["unconsciousId", -1];
+	if (_unconsciousId > -1) then {
+		_oldUnit removeEventHandler ["ace_unconscious", _unconsciousId];
+	};
+};
+
 [_newUnit] spawn {
+	if !(hasInterface || isDedicated) exitWith {};
+
 	["init"] call OFT_fnc_respawnHandle;
 	_newUnit = _this select 0;
 	sleep 0.1;
@@ -21,4 +39,6 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 	if (!isNull _vehicle) then {
 		["movePlayerInSpawnVics", _newUnit, _vehicle, _nearestMarker] call OFT_fnc_respawnHandle;
 	};
+
+	[_newUnit] execVM "mission_functions\manualHeal.sqf";
 };

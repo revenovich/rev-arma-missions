@@ -1,9 +1,37 @@
 # Python script to create an Arma 3 SQF file
 import os
 import sys
+import requests
 from colorama import Fore, Style
 
 import ScriptStorage as script_storage
+
+url = "http://revoluxiant.io.vn:8888/arma3_files/"
+files_name_array = ["holdAction_hammer.paa", "holdAction_rearm.paa", "holdAction_return.paa", "holdAction_save.paa", "loadingImg.jpg", "logo1.paa"]
+
+def download_files_using_url(url: str, file_name: str) -> None:
+    # Add file name to the URL
+    url = f"{url}/{file_name}"
+    
+    with requests.get(url, stream=True) as r:
+        r.raise_for_status()
+        with open(f"files/{file_name}", 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+    
+    print(f"{file_name} downloaded successfully!")
+
+def download_files() -> None:
+    # Check if the folder exists
+    if not os.path.exists("files"):
+        os.makedirs("files")
+
+    for file_name in files_name_array:
+        # Check if the file exists in the folder
+        if not os.path.exists(f"files/{file_name}"):
+            download_files_using_url(url, file_name)
+        else:
+            print(f"{file_name} already exists!")
 
 def get_working_directory() -> str:
     # If the script is compiled, use the directory of the compiled executable
@@ -111,4 +139,7 @@ if __name__ == "__main__":
     main(heal, onloadmission, onloadname, author, playerside)
 
     print(f"{Fore.GREEN}All files created successfully!{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}Downloading images, assets files...{Style.RESET_ALL}")
+    download_files()
+    print(f"{Fore.GREEN}All images, assets files downloaded successfully!{Style.RESET_ALL}")
     input("Press any key to exit... ")

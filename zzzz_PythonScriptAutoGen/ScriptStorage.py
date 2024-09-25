@@ -52,10 +52,10 @@ description_ext = ["description.ext", r"""
 //             EDITABLE VARIABLES             //
 ////////////////////////////////////////////////
 
-onLoadMission = ||||onLoadMission||||;
+onLoadMission = "||||onLoadMission||||";
 loadScreen = "files\loadingImg.jpg";
-onLoadName = ||||onLoadName||||;
-author = ||||author||||;
+onLoadName = "||||onLoadName||||";
+author = "||||author||||";
 
 ////////////////////////////////////////////////
 //       EDITABLE VARIABLES END HERE          //

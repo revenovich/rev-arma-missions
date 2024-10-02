@@ -3,6 +3,12 @@ $dir = Split-Path $scriptpath
 Write-host "My directory is $dir"
 Push-Location $dir
 
-scp -r dist/ rev@revoluxiant.io.vn:/home/rev/storage
+# Path of upload folder
+$upload_folder = "dist/"
+
+# Remote path
+$remote_path = "rev@revoluxiant.io.vn:/home/rev/storage"
+
+scp -r $upload_folder $remote_path
 
 Pop-Location

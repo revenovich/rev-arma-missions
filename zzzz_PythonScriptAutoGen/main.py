@@ -6,7 +6,7 @@ from colorama import Fore, Style
 
 import ScriptStorage as script_storage
 
-url = "http://revoluxiant.io.vn:8888/arma3_files/"
+url = "http://revoluxiant.io.vn:8888/rev_storage/arma3files/assets/"
 files_name_array = ["holdAction_hammer.paa", "holdAction_rearm.paa", "holdAction_return.paa", "holdAction_save.paa", "loadingImg.jpg", "logo1.paa"]
 
 def download_files_using_url(url: str, file_name: str) -> None:

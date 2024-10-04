@@ -4,10 +4,10 @@ Write-host "My directory is $dir"
 Push-Location $dir
 
 # Path of upload folder
-$upload_folder = "dist/"
+$upload_folder = "maps/"
 
 # Remote path
-$remote_path = "rev@revoluxiant.io.vn:/home/rev/storage"
+$remote_path = "rev@revoluxiant.io.vn:/home/rev/storage/arma3files"
 
 scp -r $upload_folder $remote_path
 

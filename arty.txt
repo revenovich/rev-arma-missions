@@ -1,0 +1,6 @@
+[_this, oft_t_1 , 10, 5] spawn {
+	params ["_arty", "_fireTarget", "_delayBtwShots", "_delayStart"];
+	_arty addEventHandler ["Fired", {params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];_unit setVehicleAmmo 1;}];
+	for "_i" from 1 to _delayStart do {sleep 1;};
+	while { alive _arty } do {_targetPos = getPosATL _fireTarget;_ammoType = getArtilleryAmmo [_arty] select 0;_numRounds = 1;_arty doArtilleryFire [_targetPos, _ammoType, _numRounds];sleep _delayBtwShots;};
+};

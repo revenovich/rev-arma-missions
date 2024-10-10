@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="ATM Airdrop">
+	<Package name="ATMDrop">
+		<Key ID="STR_ATM_Alt">
+			<Original>Altitude</Original>
+			<French>Altitude:</French>
+		</Key>
+		<Key ID="STR_ATM_Keys">
+			<Original>Good Luck Soldier</Original>
+			<French>Bonne chance:</French>
+		</Key>
+		<Key ID="STR_ATM_Main">
+			<Original>Choose your Altitude</Original>
+			<French>Choisir votre altitude</French>
+		<Key>
+		<Key ID="STR_ATM_hover">
+			<Original>Your select Altitude</Original>
+			<French>Votre Altitude choisi</French>
+		</Key>
+		<Key ID="STR_ATM_hinton">
+			<Original>Altitude 500m-1000m.. Designate Insertion Point</Original>
+			<French>Sélectionner votre Altitude et désigner une LZ sur la carte</French>
+		</Key>
+		<Key ID="STR_ATM_hintload">
+			<Original>Loading Gear</Original>
+			<French>Chargement de votre équipement ...</French>
+		</Key>
+		<Key ID="STR_ATM_Close">
+			<Original>Close</Original>
+			<French>Fermer</French>
+		</Key>
+	</Package>
+</Project>

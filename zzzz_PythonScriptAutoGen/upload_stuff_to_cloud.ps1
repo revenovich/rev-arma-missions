@@ -7,7 +7,7 @@ Push-Location $dir
 $upload_folder = "dist/"
 
 # Remote path
-$remote_path = "rev@revoluxiant.io.vn:/home/rev/storage"
+$remote_path = "rev@revoluxiant.io.vn:/home/rev/storage/arma3files"
 
 scp -r $upload_folder $remote_path
 

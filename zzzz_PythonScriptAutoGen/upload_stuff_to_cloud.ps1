@@ -4,7 +4,7 @@ Write-host "My directory is $dir"
 Push-Location $dir
 
 # Path of upload folder
-$upload_folder = "maps/"
+$upload_folder = "saves/"
 
 # Remote path
 $remote_path = "rev@revoluxiant.io.vn:/home/rev/storage/arma3files"

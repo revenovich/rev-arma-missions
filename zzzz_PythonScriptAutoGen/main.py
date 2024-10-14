@@ -3,11 +3,12 @@ import os
 import sys
 import requests
 from colorama import Fore, Style
+from bs4 import BeautifulSoup
 
 import ScriptStorage as script_storage
 
 url = "http://revoluxiant.io.vn:8888/rev_storage/arma3files/assets/"
-files_name_array = ["holdAction_hammer.paa", "holdAction_rearm.paa", "holdAction_return.paa", "holdAction_save.paa", "loadingImg.jpg", "logo1.paa"]
+files_name_array = []
 
 def download_files_using_url(url: str, file_name: str) -> None:
     # Add file name to the URL
@@ -135,6 +136,13 @@ def get_user_input() -> tuple:
 
 # Run the function
 if __name__ == "__main__":
+    # Fetch the HTML content of the URL
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Create a list of map names (skipping directories)
+    files_name_array = [link.get('href') for link in soup.find_all('a') if not link.get('href').endswith('/')]
+
     heal, onloadmission, onloadname, author, playerside = get_user_input()
     main(heal, onloadmission, onloadname, author, playerside)
 

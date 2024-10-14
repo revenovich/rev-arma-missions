@@ -258,7 +258,7 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 # --------------------------------------------------------------------------------------------
 
 # custom.sqf file
-custom_sqf = ["faction\\custom.sqf", r"""// //// //////////////////////////////////////////
+custom_sqf = ["factions\\custom.sqf", r"""// //// //////////////////////////////////////////
 //             EDITABLE VARIABLES            // 
 // //// //////////////////////////////////////////
 
@@ -611,8 +611,8 @@ AllPlayableUnitsItens = AllPlayableUnitsItens arrayIntersect AllPlayableUnitsIte
 	// ["fillBox", equipment_box_2, [], 0, _assignedItems, 5, [], 0, [], 0] call OFT_fnc_customFillBox;
 //};
 
-if (!(isNil "addArsenalItems")) then {
-	additionalItems = addArsenalItems call ace_arsenal_fnc_getVirtualItems;
+if (!(isNil "oft_addArsenalItems")) then {
+	additionalItems = oft_addArsenalItems call ace_arsenal_fnc_getVirtualItems;
 	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
 	additionalItems = (toArray additionalItems)#0;
 
@@ -620,11 +620,11 @@ if (!(isNil "addArsenalItems")) then {
 	AllPlayableUnitsItens = AllPlayableUnitsItens + additionalItems;
 
 	// Delete the box
-	deleteVehicle addArsenalItems;
+	deleteVehicle oft_addArsenalItems;
 };
 
-if (!(isNil "removeArsenalItems")) then {
-	itemsRemove = removeArsenalItems call ace_arsenal_fnc_getVirtualItems;
+if (!(isNil "oft_removeArsenalItems")) then {
+	itemsRemove = oft_removeArsenalItems call ace_arsenal_fnc_getVirtualItems;
 	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
 	itemsRemove = (toArray itemsRemove)#0;
 
@@ -632,7 +632,7 @@ if (!(isNil "removeArsenalItems")) then {
 	AllPlayableUnitsItens = AllPlayableUnitsItens - itemsRemove;
 
 	// Delete the box
-	deleteVehicle removeArsenalItems;
+	deleteVehicle oft_removeArsenalItems;
 };
 
 // Save all items to missionNamespace

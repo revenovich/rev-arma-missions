@@ -455,3 +455,9 @@ count _opforUnits;
 	while { alive _arty } do {_targetPos = getPosATL _fireTarget;_ammoType = getArtilleryAmmo [_arty] select 0;_numRounds = 1;_arty doArtilleryFire [_targetPos, _ammoType, _numRounds];sleep _delayBtwShots;};
 };
 
+[this] execVM "mission_functions\heliHandle.sqf";
+
+_crews = fullCrew this;
+{
+	_x disableAI "MOVE";
+} forEach _crews;

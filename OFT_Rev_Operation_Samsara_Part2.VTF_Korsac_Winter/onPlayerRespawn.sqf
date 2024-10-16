@@ -42,4 +42,6 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 
 	missionNamespace setVariable ["maxNumberOfHeals", 0, true];
 	[_newUnit] execVM "mission_functions\manualHeal.sqf";
+
+	[_newUnit] execVM "mission_functions\playerWearMask.sqf";
 };

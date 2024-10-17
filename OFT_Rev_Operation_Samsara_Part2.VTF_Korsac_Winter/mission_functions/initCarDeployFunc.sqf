@@ -22,8 +22,8 @@ if (isServer) then {
 	{ 
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		if (missionNamespace getVariable "isShowSystemChat") then {
-			textForSystemChat = format ["%1 packing up fire barrels", name _caller];
-			[textForSystemChat] remoteExec ["systemChat", 0];
+			_textForSystemChat = format ["%1 packing up fire barrels", name _caller];
+			[_textForSystemChat] remoteExec ["systemChat", 0];
 		};
 	},
 	{ },
@@ -40,7 +40,7 @@ if (isServer) then {
 		barrel_2 hideObjectGlobal false;
 	},
 	{ },
-	[], 10, nil, false, false
+	[], 5, nil, false, false
 ] call BIS_fnc_holdActionAdd;
 
 [
@@ -53,8 +53,8 @@ if (isServer) then {
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		if (missionNamespace getVariable "isShowSystemChat") then {
-			textForSystemChat = format ["%1 deploying fire barrels", name _caller];
-			[textForSystemChat] remoteExec ["systemChat", 0];
+			_textForSystemChat = format ["%1 deploying fire barrels", name _caller];
+			[_textForSystemChat] remoteExec ["systemChat", 0];
 		};
 	},
 	{ },
@@ -73,5 +73,5 @@ if (isServer) then {
 		barrel_2 hideObjectGlobal true;
 	},
 	{ },
-	[], 10, nil, false, false
+	[], 5, nil, false, false
 ] call BIS_fnc_holdActionAdd;

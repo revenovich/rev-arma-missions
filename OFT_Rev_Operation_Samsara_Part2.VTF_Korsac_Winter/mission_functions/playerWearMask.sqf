@@ -15,8 +15,9 @@
     while {alive _player} do {
         _gasMaskPlayer = goggles _player; // Check what goggles the player is wearing
         _isWearingCorrectGasMask = [_gasMaskName, _gasMaskPlayer] call BIS_fnc_inString;
+		_isInSafeZone1 = _player inArea safeAirZone_1;
 
-        if (!_isWearingCorrectGasMask) then {
+        if (!_isWearingCorrectGasMask && !_isInSafeZone1) then {
             // Player is not wearing the correct gas mask, start applying damage over time
             
             _exposureTime = _exposureTime + 1;

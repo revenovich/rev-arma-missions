@@ -15,7 +15,7 @@ _heli addAction [
 		} forEach _crews;
 		_driver = driver _target;
 		_driverGroup = group _driver;
-		_driverGroup setCurrentWaypoint [_driverGroup, 12];
+		[_driverGroup, [_driverGroup, 12]] remoteExec ["setCurrentWaypoint", 0];
 
 		_target setVariable ["heliMoving", true, true];
 	},

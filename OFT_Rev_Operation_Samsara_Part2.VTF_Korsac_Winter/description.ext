@@ -40,6 +40,7 @@ class cfgFunctions {
 			class holdActionAddFortification;
 			class respawnHandle;
 			class showFPS;
+			class teleportThings;
 		};
 	};
 };

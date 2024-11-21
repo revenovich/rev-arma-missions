@@ -37,7 +37,7 @@
 		_pitch = 1;
 		_range = 300;
 		_isInside = false;
-		_soundFile = "testSound.ogg";
+		_soundFile = "recording.ogg";
 		_isCustomSound = true;
 		_duration = 37;
 

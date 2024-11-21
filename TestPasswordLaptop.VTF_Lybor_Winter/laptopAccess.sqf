@@ -1,7 +1,7 @@
 params ["_target", "_caller", "_password", "_promptMessage"];
 
 // Request the password through chat
-_caller globalChat _promptMessage;
+[_caller, _promptMessage] remoteExec ["globalChat", 0];
 
 input_password = nil;
 
@@ -13,10 +13,10 @@ _this spawn {
 
     // Check the password
     if (input_password == _password) then {
-        systemChat "Password correct. Access granted!";
+        "Password correct. Access granted!" remoteExec ["systemChat", 0];
 		_target setVariable ["laptopAccess", true, true];
     } else {
-        systemChat "Incorrect password. Access denied.";
+        "Incorrect password. Access denied!" remoteExec ["systemChat", 0];
 		_target setVariable ["laptopAccess", false, true];
     };
 

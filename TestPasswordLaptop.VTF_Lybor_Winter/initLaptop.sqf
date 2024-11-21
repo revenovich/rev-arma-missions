@@ -7,12 +7,12 @@
 	"true",
 	{ 
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		_caller globalChat "Accessing the laptop...";
+		[_caller, "Accessing the laptop...", 5] remoteExec ["globalChat", 0];
 	},
 	{ },
 	{ 
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		_password = "1234";
+		_password = "halas#2024";
 		_promptMessage = "Access the laptop by providing the password:";
 		[_target, _caller, _password, _promptMessage] execVM "laptopAccess.sqf";
 	},
@@ -33,22 +33,9 @@
 	{ },
 	{ 
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		_volume = 10;
-		_pitch = 1;
-		_range = 300;
-		_isInside = false;
-		_soundFile = "recording.ogg";
-		_isCustomSound = true;
-		_duration = 37;
-
 		_target setVariable ["isPlaying", true, true];
-
-		if (_isCustomSound) then {
-			playSound3D [getMissionPath _soundFile, _target, _isInside, getPosASL _target, _volume, _pitch, _range];
-		} else {
-			playSound3D [_soundFile, _target, _isInside, getPosASL _target, _volume, _pitch, _range];
-		};
-
+		_duration = 37;
+		[_target, _caller] execVM "laptopSound.sqf";
 		[_duration, _target] spawn {
 			params ["_duration", "_target"];
 			sleep _duration;

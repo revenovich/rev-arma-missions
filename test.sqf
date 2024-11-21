@@ -463,3 +463,5 @@ _crews = fullCrew this;
 } forEach _crews;
 
 ["teleportArsenal", [main_arsenal_5, main_arsenal_6, main_arsenal_7, main_arsenal_8], [oft_pad_teleport_des_1,oft_pad_teleport_des_2,oft_pad_teleport_des_3,oft_pad_teleport_des_4]] call OFT_fnc_teleportThings;
+
+playSound3D [getMissionPath _soundFile, _laptop1, _isInside, getPosASL _laptop1, _volume, _pitch, _range];

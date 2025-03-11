@@ -22,6 +22,48 @@ class CfgSounds
 		sound[] = {"@A3\ui_f\data\sound\RscListbox\soundSelect", 0.2, 1};
 		titles[] = {0,""};
 	};
+	class wolfHowlMain
+	{
+		name = "wolfHowlMain";
+		sound[] = {"files\wolf-howl-main.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class wolfHowl1
+	{
+		name = "wolfHowl1";
+		sound[] = {"files\wolf-howl1.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class wolfHowl2
+	{
+		name = "wolfHowl2";
+		sound[] = {"files\wolf-howl2.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class zombieAttack
+	{
+		name = "zombieAttack";
+		sound[] = {"files\zombie-attack.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class zombieChoking
+	{
+		name = "zombieChoking";
+		sound[] = {"files\zombie-choking.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class zombieMoan
+	{
+		name = "zombieMoan";
+		sound[] = {"files\zombie-moan.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class zombieScreaming
+	{
+		name = "zombieScreaming";
+		sound[] = {"files\zombie-screaming.ogg", 1, 1};
+		titles[] = {0,""};
+	};
 };
 
 class cfgFunctions {

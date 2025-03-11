@@ -29,6 +29,10 @@ missionNamespace setVariable ["playerSideVar", _playerSideVar, true];
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
 
+_prayerHandle = execVM "prayer.sqf";
+
+waitUntil {isNull _prayerHandle};
+
 systemChat "Mission loaded!";
 diag_log "Mission loaded!";
 

@@ -29,7 +29,7 @@ missionNamespace setVariable ["playerSideVar", _playerSideVar, true];
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
 
-_prayerHandle = execVM "prayer.sqf";
+_prayerHandle = execVM "mission_functions\prayer.sqf";
 
 waitUntil {isNull _prayerHandle};
 

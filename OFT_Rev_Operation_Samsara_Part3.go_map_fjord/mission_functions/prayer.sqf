@@ -60,9 +60,6 @@ if (isServer) then {
 		_isPrayerInAltar = _person inArea altarArea_1;
 
 		if (_isPrayerInAltar) then {
-			diag_log format ["[CHAT] %1 is in the altar area", _name];
-			diag_log format ["[CHAT] Sentences matched: %1 %2 %3 %4 %5 %6 %7", sentence_1_match, sentence_2_match, sentence_3_match, sentence_4_match, sentence_5_match, sentence_6_match, sentence_7_match];
-			diag_log format ["[CHAT] Sentence: %1", _text];
 			if (_text == sentence_1
 				&& !sentence_1_match
 				&& !sentence_2_match
@@ -78,12 +75,10 @@ if (isServer) then {
 			_randomStrikePosArray = [];
 			for "_i" from 1 to 4 do {
 				_randomStrikePos = strikePosArray call BIS_fnc_selectRandom;
-				diag_log format ["[CHAT] Random strike position: %1", _randomStrikePos];
 				_randomStrikePosArray pushBack _randomStrikePos;
 			};
 			
 			{
-				diag_log format ["[CHAT] Executing random strike position: %1", _x];
 				[[_x], fn_executeRandomStrikePos] remoteExec ['call', [0,-2] select isDedicated, true];
 			} forEach _randomStrikePosArray;
 

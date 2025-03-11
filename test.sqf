@@ -467,3 +467,108 @@ _crews = fullCrew this;
 playSound3D [getMissionPath _soundFile, _laptop1, _isInside, getPosASL _laptop1, _volume, _pitch, _range];
 
 playSound3D [getMissionPath "files\wolf-howl-main.ogg", _this, false, getPosASL _this, 1, 1, 100];
+
+_path = getMissionPath "files\wolf-howl-main.ogg";
+_dist = 2000;
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+_this addEventHandler ["Hit", {
+	params ["_unit", "_source", "_damage", "_instigator"];
+	[format ["%1 was hit by %2 with %3 cause %4 damage", _unit, _instigator, _source, _damage]] remoteExec ["systemChat", 0];
+	["ace_medical_treatment_fullHealLocal", _unit, _unit] call CBA_fnc_targetEvent;
+	_unit setDamage 0;
+}];
+
+[this] spawn {
+	sleep 3;
+	_this#0 setVariable ["totalDamage", 0, true];
+	_this#0 setVariable ["oft_maxDamage", 20000, true];
+	_this#0 setVariable ["oft_hintDamage", 0, true];
+	_this#0 setVariable ["oft_hintDamageTime", 0, true];
+	_this#0 removeAllEventHandlers "HandleDamage";
+	_handleDamageEvent = _this#0 addEventHandler ["HandleDamage", {
+		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
+		if (!(alive _unit)) exitWith {
+			_unit removeEventHandler ["HandleDamage", _unit getVariable "handleDamageHandler"];
+		};
+
+		if (_context == 0) then {
+			_totalDamage = _unit getVariable ["totalDamage", 0];
+			_hintDamage = _unit getVariable ["oft_hintDamage", 0];
+			_addDamage = _totalDamage + _damage;
+			_hintDamage = _hintDamage + _damage;
+			if (_hintDamage >= 100) then {
+				_hintDamage = 0;
+				_unit setVariable ["oft_hintDamageTime", (_unit getVariable ["oft_hintDamageTime", 0]) + 1, true];
+				_unit setVariable ["oft_hintDamage", _hintDamage, true];
+				[_unit] spawn {
+					_unit = _this#0;
+					[format ["%1/%2", (_unit getVariable ["oft_maxDamage", 20000]) - ((_unit getVariable ["oft_hintDamageTime", 0]) * 100), (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+					sleep 5;
+					[""] remoteExec ["hint", [0, -2] select isDedicated];
+				};
+			};
+			_unit setVariable ["oft_hintDamage", _hintDamage, true];
+			if (_addDamage >= (_unit getVariable ["oft_maxDamage", 20000])) then {
+				[_unit] spawn {
+					_unit = _this#0;
+					[format ["0/%1", (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+					sleep 5;
+					[""] remoteExec ["hint", [0, -2] select isDedicated];
+				};
+				_unit setDamage 1;
+			};
+			_unit setVariable ["totalDamage", _addDamage, true];
+			["ace_medical_treatment_fullHealLocal", _unit, _unit] call CBA_fnc_targetEvent;
+
+		};
+		0
+	}];
+	_this#0 setVariable ["handleDamageHandler", _handleDamageEvent, true];
+};
+
+[this] spawn {
+	sleep 3;
+	_this#0 setVariable ["totalDamage", 0, true];
+	_this#0 setVariable ["oft_maxDamage", 20000, true];
+	_this#0 setVariable ["oft_hintDamage", 0, true];
+	_this#0 setVariable ["oft_hintDamageTime", 0, true];
+	_this#0 removeAllEventHandlers "HandleDamage";
+	_handleDamageEvent = _this#0 addEventHandler ["HandleDamage", {
+		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
+		if (!(alive _unit)) exitWith {
+			_unit removeEventHandler ["HandleDamage", _unit getVariable "handleDamageHandler"];
+		};
+
+		_totalDamage = _unit getVariable ["totalDamage", 0];
+		_hintDamage = _unit getVariable ["oft_hintDamage", 0];
+		_addDamage = _totalDamage + _damage;
+		_hintDamage = _hintDamage + _damage;
+		if (_hintDamage >= 100) then {
+			_hintDamage = 0;
+			_unit setVariable ["oft_hintDamageTime", (_unit getVariable ["oft_hintDamageTime", 0]) + 1, true];
+			_unit setVariable ["oft_hintDamage", _hintDamage, true];
+			[_unit] spawn {
+				_unit = _this#0;
+				[format ["Shield: %1/%2", (_unit getVariable ["oft_maxDamage", 20000]) - ((_unit getVariable ["oft_hintDamageTime", 0]) * 100), (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+				sleep 5;
+				[""] remoteExec ["hint", [0, -2] select isDedicated];
+			};
+		};
+		_unit setVariable ["oft_hintDamage", _hintDamage, true];
+		if (_addDamage >= (_unit getVariable ["oft_maxDamage", 20000])) then {
+			[_unit] spawn {
+				_unit = _this#0;
+				[format ["Shield: 0/%1", (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+				sleep 5;
+				[""] remoteExec ["hint", [0, -2] select isDedicated];
+			};
+			_unit setDamage 1;
+		};
+		_unit setVariable ["totalDamage", _addDamage, true];
+		["ace_medical_treatment_fullHealLocal", _unit, _unit] call CBA_fnc_targetEvent;
+		0
+	}];
+	_this#0 setVariable ["handleDamageHandler", _handleDamageEvent, true];
+};

@@ -234,6 +234,20 @@ if (isServer) then {
 						if (_index == 20) then {
 							boss_1 setVariable ["oft_maxDamage", 2000, true];
 							[["<t color='#ffffff' size='3'>WISH GRANTED!</t>", "PLAIN", -1, true, true]] remoteExec ["cutText", [0,-2] select isDedicated];
+
+							missionNamespace setVariable ["maxNumberOfHeals", 3, true];
+
+							[] spawn {
+								sleep 5;
+
+								_allPlayers = allPlayers - entities "HeadlessClient_F";
+								{
+									if (side _x == west) then {
+										[_x] execVM "mission_functions\manualHeal.sqf";
+									};
+								} forEach _allPlayers;
+							};
+
 						};
 					};
 

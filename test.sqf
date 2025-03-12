@@ -572,3 +572,7 @@ _this addEventHandler ["Hit", {
 	}];
 	_this#0 setVariable ["handleDamageHandler", _handleDamageEvent, true];
 };
+
+
+[west, "getIntel", ["A conversation between officers saying that high command will come to this radar station tomorrow at 1300 from highway strip base", "Intel Got", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+["getIntel", "SUCCEEDED"] call BIS_fnc_taskSetState;

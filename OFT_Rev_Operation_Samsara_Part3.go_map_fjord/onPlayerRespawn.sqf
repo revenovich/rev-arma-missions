@@ -40,7 +40,6 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 		["movePlayerInSpawnVics", _newUnit, _vehicle, _nearestMarker] call OFT_fnc_respawnHandle;
 	};
 
-	missionNamespace setVariable ["maxNumberOfHeals", 2, true];
 	[_newUnit] execVM "mission_functions\manualHeal.sqf";
 
 	[_newUnit] execVM "mission_functions\playerWearMask.sqf";

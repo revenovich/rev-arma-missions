@@ -1,6 +1,6 @@
 params ["_newUnit"];
 
-_maxNumberOfHeals = missionNamespace getVariable ["maxNumberOfHeals", 3];
+_maxNumberOfHeals = missionNamespace getVariable ["maxNumberOfHeals", 0];
 
 _newUnit setVariable ["numberOfHeals", _maxNumberOfHeals, true];
 

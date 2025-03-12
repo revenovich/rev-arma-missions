@@ -5,7 +5,7 @@ if (isServer) then {
 	sentence_4 = "Punish your children";
 	sentence_5 = "For they have tainted this land";
 	sentence_6 = "But forgive their brothers and sisters";
-	sentence_7 = "For they tried to stop them";
+	sentence_7 = "For they have not sinned";
 
 	publicVariable "sentence_1";
 	publicVariable "sentence_2";
@@ -215,15 +215,28 @@ if (isServer) then {
 				sentence_7_match = true;
 				publicVariable "sentence_7_match";
 
-				// Choose 8 random positions to strike
+				// Choose 20 random positions to strike
 				_randomStrikePosArray = [];
-				for "_i" from 1 to 8 do {
+				for "_i" from 1 to 20 do {
 					_randomStrikePos = strikePosArray call BIS_fnc_selectRandom;
 					_randomStrikePosArray pushBack _randomStrikePos;
 				};
 				
+				_index = 0;
 				{
-					[[_x], fn_executeRandomStrikePos] remoteExec ['call', [0,-2] select isDedicated, true];
+					_index = _index + 1;
+
+					[_x, _index] spawn {
+						params ["_x", "_index"];
+						sleep (_index / 2);
+						[[_x], fn_executeRandomStrikePos] remoteExec ['call', [0,-2] select isDedicated, true];
+
+						if (_index == 20) then {
+							boss_1 setVariable ["oft_maxDamage", 2000, true];
+							[["<t color='#ffffff' size='3'>WISH GRANTED!</t>", "PLAIN", -1, true, true]] remoteExec ["cutText", [0,-2] select isDedicated];
+						};
+					};
+
 				} forEach _randomStrikePosArray;
 
 			};

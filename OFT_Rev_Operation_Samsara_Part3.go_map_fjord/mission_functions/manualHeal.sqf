@@ -35,7 +35,7 @@ private _unconsciousId = ["ace_unconscious", {
 						[_unit, _healActionId] remoteExec ["removeAction", OFT_TO_ALL_PLAYERS];
 					};
 
-					[[["add", _newUnit], OFT_fnc_healAction] remoteExec ["call", OFT_TO_ALL_PLAYERS]];
+					[[["add", _unit], OFT_fnc_healAction] remoteExec ["call", OFT_TO_ALL_PLAYERS]];
 
 					sleep 1;
 					hint "";

@@ -13,16 +13,20 @@ fn_smoothSetPos = {
         
         private _startTime = time;
         private _endTime = _startTime + _time;
+		private _currentDir = vectorDir _object;
+		private _currentUp = vectorUp _object;
         
         while {time < _endTime} do {
             private _progress = (time - _startTime) / _time;
             private _interpolatedZ = (_startPos select 2) + ((_endPos select 2) - (_startPos select 2)) * _progress;
             private _currentPos = [_startPos select 0, _startPos select 1, _interpolatedZ];
             _object setPos _currentPos;
+			_object setVectorDirAndUp [_currentDir, _currentUp];
             sleep 0.01;
         };
         
         _object setPos _endPos;
+		_object setVectorDirAndUp [_currentDir, _currentUp];
     };
 };
 

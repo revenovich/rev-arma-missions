@@ -6,37 +6,7 @@ _newUnit setVariable ["numberOfHeals", _maxNumberOfHeals, true];
 
 if (_maxNumberOfHeals isEqualTo 0) exitWith {};
 
-// Manual Full Heal
-fn_addHealAction = {
-	params ["_newUnit"];
-
-	private _healActionId = _newUnit addAction [
-		format ["Full Heal | %1 left", _newUnit getVariable ["numberOfHeals", 0]],
-		{
-			params ["_target", "_caller", "_actionId", "_arguments"];
-
-			_target setVariable ["numberOfHeals", (_target getVariable ["numberOfHeals", 0]) - 1, true];
-			_target setDamage 0;
-			["ace_medical_treatment_fullHealLocal", _target, _target] call CBA_fnc_targetEvent;
-			[_target, false] call ace_medical_fnc_setUnconscious;
-
-			_target removeAction _actionId;
-
-			[_target] call fn_addHealAction;
-		},
-		[],
-		1,
-		true,
-		true,
-		"",
-		"(alive _target) && (_target getVariable ['numberOfHeals', 0] > 0) && _this == _target",
-		1
-	];
-
-	_newUnit setVariable ["healActionId", _healActionId, true];
-};
-
-[_newUnit] call fn_addHealAction;
+[["add", _newUnit], OFT_fnc_healAction] remoteExec ["call", OFT_TO_ALL_PLAYERS];
 
 private _unconsciousId = ["ace_unconscious", {
 	params ["_unit", "_state"];
@@ -50,8 +20,8 @@ private _unconsciousId = ["ace_unconscious", {
 				[_unit] spawn {
 					params ["_unit"];
 
-					for "_i" from 1 to 5 do {
-						hint format ["Healing in %1", 6 - _i];
+					for "_i" from 1 to 2 do {
+						hint format ["Healing in %1", 3 - _i];
 						sleep 1;
 					};
 
@@ -62,10 +32,10 @@ private _unconsciousId = ["ace_unconscious", {
 
 					_healActionId = _unit getVariable ["healActionId", -1];
 					if (_healActionId > -1) then {
-						_unit removeAction _healActionId;
+						[_unit, _healActionId] remoteExec ["removeAction", OFT_TO_ALL_PLAYERS];
 					};
 
-					[_unit] call fn_addHealAction;
+					[[["add", _newUnit], OFT_fnc_healAction] remoteExec ["call", OFT_TO_ALL_PLAYERS]];
 
 					sleep 1;
 					hint "";

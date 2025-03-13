@@ -222,6 +222,8 @@ if (isServer) then {
 					_randomStrikePosArray pushBack _randomStrikePos;
 				};
 				
+				missionNamespace setVariable ["maxNumberOfHeals", 3, true];
+				
 				_index = 0;
 				{
 					_index = _index + 1;
@@ -232,22 +234,17 @@ if (isServer) then {
 						[[_x], fn_executeRandomStrikePos] remoteExec ['call', [0,-2] select isDedicated, true];
 
 						if (_index == 20) then {
-							boss_1 setVariable ["oft_maxDamage", 2000, true];
-							[["<t color='#ffffff' size='3'>WISH GRANTED!</t>", "PLAIN", -1, true, true]] remoteExec ["cutText", [0,-2] select isDedicated];
-
-							missionNamespace setVariable ["maxNumberOfHeals", 3, true];
+							boss_1 setVariable ["oft_maxDamage", 1000, true];
+							[["<t color='#ffffff' size='3'>I HEAR YOU</t><br/><t color='#ffffff' size='3'>MY CHILDREN</t>", "PLAIN", -1, true, true]] remoteExec ["cutText", [0,-2] select isDedicated];
 
 							[] spawn {
 								sleep 5;
 
-								_allPlayers = allPlayers - entities "HeadlessClient_F";
+								_allPlayers = allPlayers;
 								{
-									if (side _x == west) then {
-										[_x] execVM "mission_functions\manualHeal.sqf";
-									};
+									[_x] execVM "mission_functions\manualHeal.sqf";
 								} forEach _allPlayers;
 							};
-
 						};
 					};
 

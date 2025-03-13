@@ -483,7 +483,7 @@ _this addEventHandler ["Hit", {
 [this] spawn {
 	sleep 3;
 	_this#0 setVariable ["totalDamage", 0, true];
-	_this#0 setVariable ["oft_maxDamage", 20000, true];
+	_this#0 setVariable ["oft_maxDamage", 10000, true];
 	_this#0 setVariable ["oft_hintDamage", 0, true];
 	_this#0 setVariable ["oft_hintDamageTime", 0, true];
 	_this#0 removeAllEventHandlers "HandleDamage";
@@ -504,18 +504,18 @@ _this addEventHandler ["Hit", {
 				_unit setVariable ["oft_hintDamage", _hintDamage, true];
 				[_unit] spawn {
 					_unit = _this#0;
-					[format ["%1/%2", (_unit getVariable ["oft_maxDamage", 20000]) - ((_unit getVariable ["oft_hintDamageTime", 0]) * 100), (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+					[format ["%1/%2", (_unit getVariable ["oft_maxDamage", 10000]) - ((_unit getVariable ["oft_hintDamageTime", 0]) * 100), (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
 					sleep 5;
-					[""] remoteExec ["hint", [0, -2] select isDedicated];
+					[""] remoteExec ["hintSilent", [0, -2] select isDedicated];
 				};
 			};
 			_unit setVariable ["oft_hintDamage", _hintDamage, true];
-			if (_addDamage >= (_unit getVariable ["oft_maxDamage", 20000])) then {
+			if (_addDamage >= (_unit getVariable ["oft_maxDamage", 10000])) then {
 				[_unit] spawn {
 					_unit = _this#0;
-					[format ["0/%1", (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+					[format ["0/%1", (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
 					sleep 5;
-					[""] remoteExec ["hint", [0, -2] select isDedicated];
+					[""] remoteExec ["hintSilent", [0, -2] select isDedicated];
 				};
 				_unit setDamage 1;
 			};
@@ -528,12 +528,10 @@ _this addEventHandler ["Hit", {
 	_this#0 setVariable ["handleDamageHandler", _handleDamageEvent, true];
 };
 
-[this] spawn {
+[_this] spawn {
 	sleep 3;
 	_this#0 setVariable ["totalDamage", 0, true];
-	_this#0 setVariable ["oft_maxDamage", 20000, true];
-	_this#0 setVariable ["oft_hintDamage", 0, true];
-	_this#0 setVariable ["oft_hintDamageTime", 0, true];
+	_this#0 setVariable ["oft_maxDamage", 10000, true];
 	_this#0 removeAllEventHandlers "HandleDamage";
 	_handleDamageEvent = _this#0 addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
@@ -542,27 +540,16 @@ _this addEventHandler ["Hit", {
 		};
 
 		_totalDamage = _unit getVariable ["totalDamage", 0];
-		_hintDamage = _unit getVariable ["oft_hintDamage", 0];
 		_addDamage = _totalDamage + _damage;
-		_hintDamage = _hintDamage + _damage;
-		if (_hintDamage >= 100) then {
-			_hintDamage = 0;
-			_unit setVariable ["oft_hintDamageTime", (_unit getVariable ["oft_hintDamageTime", 0]) + 1, true];
-			_unit setVariable ["oft_hintDamage", _hintDamage, true];
+
+		[format ["Shield: %1/%2", (_unit getVariable ["oft_maxDamage", 10000]) - _addDamage, (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
+
+		if (_addDamage >= (_unit getVariable ["oft_maxDamage", 10000])) then {
 			[_unit] spawn {
 				_unit = _this#0;
-				[format ["Shield: %1/%2", (_unit getVariable ["oft_maxDamage", 20000]) - ((_unit getVariable ["oft_hintDamageTime", 0]) * 100), (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
+				[format ["Shield: 0/%1", (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
 				sleep 5;
-				[""] remoteExec ["hint", [0, -2] select isDedicated];
-			};
-		};
-		_unit setVariable ["oft_hintDamage", _hintDamage, true];
-		if (_addDamage >= (_unit getVariable ["oft_maxDamage", 20000])) then {
-			[_unit] spawn {
-				_unit = _this#0;
-				[format ["Shield: 0/%1", (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hint", [0, -2] select isDedicated];
-				sleep 5;
-				[""] remoteExec ["hint", [0, -2] select isDedicated];
+				[""] remoteExec ["hintSilent", [0, -2] select isDedicated];
 			};
 			_unit setDamage 1;
 		};
@@ -574,5 +561,5 @@ _this addEventHandler ["Hit", {
 };
 
 
-[west, "getIntel", ["A conversation between officers saying that high command will come to this radar station tomorrow at 1300 from highway strip base", "Intel Got", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
+[west, "getIntel", ["A conversation between officers saying that they need to move their troops to Helbotn to protect the head scientist and help him find somethings", "Intel Got", "cookiemarker"], objNull, "ASSIGNED", 1, true] call BIS_fnc_taskCreate;
 ["getIntel", "SUCCEEDED"] call BIS_fnc_taskSetState;

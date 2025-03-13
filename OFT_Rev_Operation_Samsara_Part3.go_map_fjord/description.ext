@@ -94,6 +94,7 @@ class cfgFunctions {
 			class respawnHandle;
 			class showFPS;
 			class teleportThings;
+			class healAction;
 		};
 	};
 };

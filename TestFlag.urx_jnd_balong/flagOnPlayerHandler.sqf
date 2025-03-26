@@ -1,7 +1,6 @@
 params ["_player"];
 
-_player addAction [
-	"Deploy Flag",
+[_player, ["Deploy Flag",
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		_cursorPos = screenToWorld [0.5, 0.5];
@@ -25,4 +24,4 @@ _player addAction [
 	"",
 	"_target getVariable ['carryingFlag', false] && !(_target getVariable ['isDeployingFlag', false])",
 	1
-];
+]] remoteExec ["addAction", _player];

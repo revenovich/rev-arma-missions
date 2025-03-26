@@ -8,8 +8,7 @@ class EditorData
 	toggles=1;
 	mods[]=
 	{
-		"WBK_Zombies_AdvancedEditorSettings",
-		"3denEnhanced"
+		"WBK_Zombies_AdvancedEditorSettings"
 	};
 	class ItemIDProvider
 	{
@@ -17,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2936.864,14.959783,2177.9993};
-		dir[]={-0.86812168,-0.44040903,-0.22892061};
-		up[]={-0.42585185,0.89779723,-0.11229563};
-		aside[]={-0.2549803,7.4505806e-009,0.96694624};
+		pos[]={2929.2036,8.5730295,2168.5159};
+		dir[]={-0.45818061,-0.82918829,0.32023749};
+		up[]={-0.67964339,0.55895472,0.47502375};
+		aside[]={0.57288194,3.0759111e-07,0.81965399};
 	};
 };
 binarizationWanted=0;
@@ -183,7 +182,7 @@ class Mission
 			};
 			id=5;
 			type="ModuleMPTypeGameMaster_F";
-			atlOffset=-2.6226044e-005;
+			atlOffset=-2.6226044e-05;
 		};
 		class Item2
 		{

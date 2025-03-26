@@ -373,7 +373,7 @@ _this addEventHandler ["Hit", {
 [_this] spawn {
 	sleep 3;
 	_this#0 setVariable ["totalDamage", 0, true];
-	_this#0 setVariable ["oft_maxDamage", 10000, true];
+	_this#0 setVariable ["oft_maxDamage", 20000, true];
 	_this#0 removeAllEventHandlers "HandleDamage";
 	_handleDamageEvent = _this#0 addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
@@ -384,12 +384,12 @@ _this addEventHandler ["Hit", {
 		_totalDamage = _unit getVariable ["totalDamage", 0];
 		_addDamage = _totalDamage + _damage;
 
-		[format ["Shield: %1/%2", (_unit getVariable ["oft_maxDamage", 10000]) - _addDamage, (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
+		[format ["Shield: %1/%2", (_unit getVariable ["oft_maxDamage", 20000]) - _addDamage, (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
 
-		if (_addDamage >= (_unit getVariable ["oft_maxDamage", 10000])) then {
+		if (_addDamage >= (_unit getVariable ["oft_maxDamage", 20000])) then {
 			[_unit] spawn {
 				_unit = _this#0;
-				[format ["Shield: 0/%1", (_unit getVariable ["oft_maxDamage", 10000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
+				[format ["Shield: 0/%1", (_unit getVariable ["oft_maxDamage", 20000])]] remoteExec ["hintSilent", [0, -2] select isDedicated];
 				sleep 5;
 				[""] remoteExec ["hintSilent", [0, -2] select isDedicated];
 			};
@@ -432,3 +432,19 @@ _this addEventHandler ["Fired", {
 	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
 	_unit setAmmo [primaryWeapon _unit, 1];
 }];
+
+[["<t color='#ffffff' size='3'>I HEAR YOU</t><br/><t color='#ffffff' size='3'>MY CHILDREN</t>", "PLAIN", -1, true, true]] remoteExec ["cutText", [0,-2] select isDedicated];
+
+cutText ["<t color='#ffffff' size='1'>20:20 brief nha mn</t>", "PLAIN", -1, true, true];
+
+_path = getMissionPath "files\zombie-screaming.ogg"; 
+_dist = 1000; 
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist]; 
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+_test = [];
+_test1 = player getVariable ['carryingFlag', false];
+_test pushBack _test1;
+_test2 = !(player getVariable ['isDeployingFlag', false]);
+_test pushBack _test2;
+_test;

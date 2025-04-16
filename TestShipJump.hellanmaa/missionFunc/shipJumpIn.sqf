@@ -30,6 +30,32 @@ fn_smoothSetPos = {
     };
 };
 
+fn_shipCrash = {
+    params ["_object", "_startHeight", "_endHeight", "_duration"];
+    
+    private _startPos = getPosATL _object;
+    private _startTime = time;
+    private _endTime = _startTime + _duration;
+    
+    [_object, _startHeight, _endHeight, _duration, _startPos] spawn {
+        params ["_object", "_startHeight", "_endHeight", "_duration", "_startPos"];
+        
+        private _startTime = time;
+        private _endTime = _startTime + _duration;
+        
+        while {time < _endTime} do {
+            private _progress = (time - _startTime) / _duration;
+            private _acceleration = _progress * _progress; // Simulating gravity
+            private _currentHeight = _startHeight + (_endHeight - _startHeight) * _acceleration;
+            _object setPosATL [_startPos select 0, _startPos select 1, _currentHeight];
+            sleep 0.01;
+        };
+        _object setPosATL [_startPos select 0, _startPos select 1, _endHeight];
+    };
+};
+
+_object setVariable ["isCrash", false, true];
+
 [_object, _targetPos, _rotateDuration, _startMoveDuration, _moveDuration, _shipVarJumpIn, _isReversedRotation] spawn {
     params ["_object", "_targetPos", "_rotateDuration", "_startMoveDuration", "_moveDuration", "_shipVarJumpIn", "_isReversedRotation"];
     
@@ -131,7 +157,7 @@ fn_smoothSetPos = {
     private _currentZ = _currentPos select 2;
     private _direction = 50;
     
-    while {true} do {
+    while {_object getVariable ["isCrash", false] == false} do {
         private _updateTime = random [_minUpdateTime, (_minUpdateTime + _maxUpdateTime) / 2, _maxUpdateTime];
         private _targetZ = _currentZ + (_direction * 1);
         
@@ -148,6 +174,19 @@ fn_smoothSetPos = {
         [_object, [getPosASL _object select 0, getPosASL _object select 1, _targetZ], _updateTime] call fn_smoothSetPos;
         
         _currentZ = _targetZ;
-        sleep _updateTime;
+
+		_sleepTimeSize = _updateTime / 0.1;
+
+		for "_i" from 1 to _sleepTimeSize do {
+			sleep 0.1;
+			if (_object getVariable ["isCrash", false] == true) exitWith {};
+		};
     };
+
+	// Drop the object to the ground
+	private _currentPos = getPosATL _object;
+	private _targetPos = getPosATL _object;
+	_targetPos set [2, 10];
+	
+	[_object, _currentPos select 2, _targetPos select 2, 10] call fn_shipCrash;
 };

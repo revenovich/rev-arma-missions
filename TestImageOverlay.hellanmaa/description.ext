@@ -1,0 +1,94 @@
+
+////////////////////////////////////////////////
+//             EDITABLE VARIABLES             //
+////////////////////////////////////////////////
+
+onLoadMission = "Test";
+loadScreen = "files\loadingImg.jpg";
+onLoadName = "Test";
+author = "SgtMaj.Rev";
+
+////////////////////////////////////////////////
+//       EDITABLE VARIABLES END HERE          //
+// BELOW STILL EDITABLE BUT MUST KNOW HOW TO  //
+////////////////////////////////////////////////
+
+class CfgSounds
+{
+	sounds[] = {};
+	class sound1
+	{
+		name = "sound1";
+		sound[] = {"@A3\ui_f\data\sound\RscListbox\soundSelect", 0.2, 1};
+		titles[] = {0,""};
+	};
+	class oft_scream
+	{
+		name = "oft_scream";
+		sound[] = {"files\scream.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+};
+
+class header {
+	gameType = Zeus;
+	minPlayers = 1;
+	maxPlayers = 69;
+};
+
+class RscTitles {
+    class wm_disp {
+        idd = -1;
+        onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+        fadein = 0;
+        fadeout = 0;
+        duration = 1;
+        controlsBackground[] = {};
+        objects[] = {};
+        class controls {
+            class wm_text2 {
+                idc = 1;
+                x = safeZoneXAbs;
+				y = safeZoneY + 0.1 * safeZoneH;
+				w = safeZoneWAbs;
+				h = safeZoneH;
+                class Attributes
+                {
+                    font = "EtelkaNarrowMediumPro";
+                    color = "#FFFFFFFF";
+                    align = "center";
+                };
+                colorBackground[] = { 0, 0, 0, 1 };
+                font = "EtelkaNarrowMediumPro";
+				size = 1;
+                type = 13;
+                style = 0;
+                text="<img image='files\image0(1).paa'/>";
+            };
+        };
+    };
+	class black_screen {
+		idd = -1;
+		onLoad = "uiNamespace setVariable ['black_screen', _this select 0]";
+		fadein = 0;
+		fadeout = 0;
+		duration = 1;
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class black_screen {
+				idc = 2;
+				x = safeZoneXAbs;
+				y = safeZoneY;
+				w = safeZoneWAbs;
+				h = safeZoneH;
+				colorBackground[] = { 0, 0, 0, 1 };
+				font = "EtelkaNarrowMediumPro";
+				size = 1;
+				type = 13;
+				style = 0;
+				text="";
+			};
+		};
+	};
+};

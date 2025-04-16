@@ -448,3 +448,6 @@ _test pushBack _test1;
 _test2 = !(player getVariable ['isDeployingFlag', false]);
 _test pushBack _test2;
 _test;
+
+
+

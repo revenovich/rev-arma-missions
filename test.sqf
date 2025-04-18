@@ -449,5 +449,8 @@ _test2 = !(player getVariable ['isDeployingFlag', false]);
 _test pushBack _test2;
 _test;
 
+[_this] spawn {
+	_this setVariable ["isCrash", true, true];
+};
 
-
+[thisList, thisTrigger] execVM "mission_functions\jumpscareImg.sqf";

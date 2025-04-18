@@ -1,0 +1,1 @@
+["<t color='#f50707' size = '1'>IN THE SKY, SOMETHING IS COMING FAST FROM WEST<br /><br /><br /><br /></t>",-1,-1,2,2,0,789] spawn BIS_fnc_dynamicText;

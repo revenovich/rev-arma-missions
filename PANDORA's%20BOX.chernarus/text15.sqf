@@ -1,0 +1,1 @@
+["<t color='#f50707' size = '1'>AND YOU DARE TO USE THE POWER OF THE LOST GOD's BOX?<br /><br /><br /><br /></t>",-1,-1,2,2,0,789] spawn BIS_fnc_dynamicText;

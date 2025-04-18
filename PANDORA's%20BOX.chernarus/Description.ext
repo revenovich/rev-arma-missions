@@ -1,0 +1,157 @@
+class cfgMusic
+{
+        tracks[]={song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15};
+ 
+        class track1
+        {
+                name="song1";
+                sound[] = {\music\song1.ogg, db+20, 1.0};
+        };
+        class track2
+        {
+                name="song2";
+                sound[] = {\music\song2.ogg, db+20, 1.0};
+        };
+        class track3
+        {
+                name="song3";
+                sound[] = {\music\song3.ogg, db+20, 1.0};
+        };
+        class track4
+        {
+                name="song4";
+                sound[] = {\music\song4.ogg, db+20, 1.0};
+        };
+        class track5
+        {
+                name="song5";
+                sound[] = {\music\song5.ogg, db+20, 1.0};
+        };
+        class track6
+        {
+                name="song6";
+                sound[] = {\music\song6.ogg, db+20, 1.0};
+        };
+        class track7
+        {
+                name="song7";
+                sound[] = {\music\song7.ogg, db+20, 1.0};
+        };
+        class track8
+        {
+                name="song8";
+                sound[] = {\music\song8.ogg, db+20, 1.0};
+        };
+        class track9
+        {
+                name="song9";
+                sound[] = {\music\song9.ogg, db+20, 1.0};
+        };
+        class track10
+        {
+                name="song10";
+                sound[] = {\music\song10.ogg, db+20, 1.0};
+        };
+        class track11
+        {
+                name="song11";
+                sound[] = {\music\song11.ogg, db+20, 1.0};
+        };
+        class track12
+        {
+                name="song12";
+                sound[] = {\music\song12.ogg, db+20, 1.0};
+        };
+        class track13
+        {
+                name="song13";
+                sound[] = {\music\song13.ogg, db+25, 1.0};
+        };
+        class track14
+        {
+                name="song14";
+                sound[] = {\music\song14.ogg, db+20, 1.0};
+        };
+};
+
+class CfgSounds {
+	sounds[] = {}; 
+
+	class laugh {
+		name="laugh";
+		sound[]={"music\laugh.ogg",100,1};
+		titles[] = {};
+	};
+	class cry {
+		name="cry";
+		sound[]={"music\cry.ogg",100,1};
+		titles[] = {};
+	};
+	class ghe {
+		name="ghe";
+		sound[]={"music\ghe.ogg",100,1};
+		titles[] = {};
+	};
+	class oft_scream
+	{
+		name = "oft_scream";
+		sound[] = {"files\scream.ogg", 100, 1};
+		titles[] = {0,""};
+	};
+};
+class RscTitles {
+    class wm_disp {
+        idd = -1;
+        onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+        fadein = 0;
+        fadeout = 0;
+        duration = 1;
+        controlsBackground[] = {};
+        objects[] = {};
+        class controls {
+            class wm_text2 {
+                idc = 1;
+                x = safeZoneXAbs;
+				y = safeZoneY + 0.1 * safeZoneH;
+				w = safeZoneWAbs;
+				h = safeZoneH;
+                class Attributes
+                {
+                    font = "EtelkaNarrowMediumPro";
+                    color = "#FFFFFFFF";
+                    align = "center";
+                };
+                colorBackground[] = { 0, 0, 0, 1 };
+                font = "EtelkaNarrowMediumPro";
+				size = 1;
+                type = 13;
+                style = 0;
+                text="<img image='files\image0(1).paa'/>";
+            };
+        };
+    };
+	class black_screen {
+		idd = -1;
+		onLoad = "uiNamespace setVariable ['black_screen', _this select 0]";
+		fadein = 0;
+		fadeout = 0;
+		duration = 1;
+		controlsBackground[] = {};
+		objects[] = {};
+		class controls {
+			class black_screen {
+				idc = 2;
+				x = safeZoneXAbs;
+				y = safeZoneY;
+				w = safeZoneWAbs;
+				h = safeZoneH;
+				colorBackground[] = { 0, 0, 0, 1 };
+				font = "EtelkaNarrowMediumPro";
+				size = 1;
+				type = 13;
+				style = 0;
+				text="";
+			};
+		};
+	};
+};

@@ -454,3 +454,8 @@ _test;
 };
 
 [thisList, thisTrigger] execVM "mission_functions\jumpscareImg.sqf";
+
+[] spawn {
+	sleep 0.5;
+	"oft_scream" remoteExec ["playSound", [0,-2] select isDedicated];
+};

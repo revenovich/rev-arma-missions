@@ -10,3 +10,5 @@ vehicle_wreck_4_pos = getPosATL vehicle_wreck_4;
 [vehicle_wreck_2, ((vehicle_wreck_2_pos#2) + 15), ((vehicle_wreck_2_pos#2) + 7), 5, 3] execVM "mission_functions\objectFloating.sqf";
 [vehicle_wreck_3, ((vehicle_wreck_3_pos#2) + 18), ((vehicle_wreck_3_pos#2) + 10), 8, 4] execVM "mission_functions\objectFloating.sqf";
 [vehicle_wreck_4, ((vehicle_wreck_4_pos#2) + 10), ((vehicle_wreck_4_pos#2) + 5), 6, 4] execVM "mission_functions\objectFloating.sqf";
+
+[hanged_man_1, 7, 0, 0.5] execVM "mission_functions\hangedMan.sqf";

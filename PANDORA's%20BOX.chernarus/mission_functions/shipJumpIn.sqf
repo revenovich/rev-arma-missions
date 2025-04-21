@@ -149,7 +149,7 @@ _object setVariable ["isCrash", false, true];
 
 	sleep 1;
 
-	private _currentPos = getPosASL _object;
+	private _currentPos = getPosATL _object;
 	private _maxZ = (_currentPos select 2) + 100;
 	private _minZ = (_currentPos select 2) - 20;
 	private _maxUpdateTime = 10;

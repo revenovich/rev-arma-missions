@@ -158,7 +158,7 @@ _this removeAllEventHandlers "Fired";
 
 [_this] spawn {
 	while { true } do {
-		sleep 1;
+		sleep 10;
 		_this#0 setFuel 1;
 	};
 };
@@ -454,3 +454,11 @@ _test;
 };
 
 [thisList, thisTrigger] execVM "mission_functions\jumpscareImg.sqf";
+
+playMusic "track3";
+
+(backpackContainer _this) setMaxLoad 999999999999;
+
+{
+	(backpackContainer _x) setMaxLoad 999999999999;
+} forEach allPlayers;

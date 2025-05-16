@@ -7,6 +7,8 @@ private _endTime = _startTime + _duration;
 [_object, _startHeight, _endHeight, _duration, _startPos] spawn {
 	params ["_object", "_startHeight", "_endHeight", "_duration", "_startPos"];
 	
+	waitUntil {missionNamespace getVariable ["hangedManTriggered", false]};
+
 	private _startTime = time;
 	private _endTime = _startTime + _duration;
 	

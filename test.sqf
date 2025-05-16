@@ -462,3 +462,8 @@ playMusic "track3";
 {
 	(backpackContainer _x) setMaxLoad 999999999999;
 } forEach allPlayers;
+
+[] spawn {
+	sleep 0.5;
+	"oft_scream" remoteExec ["playSound", [0,-2] select isDedicated];
+};

@@ -477,3 +477,37 @@ copyToClipboard str AllPlayableUnitsItens;
 [_this] spawn {
 	[3, _this#0] spawn OFT_fnc_gearBox;   
 };
+
+[
+	laptop_1,
+	"Play",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 6",
+	"true",
+	{
+		// Code executed when action starts
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	{
+		// Code executed on every progress tick
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	{
+		// Code executed on completion
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		_path = getMissionPath "files\scream.ogg"; 
+		_dist = 200; 
+		playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+		playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+	},
+	{
+		// Code executed on interrupted
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	[], // Arguments passed to the scripts as _this select 3
+	5, // Action duration in seconds
+	nil, // Priority (nil or a number)
+	true, // Remove on completion
+	false // Show in unconscious state
+] call BIS_fnc_holdActionAdd;

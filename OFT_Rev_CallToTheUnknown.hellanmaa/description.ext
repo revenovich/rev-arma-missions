@@ -3,7 +3,7 @@
 //             EDITABLE VARIABLES             //
 ////////////////////////////////////////////////
 
-onLoadMission = "Side Story";
+onLoadMission = "Main Story";
 loadScreen = "files\loadingImg.jpg";
 onLoadName = "Call to the Unknown";
 author = "SgtMaj.Rev";
@@ -21,6 +21,12 @@ class CfgSounds
 		name = "sound1";
 		sound[] = {"@A3\ui_f\data\sound\RscListbox\soundSelect", 0.2, 1};
 		titles[] = {0,""};
+	};
+	class calling
+	{
+		name = "calling";
+		sound[] = {"files\calling.ogg", db+40, 1};
+		titles[] = {0,"We are coming, hang in there!"};
 	};
 };
 

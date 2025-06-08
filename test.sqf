@@ -496,10 +496,7 @@ copyToClipboard str AllPlayableUnitsItens;
 	{
 		// Code executed on completion
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		_path = getMissionPath "files\scream.ogg"; 
-		_dist = 200; 
-		playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
-		playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+		playMusic "musicName";
 	},
 	{
 		// Code executed on interrupted
@@ -511,3 +508,32 @@ copyToClipboard str AllPlayableUnitsItens;
 	true, // Remove on completion
 	false // Show in unconscious state
 ] call BIS_fnc_holdActionAdd;
+
+
+["teleportGroup", _this, teleport_target_1] call OFT_fnc_teleportThings;
+["teleport", _this, teleport_target_1] call OFT_fnc_teleportThings;
+
+[] execVM "mission_functions\shadowCompanyArrive.sqf";
+
+fn_checkKey = {
+	params ["_this"];
+	private _isHave = false;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach uniformItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach backpackItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach vestItems _this;
+	_isHave
+};
+
+[_this] call fn_checkKey;

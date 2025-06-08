@@ -70,6 +70,27 @@ missionNamespace setVariable ["playerSideVar", _playerSideVar, true];
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
 
+fn_checkKey = {
+	params ["_this"];
+	private _isHave = false;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach uniformItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach backpackItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach vestItems _this;
+	_isHave
+};
+
 systemChat "Mission loaded!";
 diag_log "Mission loaded!";
 

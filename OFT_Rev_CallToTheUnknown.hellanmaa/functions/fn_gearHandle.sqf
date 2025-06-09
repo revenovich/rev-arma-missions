@@ -545,7 +545,11 @@ fn_loadoutLoad = {
 };
 
 fn_gearStart = {
-	if ((missionNamespace getVariable "playerGear") isEqualTo []) then {
+	if (!(missionNamespace getVariable ["isAutoGear", false])) exitWith {
+		diag_log "Auto gear is disabled";
+	};
+
+	if ((missionNamespace getVariable ["playerGear", []]) isEqualTo []) then {
 		removeAllWeapons player;
 		removeUniform player;
 		removeVest player;

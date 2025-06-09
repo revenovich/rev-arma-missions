@@ -1,17 +1,10 @@
-
-////////////////////////////////////////////////
-//             EDITABLE VARIABLES             //
-////////////////////////////////////////////////
-
 onLoadMission = "Main Story";
 loadScreen = "files\loadingImg.jpg";
 onLoadName = "Call to the Unknown";
 author = "SgtMaj.Rev";
 
-////////////////////////////////////////////////
-//       EDITABLE VARIABLES END HERE          //
-// BELOW STILL EDITABLE BUT MUST KNOW HOW TO  //
-////////////////////////////////////////////////
+enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198146029406"};
 
 class CfgSounds
 {
@@ -27,6 +20,18 @@ class CfgSounds
 		name = "calling";
 		sound[] = {"files\calling.ogg", db+40, 1};
 		titles[] = {0,"We are coming, hang in there!"};
+	};
+	class scream
+	{
+		name = "scream";
+		sound[] = {"files\scream.ogg", db+40, 1};
+		titles[] = {0,""};
+	};
+	class zombieScreaming
+	{
+		name = "zombieScreaming";
+		sound[] = {"files\zombie-screaming.ogg", db+40, 1};
+		titles[] = {0,""};
 	};
 };
 

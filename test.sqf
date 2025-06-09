@@ -477,3 +477,63 @@ copyToClipboard str AllPlayableUnitsItens;
 [_this] spawn {
 	[3, _this#0] spawn OFT_fnc_gearBox;   
 };
+
+[
+	laptop_1,
+	"Play",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 6",
+	"true",
+	{
+		// Code executed when action starts
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	{
+		// Code executed on every progress tick
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	{
+		// Code executed on completion
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		playMusic "musicName";
+	},
+	{
+		// Code executed on interrupted
+		params ["_target", "_caller", "_actionId", "_arguments"];
+	},
+	[], // Arguments passed to the scripts as _this select 3
+	5, // Action duration in seconds
+	nil, // Priority (nil or a number)
+	true, // Remove on completion
+	false // Show in unconscious state
+] call BIS_fnc_holdActionAdd;
+
+
+["teleportGroup", _this, teleport_target_1] call OFT_fnc_teleportThings;
+["teleport", _this, teleport_target_1] call OFT_fnc_teleportThings;
+
+[] execVM "mission_functions\shadowCompanyArrive.sqf";
+
+fn_checkKey = {
+	params ["_this"];
+	private _isHave = false;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach uniformItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach backpackItems _this;
+	{
+		if (_x == "Keys") then {
+			_isHave = true;
+		};
+	} forEach vestItems _this;
+	_isHave
+};
+
+[_this] call fn_checkKey;

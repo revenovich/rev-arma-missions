@@ -537,3 +537,8 @@ fn_checkKey = {
 };
 
 [_this] call fn_checkKey;
+
+this addEventHandler ["HandleDamage", {
+	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
+	format ["%1", _source] remoteExec ["systemChat", [0, -2] select isDedicated];
+}];

@@ -61,35 +61,16 @@ diag_log "Loading mission...";
 ["init"] call OFT_fnc_healAction;
 
 _handle = execVM format["factions\%1.sqf", _faction];
-
 waitUntil {isNull _handle};
+
+_handleFnInit = execVM "functions\fn_init.sqf";
+waitUntil {isNull _handleFnInit};
 
 ["init"] call OFT_fnc_respawnHandle;
 
 missionNamespace setVariable ["playerSideVar", _playerSideVar, true];
 missionNameSpace setVariable ["gearGiveNightvision", _nightvision, true];
 missionNameSpace setVariable ["fullArsenal", _fullArsenal, true];
-
-fn_checkKey = {
-	params ["_this"];
-	private _isHave = false;
-	{
-		if (_x == "Keys") then {
-			_isHave = true;
-		};
-	} forEach uniformItems _this;
-	{
-		if (_x == "Keys") then {
-			_isHave = true;
-		};
-	} forEach backpackItems _this;
-	{
-		if (_x == "Keys") then {
-			_isHave = true;
-		};
-	} forEach vestItems _this;
-	_isHave
-};
 
 systemChat "Mission loaded!";
 diag_log "Mission loaded!";

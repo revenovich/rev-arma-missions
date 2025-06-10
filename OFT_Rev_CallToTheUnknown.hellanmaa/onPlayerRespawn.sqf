@@ -24,6 +24,12 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 	if (_unconsciousId > -1) then {
 		_oldUnit removeEventHandler ["ace_unconscious", _unconsciousId];
 	};
+
+	_lookAtHandle = _oldUnit getVariable ["lookAtHandle", objNull];
+	if (!isNull _lookAtHandle) then {
+		terminate _lookAtHandle;
+		_oldUnit setVariable ["lookAtHandle", objNull, true];
+	};
 };
 
 [_newUnit] spawn {
@@ -47,4 +53,31 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 	// [_newUnit] execVM "mission_functions\manualHeal.sqf";
 
 	// [_newUnit] execVM "mission_functions\playerWearMask.sqf";
+
+	private _lookAtHandle = [_newUnit] spawn {
+		params ["_newUnit"];
+		while {alive _newUnit} do {
+			private _from = eyePos _newUnit;
+			private _to = _from vectorAdd (eyeDirection _newUnit vectorMultiply 3000);
+			private _hit = lineIntersectsSurfaces [_from, _to, _newUnit, objNull, true, 1, "VIEW", "FIRE"];
+
+			if (_hit isNotEqualTo []) then {
+				private _objectHit = (_hit select 0) select 2;
+
+				private _damage = _newUnit getVariable ["increamentDamage", 0];
+
+				if (_objectHit isEqualTo jason_voorhees) then {
+					_damage = _damage + 0.1;
+					[_newUnit, _damage, "Head", "poison", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
+					[_newUnit, _damage, "Body", "poison", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
+				} else {
+					_damage = 0;
+				};
+				_newUnit setVariable ["increamentDamage", _damage, true];
+			};
+
+			sleep 0.2;
+		};
+	};
+	_newUnit setVariable ["lookAtHandle", _lookAtHandle, true];
 };

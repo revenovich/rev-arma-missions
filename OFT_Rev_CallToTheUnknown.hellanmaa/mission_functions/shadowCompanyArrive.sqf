@@ -30,15 +30,19 @@ fn_randomLighting = {
 };
 
 [] spawn {
-	sleep 5;
-	for "_i" from 1 to 30 do {
+	sleep 3;
+	for "_i" from 1 to 14 do {
 		[] spawn fn_randomLighting;
 		sleep 0.5;
 	};
 
-	sleep 2;
+	sleep 3;
 
 	playSound "calling";
+
+	sleep 3;
+
+	"rancid" remoteExec ["playMusic", OFT_TO_ALL_PLAYERS];
 
 	sleep 60;
 

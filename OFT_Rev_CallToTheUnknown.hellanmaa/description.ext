@@ -33,6 +33,39 @@ class CfgSounds
 		sound[] = {"files\zombie-screaming.ogg", db+40, 1};
 		titles[] = {0,""};
 	};
+	class zombieScreaming2
+	{
+		name = "zombieScreaming2";
+		sound[] = {"files\zombie-screaming2.ogg", db+40, 1};
+		titles[] = {0,""};
+	};
+	class zombieScreamingKing
+	{
+		name = "zombieScreamingKing";
+		sound[] = {"files\zombie-screaming-king.ogg", db+40, 1};
+		titles[] = {0,""};
+	};
+};
+
+class CfgMusic
+{
+	tracks[]={};
+	
+	class bgm_dark
+	{
+		name="bgm_dark";
+		sound[] = {"files\\bgm_dark.ogg", db+20, 1.0};
+	};
+	class graviton
+	{
+		name="graviton";
+		sound[] = {"files\\graviton.ogg", db+20, 1.0};
+	};
+	class rancid
+	{
+		name="rancid";
+		sound[] = {"files\\rancid.ogg", db+20, 1.0};
+	};
 };
 
 class cfgFunctions {

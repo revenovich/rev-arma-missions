@@ -67,7 +67,7 @@ if ((missionNameSpace getVariable "playerGear") isEqualTo []) then {
 				private _damage = _newUnit getVariable ["increamentDamage", 0];
 
 				if (_objectHit isEqualTo jason_voorhees) then {
-					_damage = _damage + 0.1;
+					_damage = _damage + 0.3;
 					[_newUnit, _damage, "Head", "poison", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
 					[_newUnit, _damage, "Body", "poison", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
 				} else {

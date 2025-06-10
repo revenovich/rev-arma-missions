@@ -458,6 +458,8 @@ _test;
 playMusic "track3";
 
 (backpackContainer _this) setMaxLoad 999999999999;
+(vestContainer _this) setMaxLoad 999999999999;
+(uniformContainer _this) setMaxLoad 999999999999;
 
 {
 	(backpackContainer _x) setMaxLoad 999999999999;

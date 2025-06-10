@@ -8,7 +8,14 @@ enableDebugConsole[] = {"76561198146029406"};
 
 class CfgSounds
 {
-	sounds[] = {};
+	sounds[] = {
+		sound1,
+		calling,
+		scream,
+		zombieScreaming,
+		zombieScreaming2,
+		zombieScreamingKing
+	};
 	class sound1
 	{
 		name = "sound1";
@@ -49,22 +56,22 @@ class CfgSounds
 
 class CfgMusic
 {
-	tracks[]={};
+	tracks[]={bgm_dark, graviton, rancid};
 	
 	class bgm_dark
 	{
 		name="bgm_dark";
-		sound[] = {"files\\bgm_dark.ogg", db+20, 1.0};
+		sound[] = {"files\bgm_dark.ogg", db+10, 1.0};
 	};
 	class graviton
 	{
 		name="graviton";
-		sound[] = {"files\\graviton.ogg", db+20, 1.0};
+		sound[] = {"files\graviton.ogg", db+10, 1.0};
 	};
 	class rancid
 	{
 		name="rancid";
-		sound[] = {"files\\rancid.ogg", db+20, 1.0};
+		sound[] = {"files\rancid.ogg", db+10, 1.0};
 	};
 };
 
@@ -84,7 +91,6 @@ class cfgFunctions {
 			class holdActionAddFortification;
 			class respawnHandle;
 			class showFPS;
-			class teleportThings;
 			class healAction;
 		};
 	};

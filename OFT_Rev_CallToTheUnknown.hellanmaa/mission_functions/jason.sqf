@@ -1,5 +1,8 @@
 [_this#0] spawn {
 	sleep 1; // Wait for the unit to be fully initialized
+	jason_voorhees = objNull;
+	jason_voorhees = _this#0;
+	publicVariable "jason_voorhees";
 	_this#0 removeAllEventHandlers "HandleDamage";
 	_this#0 addEventHandler ["HandleDamage", {
 		params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];

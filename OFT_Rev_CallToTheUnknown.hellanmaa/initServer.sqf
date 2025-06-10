@@ -57,7 +57,6 @@ systemChat "Loading mission...";
 diag_log "Loading mission...";
 
 ["init"] call OFT_fnc_customFillBox;
-["init"] call OFT_fnc_teleportThings;
 ["init"] call OFT_fnc_healAction;
 
 _handle = execVM format["factions\%1.sqf", _faction];

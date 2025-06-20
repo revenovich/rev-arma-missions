@@ -544,3 +544,19 @@ this addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
 	format ["%1", _source] remoteExec ["systemChat", [0, -2] select isDedicated];
 }];
+
+[_this] spawn {
+	_unit = _this#0;
+	_unit setWeaponReloadingTime [gunner (vehicle player), currentMuzzle (gunner (vehicle player)), 0.1];
+};
+
+[this] spawn {
+	params ["_unit"];
+
+	waitUntil {missionNamespace getVariable ["oft_serverInit", false]};
+
+	[_unit] call oft_fn_handleArtil;
+};
+
+
+[[this], oft_fn_handleArtil] remoteExec ["call", [0, -2] select isDedicated, true];

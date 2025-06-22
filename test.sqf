@@ -266,6 +266,11 @@ _this addEventHandler ["Fired", {
 	_unit setVehicleAmmo 1;
 }];
 
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	_unit setVehicleAmmo 1;
+}];
+
 this forceFlagTexture "textures\vietnam-flag.jpg";
 
 [true] execVM "missions\shockwave.sqf";
@@ -461,6 +466,8 @@ playMusic "track3";
 (vestContainer _this) setMaxLoad 999999999999;
 (uniformContainer _this) setMaxLoad 999999999999;
 
+_this container
+
 {
 	(backpackContainer _x) setMaxLoad 999999999999;
 } forEach allPlayers;
@@ -544,3 +551,17 @@ this addEventHandler ["HandleDamage", {
 	params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit", "_context"];
 	format ["%1", _source] remoteExec ["systemChat", [0, -2] select isDedicated];
 }];
+
+private _allPlayers = call BIS_fnc_listPlayers;
+{
+	private _playerID = getPlayerID _x;
+	private _userInfo = getUserInfo _playerID;
+	private _playerUID = _userInfo select 2;
+
+	systemChat format ["Player: %1, UID: %2", name _x, _playerUID];
+	
+} forEach _allPlayers;
+
+while (count thisList > 1) do {
+	[thisList, thisTrigger] call fnc_handleWireDamage;
+};

@@ -565,3 +565,18 @@ private _allPlayers = call BIS_fnc_listPlayers;
 while (count thisList > 1) do {
 	[thisList, thisTrigger] call fnc_handleWireDamage;
 };
+[_this] spawn {
+	_unit = _this#0;
+	_unit setWeaponReloadingTime [gunner (vehicle player), currentMuzzle (gunner (vehicle player)), 0.1];
+};
+
+[this] spawn {
+	params ["_unit"];
+
+	waitUntil {missionNamespace getVariable ["oft_serverInit", false]};
+
+	[_unit] call oft_fn_handleArtil;
+};
+
+
+[[this], oft_fn_handleArtil] remoteExec ["call", [0, -2] select isDedicated, true];

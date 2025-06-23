@@ -1,0 +1,18 @@
+//THIS GOES INTO THE INIT.SQF FILE
+
+if ((!isServer) && (player != player)) then {waitUntil {player == player};};
+
+enableSentences false;
+
+if (!isDedicated) then {
+
+     player enableStamina FALSE;
+
+     player addEventHandler ['Respawn',{player enableStamina FALSE;}];
+
+};
+
+setViewDistance 2000;
+sleep 5;
+[] execVM "missionOpening.sqf";
+sleep 10;

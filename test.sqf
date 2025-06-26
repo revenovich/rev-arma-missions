@@ -580,3 +580,30 @@ while (count thisList > 1) do {
 
 
 [[this], oft_fn_handleArtil] remoteExec ["call", [0, -2] select isDedicated, true];
+[thisList, thisTrigger] call fnc_handleWireDamage; 
+
+//THIS GOES INTO THE INIT.SQF FILE
+
+if ((!isServer) && (player != player)) then {waitUntil {player == player};};
+
+enableSentences false;
+
+if (!isDedicated) then {
+
+     player enableStamina FALSE;
+
+     player addEventHandler ['Respawn',{player enableStamina FALSE;}];
+
+};
+
+setViewDistance 2000;
+sleep 5;
+[] execVM "missionOpening.sqf";
+sleep 10;
+
+if (isServer) then {
+	[this] spawn {
+		waitUntil {missionNamespace getVariable ["oft_serverInit", false]};
+		[_this#0] call oft_fnc_logic_init_leader;
+	};
+};

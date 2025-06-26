@@ -1,1 +1,22 @@
-enableDebugConsole[] = {"76561198033060740", "76561198241088228"};
+enableDebugConsole[] = {"76561198146029406", "76561198241088228", "76561198033060740"};
+
+class CfgMusic
+{
+	tracks[]={song1, song2, song3};
+	
+	class song1
+	{
+		name="song1";
+		sound[] = {"music\song1.ogg", db+20, 1.0};
+	};
+	class song2
+	{
+		name="song2";
+		sound[] = {"music\song2.ogg", db+20, 1.0};
+	};
+	class song3
+	{
+		name="song3";
+		sound[] = {"music\song3.ogg", db+20, 1.0};
+	};
+};

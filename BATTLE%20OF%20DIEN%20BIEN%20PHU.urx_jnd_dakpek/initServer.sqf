@@ -14,6 +14,9 @@ waitUntil {isNull _handleFnInit};
 _handleFnInit = execVM "betterText.sqf";
 waitUntil {isNull _handleFnInit};
 
+_handleFnInit = execVM "betterHint.sqf";
+waitUntil {isNull _handleFnInit};
+
 oft_fnc_run_intro = {
 	[] spawn {
 		playMusic "song1";

@@ -102,7 +102,7 @@ oft_fn_handleArtil = {
 			_target setMagazineTurretAmmo [_magClass, 1, _turretPath];
 		},
 		{ },
-		[], 0.5, nil, false, false
+		[], missionNamespace getVariable ["oft_arty_load_time", 7], nil, false, false
 	] call BIS_fnc_holdActionAdd;
 };
 
@@ -138,7 +138,7 @@ oft_fn_handleAmmoBox = {
 			[_caller] spawn {params ["_caller"]; sleep 4; [["", "PLAIN", 0, true, true]] remoteExec ["cutText", _caller];};
 		},
 		{ },
-		[], 0.5, nil, false, false
+		[], 1, nil, false, false
 	] call BIS_fnc_holdActionAdd;
 };
 

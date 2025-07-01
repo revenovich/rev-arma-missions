@@ -607,3 +607,5 @@ if (isServer) then {
 		[_this#0] call oft_fnc_logic_init_leader;
 	};
 };
+
+[thisList, thisTrigger] call fnc_handleWireDamage;

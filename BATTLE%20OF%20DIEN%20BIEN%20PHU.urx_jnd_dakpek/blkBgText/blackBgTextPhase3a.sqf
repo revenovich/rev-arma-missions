@@ -6,7 +6,7 @@ enableRadio false;
 titleText ["", "BLACK OUT", 3];
 sleep 3;
 
-titleText ["<t color='#ffffff' size='2'>The Vietnam People's Army has been bulding trenches in 14 days, suffocating the French military stronghold...</t>", "BLACK FADED", 6, true, true];
+titleText ["<t color='#ffffff' size='2'>The Viet Minh Army has been bulding trenches in 14 days, suffocating the French military stronghold...</t>", "BLACK FADED", 6, true, true];
 sleep 6;
 titleText ["<t color='#ffffff' size='2'>Phase 3 (30/3/1954-7/5/1954)</t>", "BLACK FADED", 4, true, true];
 sleep 4;

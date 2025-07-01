@@ -6,11 +6,11 @@ enableRadio false;
 titleText ["", "BLACK OUT", 3];
 sleep 3;
 
-titleText ["<t color='#ffffff' size='2'>Phase 2 (14/3/1954-17/3/1954)</t>", "BLACK FADED", 4, true, true];
+titleText ["<t color='#ffffff' size='2'>PHASE 2 (14/3/1954-17/3/1954)</t>", "BLACK FADED", 4, true, true];
 sleep 4;
-titleText ["<t color='#ffffff' size='3'>Doc Lap Hill</t>", "BLACK FADED", 3, true, true];
+titleText ["<t color='#ffffff' size='3'>DOC LAP HILL</t>", "BLACK FADED", 3, true, true];
 sleep 3;
-titleText ["<t color='#ffffff' size='2'>165th Regiment and 88th Regiment</t>", "BLACK FADED", 4, true, true];
+titleText ["<t color='#ffffff' size='2'>165TH REGIMENT AND 88TH REGIMENT</t>", "BLACK FADED", 4, true, true];
 sleep 4;
 
 3 fadeSpeech 1;

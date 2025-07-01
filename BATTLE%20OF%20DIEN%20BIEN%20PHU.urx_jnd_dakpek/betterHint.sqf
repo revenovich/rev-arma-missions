@@ -2,7 +2,7 @@ oft_fnc_better_hint = {
 	params ["_eventName"];
 
 	if (_eventName == "p1e1") then {
-		hint parseText "<br/>The French artillery ammo bunker at Him Lam hill is hit by a shell and explodes.<br/><img size = '7' image='hintPics\Picture1.jpg'/>";
+		hint parseText "The French artillery ammo bunker at Him Lam hill is hit by a shell and explodes.<br/><br/><img size = '10' image='hintPics\Picture1.jpg'/>";
 	};
 	if (_eventName == "p1e2") then {
 		hint parseText "<br/>Paul Pégot, the commander of the 3rd Battalion at Him Lam hill, is hit by artillery fire. Radio is destroyed. Him Lam hill lost contact with French central subdivision.<br/><img size = '7' image='hintPics\Picture2.jpg'/>";
@@ -29,7 +29,7 @@ oft_fnc_better_hint = {
 		hint parseText "<br/>The French army will announce its surrender at 17h30 May 7 1954.<br/><img size = '7' image='hintPics\Picture7.jpg'/>";
 	};
 	if (_eventName == "p3e3") then {
-		hint parseText "<br/>The French army will announce its surrender at 17h30 May 7 1954<br/><img size = '7' image='hintPics\Picture8.jpg'/>";
+		hint parseText "<br/>The Viet Minh Army gained victory in the Battle of Dien Bien Phu.<br/><img size = '7' image='hintPics\Picture8.jpg'/>";
 	};
 };
 

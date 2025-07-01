@@ -3,7 +3,7 @@ enableRadio false;
 0 fadeRadio 0;
 0 fadeSound 0;
 
-titleText ["", "BLACK OUT", 1];
+titleText ["", "BLACK OUT", 3];
 sleep 3;
 
 titleText ["<t color='#ffffff' size='2'>Vietnam troops surrouned French central subdivision. Vietnam air defense has eliminated the possibility of take-off and landing at Muong Thanh airport.</t>", "BLACK FADED", 8, true, true];

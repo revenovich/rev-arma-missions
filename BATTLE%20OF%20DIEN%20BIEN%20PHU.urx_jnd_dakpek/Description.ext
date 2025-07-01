@@ -7,16 +7,16 @@ class CfgMusic
 	class song1
 	{
 		name="song1";
-		sound[] = {"music\song1.ogg", db+20, 1.0};
+		sound[] = {"music\song1.ogg", db+30, 1.0};
 	};
 	class song2
 	{
 		name="song2";
-		sound[] = {"music\song2.ogg", db+20, 1.0};
+		sound[] = {"music\song2.ogg", db+30, 1.0};
 	};
 	class song3
 	{
 		name="song3";
-		sound[] = {"music\song3.ogg", db+20, 1.0};
+		sound[] = {"music\song3.ogg", db+30, 1.0};
 	};
 };

@@ -3,7 +3,7 @@ enableRadio false;
 0 fadeRadio 0;
 0 fadeSound 0;
 
-titleText ["", "BLACK OUT", 1];
+titleText ["", "BLACK OUT", 3];
 sleep 3;
 
 titleText ["<t color='#ffffff' size='2'>The Vietnam People's Army has been bulding trenches in 14 days, suffocating the French military stronghold...</t>", "BLACK FADED", 6, true, true];

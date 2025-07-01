@@ -3,7 +3,7 @@ enableRadio false;
 0 fadeRadio 0;
 0 fadeSound 0;
 
-titleText ["", "BLACK OUT", 1];
+titleText ["", "BLACK OUT", 3];
 sleep 3;
 
 titleText ["<t color='#ffffff' size='2'>Phase 1 (13/3/1954-14/3/1954)</t>", "BLACK FADED", 4, true, true];

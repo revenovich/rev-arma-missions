@@ -354,3 +354,5 @@ oft_fnc_gearLoad = {
 		player addItemToBackpack _x;
 	} forEach (_loadout select 4);
 };
+
+publicVariable "oft_fnc_gearLoad";

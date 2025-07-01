@@ -40,7 +40,8 @@ fnc_handleWireDamage = {
 					private _randomPart = selectRandom ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"];
 
 					// Apply damage to the player
-					[_player, _randomDamage, _randomPart, "cut", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
+					// [_player, _randomDamage, _randomPart, "cut", objNull, [], true] call ace_medical_fnc_addDamageToUnit;
+					[[_player, _randomDamage, _randomPart, "cut", objNull, [], true], ace_medical_fnc_addDamageToUnit] remoteExec ["call", [0,-2] select isDedicated];
 				};
 			} forEach _playersInArea;	
 

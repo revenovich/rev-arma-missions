@@ -99,10 +99,10 @@ oft_fn_handleArtil = {
 			private _ammoInAmmoBox = _ammoBoxObj getVariable "ammoCount";
 			_ammoBoxObj setVariable ["ammoCount", _ammoInAmmoBox - 1, true];
 			[[format ["<t color='#ffffff' size='1'>%1 shell(s) left in ammo box</t>", _ammoInAmmoBox - 1], "PLAIN", -1, true, true]] remoteExec ["cutText", _caller];
-			_target setMagazineTurretAmmo [_magClass, 1, _turretPath];
+			[_target, [_magClass, 1, _turretPath]] remoteExec ["setMagazineTurretAmmo", [0, -2] select isDedicated];
 		},
 		{ },
-		[], missionNamespace getVariable ["oft_arty_load_time", 7], nil, false, false
+		[], missionNamespace getVariable ["oft_arty_load_time", 3], nil, false, false
 	] call BIS_fnc_holdActionAdd;
 };
 

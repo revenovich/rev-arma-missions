@@ -19,7 +19,7 @@ waitUntil {isNull _handleFnInit};
 
 oft_fnc_run_intro = {
 	[] spawn {
-		playMusic "song1";
+		"song1" remoteExec ["playMusic", [0, -2] select isDedicated];
 		["intro1"] call oft_fnc_better_text;
 		sleep 6.5;
 		["intro2"] call oft_fnc_better_text;

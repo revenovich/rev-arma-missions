@@ -4,14 +4,14 @@ enableRadio false;
 0 fadeSound 0;
 
 titleText ["", "BLACK OUT", 3];
-sleep 3;
+sleep 2.9;
 
 titleText ["<t color='#ffffff' size='2'>PHASE 2 (14/3/1954-17/3/1954)</t>", "BLACK FADED", 4, true, true];
-sleep 4;
+sleep 3.8
 titleText ["<t color='#ffffff' size='3'>DOC LAP HILL</t>", "BLACK FADED", 3, true, true];
-sleep 3;
+sleep 2.8;
 titleText ["<t color='#ffffff' size='2'>165TH REGIMENT AND 88TH REGIMENT</t>", "BLACK FADED", 4, true, true];
-sleep 4;
+sleep 3.8;
 
 3 fadeSpeech 1;
 3 fadeRadio 1;

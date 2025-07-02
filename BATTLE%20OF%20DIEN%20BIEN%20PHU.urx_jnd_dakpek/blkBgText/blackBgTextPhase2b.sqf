@@ -4,7 +4,7 @@ enableRadio false;
 0 fadeSound 0;
 
 titleText ["", "BLACK OUT", 3];
-sleep 3;
+sleep 2.9;
 
 titleText ["<t color='#ffffff' size='2'>VIETNAM TROOPS SURROUNED FRENCH CENTRAL SUBDIVISION. VIETNAM AIR DEFENSE HAS ELIMINATED THE POSSIBILITY OF TAKE-OFF AND LANDING AT MUONG THANH AIRPORT.</t>", "BLACK FADED", 8, true, true];
 sleep 8;

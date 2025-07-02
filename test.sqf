@@ -121,19 +121,7 @@ while { true } do {
 
 [[_this, 5, 7, 10], "randomTeleport.sqf"] remoteExec ["execVM", 0, false];
 
-// Infinity ammo
-this addEventHandler ["Fired", {
-	(_this select 0) setVehicleAmmo 1
-}]
-
 missionNamespace setVariable ["1_labTotalTimeToCharge", 12, true];
-
-// Infinity ammo with fast reload
-_this addEventHandler ["Fired", {
-	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
-	_unit setWeaponReloadingTime [_gunner, _muzzle, 0.1];
-	_unit setVehicleAmmo 1;
-}];
 
 _this removeAllEventHandlers "Fired";
 
@@ -609,3 +597,37 @@ if (isServer) then {
 };
 
 [thisList, thisTrigger] call fnc_handleWireDamage;
+
+[] execVM "blkBgText\blackBgTextPhase1.sqf";
+[] execVM "blkBgText\blackBgTextPhase2a.sqf";
+[] execVM "blkBgText\blackBgTextPhase2b.sqf";
+[] execVM "blkBgText\blackBgTextPhase3a.sqf";
+[] execVM "blkBgText\blackBgTextPhase3b.sqf";
+[] execVM "blkBgText\blackBgTextPhase3c.sqf";
+
+["p1e1"] call oft_fnc_better_hint;
+["p1e2"] call oft_fnc_better_hint;
+["p1e3"] call oft_fnc_better_hint;
+["p2e1"] call oft_fnc_better_hint;
+["p2e2"] call oft_fnc_better_hint;
+["p2e3"] call oft_fnc_better_hint;
+["p2e4"] call oft_fnc_better_hint;
+["p3e1"] call oft_fnc_better_hint;
+["p3e2"] call oft_fnc_better_hint;
+["p3e3"] call oft_fnc_better_hint;
+
+[[_this], oft_fn_handleArtil] remoteExec ["call", [0,-2] select isDedicated];
+
+[[_this, 10], oft_fn_handleAmmoBox] remoteExec ["call", [0,-2] select isDedicated];
+
+// Infinity ammo with fast reload
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	_unit setWeaponReloadingTime [_gunner, _muzzle, 0.1];
+	_unit setVehicleAmmo 1;
+}];
+
+// Infinity ammo
+this addEventHandler ["Fired", {
+	(_this select 0) setVehicleAmmo 1
+}]

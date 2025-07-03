@@ -628,6 +628,14 @@ _this addEventHandler ["Fired", {
 }];
 
 // Infinity ammo
-this addEventHandler ["Fired", {
-	(_this select 0) setVehicleAmmo 1
-}]
+_this addEventHandler ["Fired", {
+	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+	_unit setVehicleAmmo 1;
+}];
+
+"vn_bomb_15000_blu82_dc_ammo" createVehicle (position _this);
+
+private _units = units _this;
+{
+	_x allowDamage false;
+} forEach _units;

@@ -616,9 +616,9 @@ if (isServer) then {
 ["p3e2"] call oft_fnc_better_hint;
 ["p3e3"] call oft_fnc_better_hint;
 
-[[_this], oft_fn_handleArtil] remoteExec ["call", [0,-2] select isDedicated];
+[[_this], oft_fn_handleArtil] remoteExec ["call", [0,-2] select isDedicated, _this];
 
-[[_this, 10], oft_fn_handleAmmoBox] remoteExec ["call", [0,-2] select isDedicated];
+[[_this, 10], oft_fn_handleAmmoBox] remoteExec ["call", [0,-2] select isDedicated, _this];
 
 // Infinity ammo with fast reload
 _this addEventHandler ["Fired", {
@@ -639,3 +639,5 @@ private _units = units _this;
 {
 	_x allowDamage false;
 } forEach _units;
+
+[] call oft_fnc_run_intro;

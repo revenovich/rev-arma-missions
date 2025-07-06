@@ -102,7 +102,7 @@ oft_fn_handleArtil = {
 			[_target, [_magClass, 1, _turretPath]] remoteExec ["setMagazineTurretAmmo", [0, -2] select isDedicated];
 		},
 		{ },
-		[], missionNamespace getVariable ["oft_arty_load_time", 3], nil, false, false
+		[], missionNamespace getVariable ["oft_arty_load_time", 2], nil, false, false
 	] call BIS_fnc_holdActionAdd;
 };
 
@@ -120,7 +120,7 @@ oft_fn_handleAmmoBox = {
 	missionNamespace setVariable ["oftAmmoBoxArr", _ammoBoxArr, true];
 
 	_unit setVariable ["ammoCount", _ammoCount, true];
-
+	
 	[
 		_unit,
 		"Get current ammo count",
@@ -143,3 +143,28 @@ oft_fn_handleAmmoBox = {
 };
 
 publicVariable "oft_fn_handleAmmoBox";
+
+oft_fn_handleAmmoBoxDelete = {
+	params ['_unit'];
+
+	[
+		_unit,
+		"Remove ammo box, no ammo left",
+		"\a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa",
+		"\a3\ui_f\data\igui\cfg\holdactions\holdaction_search_ca.paa",
+		'(_this distance _target) < 3 && _this getVariable ["ammoCount", 0] == 0',
+		"true",
+		{
+			params ["_target", "_caller", "_actionId", "_arguments"];
+		},
+		{ },
+		{ 
+			params ["_target", "_caller", "_actionId", "_arguments"];
+			deleteVehicle _target;
+		},
+		{ },
+		[], 1, nil, false, false
+	] call BIS_fnc_holdActionAdd;
+};
+
+publicVariable "oft_fn_handleAmmoBoxDelete";

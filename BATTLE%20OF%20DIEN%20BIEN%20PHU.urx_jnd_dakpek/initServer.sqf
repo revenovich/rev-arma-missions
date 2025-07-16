@@ -25,10 +25,8 @@ oft_fnc_run_intro = {
 		["intro2"] call oft_fnc_better_text;
 		sleep 6;
 		["intro3"] call oft_fnc_better_text;
-		sleep 5;
+		sleep 11;
 		["intro4"] call oft_fnc_better_text;
-		sleep 6;
-		["intro5"] call oft_fnc_better_text;
 	};
 };
 

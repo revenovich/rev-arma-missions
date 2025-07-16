@@ -5,23 +5,19 @@ oft_fnc_better_text = {
 	txt6Layer = "txt6" call BIS_fnc_rscLayer;
 
 	if (_eventName == "intro1") then {
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "A HISTORICAL OPERATION"+"</t>"; 
+		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "MOT CHIEN DICH LICH SU"+"</t>"; 
 		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 3,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
 	};
 	if (_eventName == "intro2") then {
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "IN REMEMBRANCE OF OUR FALLEN HEROES"+"</t>"; 
+		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "TUONG NHO CAC ANH HUNG LIET SI"+"</t>"; 
 		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 3,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
 	};
 	if (_eventName == "intro3") then {
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "JOINT OPERATION OF SEACOC"+"</t>"; 
-		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 2,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
+		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "DUOC TAI HIEN BOI 150TH LANGUARD"+"</t>"; 
+		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 7,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
 	};
 	if (_eventName == "intro4") then {
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "MADE BY 150TH LANGUARD"+"</t>"; 
-		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 3,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
-	};
-	if (_eventName == "intro5") then {
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "BATTLE OF DIEN BIEN PHU"+"</t>"; 
+		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1.4' color='#F98E05'>" + "CHIEN DICH DIEN BIEN PHU"+"</t>"; 
 		[_texta,/* poz x */ 0,/* poz y */ -1,/*durata*/ 10,/* fade in?*/ 1,0,txt5Layer] spawn BIS_fnc_dynamicText;
 	};
 };

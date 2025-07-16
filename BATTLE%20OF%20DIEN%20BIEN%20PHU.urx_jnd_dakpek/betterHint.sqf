@@ -2,34 +2,34 @@ oft_fnc_better_hint = {
 	params ["_eventName"];
 
 	if (_eventName == "p1e1") then {
-		hint parseText "The French artillery ammo bunker at Him Lam hill is hit by a shell and explodes.<br/><br/><img size = '10' image='hintPics\Picture1.jpg'/>";
+		hint parseText "HAM DAN PHAO CUA PHAP TAI HIM LAM TRUNG PHAO PHAT NO.<br/><br/><img size = '10' image='hintPics\Picture1.jpg'/>";
 	};
 	if (_eventName == "p1e2") then {
-		hint parseText "<br/>Paul Pégot, the commander of the 3rd Battalion at Him Lam hill, is hit by artillery fire. Radio is destroyed. Him Lam hill lost contact with French central subdivision.<br/><img size = '7' image='hintPics\Picture2.jpg'/>";
+		hint parseText "<br/>PAUL PEGOT, CHI HUY TIEU DOAN 3 TAI DOI HIM LAM, TRUNG PHAO CHET TRONG HAM CHI HUY CUNG RADIO, DOI HIM LAM MAT LIEN LAC VOI PHAN KHU TRUNG TAM<br/><img size = '7' image='hintPics\Picture2.jpg'/>";
 	};
 	if (_eventName == "p1e3") then {
-		hint parseText "<br/>312nd Division captured Him Lam hill!.<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
+		hint parseText "<br/>SU DOAN 312 DA CHIEM DUOC DOI HIM LAM!<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
 	};
 	if (_eventName == "p2e1") then {
-		hint parseText "<br/>165th Regiment and 88th Regiment captured Doc Lap Hill!<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
+		hint parseText "<br/>TRUNG DOAN 165 VA TRUNG DOAN 88 DA CHIEM DUOC DOI DOC LAP!<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
 	};
 	if (_eventName == "p2e2") then {
-		hint parseText "<br/>Charles Piroth, French artillery commander, committed suicide with a grenade in his command bunker.<br/><img size = '7' image='hintPics\Picture4.jpg'/>";
+		hint parseText "<br/>TRUNG TA CHARLES PIROTH, CHI HUY PHAO BINH CUA PHAP, TU SAT BANG LUU DAN TRONG HAM CHI HUY.<br/><img size = '7' image='hintPics\Picture4.jpg'/>";
 	};
 	if (_eventName == "p2e3") then {
-		hint parseText "<br/>French troops fled from Ban Keo hill. 36th Regiment captured Ban Keo hill without shooting a single bullet.<br/><img size = '7' image='hintPics\Picture5.jpg'/>";
+		hint parseText "<br/>LINH PHAP BO CHAY KHOI DOI BAN KEO, TRUNG DOAN 36 CHIEM DUOC DOI BAN KEO MA KHONG TON VIEN DAN NAO.<br/><img size = '7' image='hintPics\Picture5.jpg'/>";
 	};
 	if (_eventName == "p2e4") then {
-		hint parseText "<br/>America denies participating in the war with air and ground forces.<br/><img size = '7' image='hintPics\Picture6.jpg'/>";
+		hint parseText "<br/>MY TU CHOI THAM CHIEN TAI DIEN BIEN PHU.<br/><img size = '7' image='hintPics\Picture6.jpg'/>";
 	};
 	if (_eventName == "p3e1") then {
-		hint parseText "<br/>312nd Division captured A1 hill.<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
+		hint parseText "<br/>SU DOAN 312 DA CHIEM DUOC DOI A1.<br/><img size = '7' image='hintPics\Picture3.jpg'/>";
 	};
 	if (_eventName == "p3e2") then {
-		hint parseText "<br/>The French army will announce its surrender at 17h30 May 7 1954.<br/><img size = '7' image='hintPics\Picture7.jpg'/>";
+		hint parseText "<br/>QUAN PHAP CHINH THUC TUYEN BO DAU HANG VAO LUC 17h30 NGAY 7/5/1954.<br/><img size = '7' image='hintPics\Picture7.jpg'/>";
 	};
 	if (_eventName == "p3e3") then {
-		hint parseText "<br/>The Viet Minh Army gained victory in the Battle of Dien Bien Phu.<br/><img size = '7' image='hintPics\Picture8.jpg'/>";
+		hint parseText "<br/>QUAN VIET MINH DA DANH CHIEN THANG TAI DIEN BIEN PHU.<br/><img size = '7' image='hintPics\Picture8.jpg'/>";
 	};
 };
 

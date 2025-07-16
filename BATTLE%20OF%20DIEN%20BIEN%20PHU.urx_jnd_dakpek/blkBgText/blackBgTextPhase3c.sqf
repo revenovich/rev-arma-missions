@@ -6,16 +6,14 @@ enableRadio false;
 titleText ["", "BLACK OUT", 3];
 sleep 2.9;
 
-titleText ['<t color="#ffffff" size="2">"One can defeat an army, but one cannot defeat a nation." - De Castries</t>', "BLACK FADED", 5, true, true];
+titleText ['<t color="#ffffff" size="2">"CHUNG TA CO THE DANH BAI MOT DOI QUAN, NHUNG KHONG THE DANH BAI DUOC CA MOT DAN TOC" - DE CASTRIES</t>', "BLACK FADED", 5, true, true];
 sleep 4.8;
-titleText ["<t color='#ffffff' size='2'>The victory at Dien Bien Phu was a victory that resounded throughout the five continents and shook the world.</t>", "BLACK FADED", 6, true, true];
+titleText ["<t color='#ffffff' size='2'>CHIEN THANG TAI DIEN BIEN PHU LA CHIEN THANG LUNG LAY NAM CHAU, CHAN DONG DIA CAU.</t>", "BLACK FADED", 6, true, true];
 sleep 5.8;
-titleText ["<t color='#ffffff' size='2'>It ended French colonial rule in Vietnam. It was also an inspiration for colonies around the world to rise up against French colonial rule.</t>", "BLACK FADED", 7, true, true];
+titleText ["<t color='#ffffff' size='2'>CHIEN THANG NAY DA CHAM DUT CHE DO THUOC DIA CUA PHAP TAI VIET NAM VA LA DONG LUC DE CA NUOC THUOC DIA CHAU PHI DUNG DAY CHONG LAI PHAP.</t>", "BLACK FADED", 7, true, true];
 sleep 6.8;
-titleText ["<t color='#ffffff' size='2'>The victory at Dien Bien Phu was the victory of the iron national spirit, the utmost determination of the Vietnamese people and the victory of the greatest general in the history of the Vietnamese nation </t><br/><t color='#ffffff' size='3'> General Vo Nguyen Giap.</t>", "BLACK FADED", 10, true, true];
+titleText ["<t color='#ffffff' size='2'>CHIEN THANG DIEN BIEN PHU LA CHIEN THANG CUA TINH THAN DAN TOC SAT DA. CUA Y CHI QUYET TAM BAO VE DOC LAP CUA DAN TOC VIET NAM VA LA CHIEN THANG  CUA VI DAI TUONG VI DAI NHAT VIET NAM</t><br/><t color='#ffffff' size='3'>DAI TUONG VO NGUYEN GIAP</t>", "BLACK FADED", 10, true, true];
 sleep 9.8;
-titleText ["<t color='#ffffff' size='2'>Thank for playing this operation</t><br/><t color='#ffffff' size='2'> 150th Languard</t>", "BLACK FADED", 3, true, true];
-sleep 2.8;
 
 3 fadeSpeech 1;
 3 fadeRadio 1;

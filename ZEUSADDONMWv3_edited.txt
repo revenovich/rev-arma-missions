@@ -17,14 +17,10 @@ force ace_advanced_ballistics_enabled = true;
 force ace_advanced_ballistics_muzzleVelocityVariationEnabled = true;
 force ace_advanced_ballistics_simulationInterval = 0.05;
 
-// ACE Advanced Fatigue
-force ace_advanced_fatigue_enabled = true;
-force ace_advanced_fatigue_enableStaminaBar = true;
-ace_advanced_fatigue_fadeStaminaBar = true;
-force ace_advanced_fatigue_loadFactor = 0.5;
-force ace_advanced_fatigue_performanceFactor = 2.50373;
-force ace_advanced_fatigue_recoveryFactor = 5;
-force ace_advanced_fatigue_terrainGradientFactor = 0.1;
+// ACE Advanced Missile Guidance
+force ace_missileguidance_chaffEffectivenessCoef = 1;
+force ace_missileguidance_flareAngleCoef = 1;
+force ace_missileguidance_flareEffectivenessCoef = 1;
 
 // ACE Advanced Throwing
 ace_advanced_throwing_enabled = true;
@@ -57,9 +53,9 @@ ace_arsenal_loadoutsSaveVoice = false;
 ace_arsenal_showUnavailableItems = 0;
 
 // ACE Artillery
-force ace_artillerytables_advancedCorrections = true;
+force ace_artillerytables_advancedCorrections = false;
 force ace_artillerytables_disableArtilleryComputer = false;
-force ace_mk6mortar_airResistanceEnabled = true;
+force ace_mk6mortar_airResistanceEnabled = false;
 force ace_mk6mortar_allowCompass = true;
 force ace_mk6mortar_allowComputerRangefinder = false;
 force ace_mk6mortar_useAmmoHandling = true;
@@ -95,6 +91,8 @@ force ace_common_swayFactor = 0.6;
 // ACE Cook-off
 force ace_cookoff_ammoCookoffDuration = 1;
 force ace_cookoff_cookoffDuration = 1;
+force ace_cookoff_cookoffEnableProjectiles = true;
+force ace_cookoff_cookoffEnableSound = true;
 force ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enableAmmobox = false;
 force ace_cookoff_enableAmmoCookoff = false;
@@ -294,6 +292,7 @@ ace_maptools_rotateModifierKey = 1;
 force ace_medical_ai_enabledFor = 2;
 force ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 0.8;
+force ace_medical_alternateArmorPenetration = true;
 force ace_medical_bleedingCoefficient = 0.2;
 force ace_medical_blood_bloodLifetime = 900;
 force ace_medical_blood_enabledFor = 2;
@@ -301,7 +300,6 @@ force ace_medical_blood_maxBloodObjects = 200;
 force ace_medical_deathChance = 1;
 force ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = true;
-force ace_medical_engine_damagePassThroughEffect = 1;
 force ace_medical_fatalDamageSource = 0;
 force ace_medical_fractureChance = 0.4;
 force ace_medical_fractures = 1;
@@ -882,7 +880,7 @@ force IMS_DamageMultiplierParamPlayer = "1";
 force IMS_ExecutionChanceParametr = "20";
 force IMS_isFistsAllowd = false;
 force IMS_isHumansCanHitSM = false;
-force IMS_isImsCanHitAllies = true;
+force IMS_isImsCanHitAllies = false;
 force IMS_isKickButtInstaKill = true;
 force IMS_isStaticDeaths = true;
 force IMS_RifleDodgeSet = false;

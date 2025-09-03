@@ -10,7 +10,7 @@ titleText ["<t color='#ffffff' size='2'>PHASE 1 (13/3/1954-14/3/1954)</t>", "BLA
 sleep 3.8;
 titleText ["<t color='#ffffff' size='3'>DOI HIM LAM</t>", "BLACK FADED", 2, true, true];
 sleep 1.8;
-titleText ["<t color='#ffffff' size='2'>SƯ ĐOÀN 312</t>", "BLACK FADED", 2, true, true];
+titleText ["<t color='#ffffff' size='2'>SU DOAN 312</t>", "BLACK FADED", 2, true, true];
 sleep 1.8;
 
 3 fadeSpeech 1;

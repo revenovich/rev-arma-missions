@@ -1,0 +1,155 @@
+onLoadMission = "Main Story";
+loadScreen = "files\loadingImg.jpg";
+onLoadName = "Broken Protocol";
+author = "SgtMaj.Rev";
+
+enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198146029406"};
+
+class CfgSounds
+{
+	sounds[] = {
+		sound1,
+	};
+	class sound1
+	{
+		name = "sound1";
+		sound[] = {"@A3\ui_f\data\sound\RscListbox\soundSelect", 0.2, 1};
+		titles[] = {0,""};
+	};
+};
+
+class cfgFunctions {
+	class onefiftythlanguard
+	{
+		tag = "OFT";
+		class functions
+		{
+			file = "functions";
+			class coverMap;
+			class customFillBox;
+			class fortificationBox;
+			class gearBox;
+			class gearHandle;
+			class holdActionAdd;
+			class holdActionAddFortification;
+			class respawnHandle;
+			class showFPS;
+			class healAction;
+		};
+	};
+};
+
+class header {
+	gameType = Zeus;
+	minPlayers = 1;
+	maxPlayers = 69;
+};
+
+class CfgORBAT
+{
+	class RADIO
+	{
+	side = "West";
+	type = "Unknown";
+	text = "Radio Settings";
+	textShort = "RADIO";
+	assets[] = {};
+	color[] = {0,0,0,1};
+	texture = __EVAL((__FILE__ select [0, count __FILE__ - 15]) + "files\logo1");
+	description = "";
+
+		class RADIOS
+		{
+			side = "West";
+			type = "Unknown";
+			text = "Radio Frequencies";
+			textShort = "RADIOS";
+			assets[] = {};
+			color[] = {0,0,0,1};
+			texture = __EVAL((__FILE__ select [0, count __FILE__ - 15]) + "files\logo1");
+			description = "";
+
+			class CO
+			{
+				side = "West";
+				color[] = {0.7,0.6,0,1};
+				size = "Company";
+				type = "Unknown";
+				text = "Company";
+				textShort = "Company";
+				assets[] = {};
+				description = "Mixed Company.";
+
+				class CO
+				{
+					side = "West";
+					color[] = {0.7,0.6,0,1};
+					size = "Fireteam";
+					type = "HQ";
+					text = "CO Team";
+					textShort = "CO";
+					assets[] = {};
+					description = "CO element.<br/><br/>Freq: 69.1";
+				};
+
+				class Platoon
+				{
+					side = "West";
+					color[] = {0.7,0.6,0,1};
+					size = "Platoon";
+					type = "Infantry";
+					text = "150th Infantry Platoon";
+					textShort = "Platoon";
+					assets[] = {};
+					description = "Infantry platoon of 18-40 members.<br/><br/>Freq: 69";
+
+					class Alpha
+					{
+						side = "West";
+						color[] = {0.7,0.6,0,1};
+						size = "Squad";
+						type = "Infantry";
+						text = "Alpha Squad";
+						textShort = "Alpha";
+						assets[] = {};
+						description = "Infantry squad of 8-12 members.<br/><br/>Freq: 41.1";
+					};
+					class Bravo
+					{
+						side = "West";
+						color[] = {0.7,0.6,0,1};
+						size = "Squad";
+						type = "Infantry";
+						text = "Bravo Squad";
+						textShort = "Bravo";
+						assets[] = {};
+						description = "Infantry squad of 8-12 members.<br/><br/>Freq: 51.1";
+					};
+					class Charlie
+					{
+						side = "West";
+						color[] = {0.7,0.6,0,1};
+						size = "Squad";
+						type = "Infantry";
+						text = "Charlie Squad";
+						textShort = "Charlie";
+						assets[] = {};
+						description = "Infantry squad of 8-12 members.<br/><br/>Freq: 61.1";
+					};
+					class Delta
+					{
+						side = "West";
+						color[] = {0.7,0.6,0,1};
+						size = "Squad";
+						type = "Infantry";
+						text = "Delta Squad";
+						textShort = "Delta";
+						assets[] = {};
+						description = "Infantry squad of 8-12 members.<br/><br/>Freq: 71.1";
+					};
+				};
+			};
+		};
+	};
+};

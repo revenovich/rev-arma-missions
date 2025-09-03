@@ -641,3 +641,14 @@ private _units = units _this;
 } forEach _units;
 
 [] call oft_fnc_run_intro;
+
+[_this] spawn {
+	while {alive _this#0} do {
+		_this#0 setFuel 1;
+		sleep 60;
+	};
+};
+
+for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_AT"};
+for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_KE"};
+for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_AP"};

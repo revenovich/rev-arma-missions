@@ -401,25 +401,24 @@ switch (_request) do {
         _materialCount = _this select 2;
 
 		if (isNil "_materialCount") then {
-        	_materialCount = 800000;
+        	_materialCount = 500;
 		};
         _interactionDistance = 10;
         _object setVariable ["materialCount", _materialCount, true];
         _object setVariable ["interactionDistance", _interactionDistance, true];
 
 		// params = [_box, _className, _displayName, _cost, _distanceFromPlayer]
+		[_object, "Land_BagBunker_Large_F", "BAGBUNKERLARGE", 20, 9, 180] call fn_addFortificationAction;
 		[_object, "Land_BagBunker_Small_F", "BAGBUNKERSMALL", 5, 4, 180] call fn_addFortificationAction;
 		[_object, "Land_BagFence_Long_F", "BAGWALL", 1, 3, 0] call fn_addFortificationAction;
 		[_object, "Land_BagFence_Round_F", "BAGWALLROUND", 1, 3, 180] call fn_addFortificationAction;
 		[_object, "Land_HBarrier_1_F", "HBARRIER1", 2, 3, 90] call fn_addFortificationAction;
-		[_object, "Land_HBarrier_3_F", "HBARRIER3", 6, 3, 0] call fn_addFortificationAction;
+		[_object, "Land_HBarrier_3_F", "HBARRIER3", 5, 3, 0] call fn_addFortificationAction;
 		[_object, "Land_HBarrier_5_F", "HBARRIER5", 10, 5, 0] call fn_addFortificationAction;
 		[_object, "Land_HBarrier_Big_F", "HBARRIERLARGE", 10, 6, 0] call fn_addFortificationAction;
-		[_object, "B_APC_Wheeled_01_cannon_F", "Badger IFV", 50000, 10, 0] call fn_addFortificationAction;
-		[_object, "rhs_btr80a_msv", "BTR-80A", 20000, 10, 0] call fn_addFortificationAction;
-		[_object, "O_T_MBT_02_railgun_ghex_F", "T-100X Futura", 100000, 10, 0] call fn_addFortificationAction;
-		[_object, "O_T_MBT_04_command_F", "T-14K Armata", 100000, 10, 0] call fn_addFortificationAction;
-		[_object, "rhsusf_m1a2sep1tuskiiwd_usarmy", "M1A2SepV1 (TUSK II)", 100000, 10, 0] call fn_addFortificationAction;
-		[_object, "rhs_t90sm_tv", "T-90SM", 100000, 10, 0] call fn_addFortificationAction;
+		[_object, "Land_CzechHedgeHog_01_new_F", "HEDGEHOG", 1, 3, 0] call fn_addFortificationAction;
+		[_object, "Land_CncShelter_F", "CONCRETESHELTER", 4, 3, 0] call fn_addFortificationAction;
+		[_object, "Land_CncBarrierMedium_F", "CONCRETEBARRIER", 1, 3, 0] call fn_addFortificationAction;
+		[_object, "Land_Razorwire_F", "RAZORWIRE", 1, 6, 0] call fn_addFortificationAction;
 	};
 };

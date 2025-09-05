@@ -19,6 +19,17 @@ class CfgSounds
 	};
 };
 
+class CfgMusic
+{
+	tracks[]={song1};
+	
+	class song1
+	{
+		name="song1";
+		sound[] = {"files\song1.ogg", db+10, 1.0};
+	};
+};
+
 class cfgFunctions {
 	class onefiftythlanguard
 	{

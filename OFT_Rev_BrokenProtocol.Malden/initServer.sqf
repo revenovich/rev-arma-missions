@@ -67,6 +67,9 @@ waitUntil {isNull _handle};
 _handleFnInit = execVM "functions\fn_init.sqf";
 waitUntil {isNull _handleFnInit};
 
+_handleFnInit = execVM "functions\betterText.sqf";
+waitUntil {isNull _handleFnInit};
+
 ["init"] call OFT_fnc_respawnHandle;
 
 missionNamespace setVariable ["playerSideVar", _playerSideVar, true];

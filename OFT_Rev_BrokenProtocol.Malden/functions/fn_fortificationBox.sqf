@@ -173,7 +173,7 @@ fn_addFortificationAction = {
 		},
 		/* 2 idle icon */                   "files\holdAction_hammer.paa",
 		/* 3 progress icon */               "files\holdAction_hammer.paa",
-		/* 4 condition to show */           "(_this distance _target < (_target getVariable ""interactionDistance"")) && ((_this getVariable [""movingObject"", objNull]) isEqualTo objNull)",
+		/* 4 condition to show */           "(_this distance _target < (_target getVariable ""interactionDistance"")) && ((_this getVariable [""movingObject"", objNull]) isEqualTo objNull) && {_isEngineer = _this getVariable [""Ace_IsEngineer"", 0]; if (_isEngineer isEqualType false) then { _isEngineer = [0, 1] select _isEngineer; }; _isEngineer == 1}",
 		/* 5 condition for action */        "(_this distance _target < (_target getVariable ""interactionDistance"")) && (_target getVariable ""materialCount"") >= (_arguments select 2) && {_isEngineer = _this getVariable [""Ace_IsEngineer"", 0]; if (_isEngineer isEqualType false) then { _isEngineer = [0, 1] select _isEngineer; }; _isEngineer == 1}",
 		/* 6 code executed on start */      {},
 		/* 7 code executed per tick */      {},

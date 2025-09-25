@@ -1,0 +1,1 @@
+["scripts\initCam.sqf"] remoteExec ["execVM", 0, true];

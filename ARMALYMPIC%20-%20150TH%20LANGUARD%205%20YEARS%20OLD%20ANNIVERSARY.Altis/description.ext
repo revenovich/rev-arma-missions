@@ -1,0 +1,22 @@
+enableDebugConsole[] = {"76561198146029406"};
+
+class CfgMusic
+{
+	tracks[]={opening, awarding, closing};
+	
+	class opening
+	{
+		name="opening";
+		sound[] = {"files\opening.ogg", db+10, 1.0};
+	};
+	class awarding
+	{
+		name="awarding";
+		sound[] = {"files\\awarding.ogg", db+10, 1.0};
+	};
+	class closing
+	{
+		name="closing";
+		sound[] = {"files\closing.ogg", db+10, 1.0};
+	};
+};

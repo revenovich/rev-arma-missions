@@ -9,11 +9,39 @@ class CfgSounds
 {
 	sounds[] = {
 		sound1,
+		wolfHowlMain,
+		wolfHowl1,
+		wolfHowl2,
+		womanScream
 	};
 	class sound1
 	{
 		name = "sound1";
 		sound[] = {"@A3\ui_f\data\sound\RscListbox\soundSelect", 0.2, 1};
+		titles[] = {0,""};
+	};
+	class wolfHowlMain
+	{
+		name = "wolfHowlMain";
+		sound[] = {"files\wolf-howl-main.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class wolfHowl1
+	{
+		name = "wolfHowl1";
+		sound[] = {"files\wolf-howl1.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class wolfHowl2
+	{
+		name = "wolfHowl2";
+		sound[] = {"files\wolf-howl2.ogg", 1, 1};
+		titles[] = {0,""};
+	};
+	class womanScream
+	{
+		name = "womanScream";
+		sound[] = {"files\woman-scream.ogg", 1, 1};
 		titles[] = {0,""};
 	};
 };
@@ -25,7 +53,7 @@ class CfgMusic
 	class song1
 	{
 		name="song1";
-		sound[] = {"files\song1.ogg", db-15, 1.0};
+		sound[] = {"files\song1.ogg", db+10, 1.0};
 	};
 };
 

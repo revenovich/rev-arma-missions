@@ -11,11 +11,6 @@ oft_fnc_better_text = {
 
 		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='2' color='#841313'>" + "Part 3"+"</t>"; 
 		[_texta,/* poz x */ 0,/* poz y */ 0.2,/*durata*/ 5,/* fade in?*/ 1,0,txt6Layer] spawn BIS_fnc_dynamicText;
-
-		sleep 2;
-
-		_texta = "<t font ='EtelkaMonospaceProBold' align = 'center' size='1' color='#841313'>" + "But it is not for us."+"</t>"; 
-		[_texta,/* poz x */ 0,/* poz y */ 0.4,/*durata*/ 5,/* fade in?*/ 1,0,txt7Layer] spawn BIS_fnc_dynamicText;
 	};
 };
 

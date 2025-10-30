@@ -12,7 +12,8 @@ class CfgSounds
 		wolfHowlMain,
 		wolfHowl1,
 		wolfHowl2,
-		womanScream
+		womanScream,
+		deviceBoom
 	};
 	class sound1
 	{
@@ -44,16 +45,27 @@ class CfgSounds
 		sound[] = {"files\woman-scream.ogg", 1, 1};
 		titles[] = {0,""};
 	};
+	class deviceBoom
+	{
+		name = "deviceBoom";
+		sound[] = {"files\deviceboom.ogg", 5, 1};
+		titles[] = {0,""};
+	};
 };
 
 class CfgMusic
 {
-	tracks[]={song1};
+	tracks[]={song1, finalbattle};
 	
 	class song1
 	{
 		name="song1";
 		sound[] = {"files\song1.ogg", db+10, 1.0};
+	};
+	class finalbattle
+	{
+		name="finalbattle";
+		sound[] = {"files\finalbattle.ogg", db+10, 1.0};
 	};
 };
 

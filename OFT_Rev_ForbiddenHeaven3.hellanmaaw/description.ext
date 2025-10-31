@@ -65,7 +65,7 @@ class CfgMusic
 	class finalbattle
 	{
 		name="finalbattle";
-		sound[] = {"files\finalbattle.ogg", db+10, 1.0};
+		sound[] = {"files\finalbattle.ogg", db+5, 1.0};
 	};
 };
 

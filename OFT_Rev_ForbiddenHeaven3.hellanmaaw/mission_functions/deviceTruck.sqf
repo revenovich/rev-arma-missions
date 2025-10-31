@@ -31,8 +31,8 @@ params ["_deviceTruck"];
 			_textForChat = "Device successfully started";
 			[_caller, _textForChat] remoteExec ["sideChat", 0];
 			"deviceBoom" remoteExec ["playSound", 0];
-			_target setVehicleLock "LOCKED";
-			_target engineOn true;
+			[_target, "LOCKED"] remoteExec ["setVehicleLock", 0, _target];
+			[_target, true] remoteExec ["engineOn", 0, _target];
 			[_caller, _target] spawn {
 				private _caller = _this select 0;
 				private _target = _this select 1;
@@ -41,7 +41,7 @@ params ["_deviceTruck"];
 				sleep _waitTime;
 				_textForChat2 = "The device has stabilized.";
 				[_caller, _textForChat2] remoteExec ["sideChat", 0];
-				_target engineOn false;
+				[_target, false] remoteExec ["engineOn", 0, _target];
 			};
 		} else {
 			_target setVariable ["isActivated", false, true];

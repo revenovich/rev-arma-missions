@@ -1,1 +1,0 @@
-[jamCar_1] execVM "mission_functions\initCarDeployFunc.sqf";

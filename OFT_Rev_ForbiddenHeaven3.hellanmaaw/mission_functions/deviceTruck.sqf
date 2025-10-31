@@ -11,6 +11,7 @@ params ["_deviceTruck"];
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		_textForChat = "I'm starting the device";
 		[_caller, _textForChat] remoteExec ["sideChat", 0];
+		_target engineOn true;
 	},
 	{ },
 	{ 
@@ -26,17 +27,21 @@ params ["_deviceTruck"];
 		} forEach _anchorZones;
 
 		if (_isInAnchorZone) then {
-			_target setVariable ["isDeviceTruckActive", true, true];
+			_target setVariable ["isActivated", true, true];
 			_textForChat = "Device successfully started";
 			[_caller, _textForChat] remoteExec ["sideChat", 0];
 			"deviceBoom" remoteExec ["playSound", 0];
-			[_caller] spawn {
+			_target setVehicleLock "LOCKED";
+			_target engineOn true;
+			[_caller, _target] spawn {
+				private _caller = _this select 0;
+				private _target = _this select 1;
 				// Wait for 5 to 7 minutes
-				private _this = _this select 0;
 				private _waitTime = [300, 420] call BIS_fnc_randomInt;
 				sleep _waitTime;
 				_textForChat2 = "The device has stabilized.";
-				[_this, _textForChat2] remoteExec ["sideChat", 0];
+				[_caller, _textForChat2] remoteExec ["sideChat", 0];
+				_target engineOn false;
 			};
 		} else {
 			_target setVariable ["isActivated", false, true];

@@ -633,3 +633,34 @@ private _units = units _this;
 for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_AT"};
 for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_KE"};
 for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_AP"};
+
+// Check vehicle move state every 1s
+[] spawn {
+	private _sleepDelay = 0.5;
+	while {true} do {
+		if (isNil "jamCar_1") then {
+			sleep _sleepDelay;
+		};
+		private _currentPos = getPosATL jamCar_1;
+		private _lastPos = missionNamespace getVariable ["lastCarPos", [0,0,0]];
+		private _distance = _currentPos vectorDistance _lastPos;
+
+		if (_distance > 0.5) then {
+			if (missionNamespace getVariable ["isJammerOn", false]) then {
+				// Turn off the jammer
+				jamswitch_1 animateSource ["switchposition",1];  
+				jamswitch_1 animateSource ["light",0];
+
+				["Sound barrier is off due to vehicle movement"] remoteExec ["systemChat", 0];
+				missionNamespace setVariable ["isJammerOn", false, true];
+			};
+		};
+
+		missionNamespace setVariable ["lastCarPos", _currentPos, true];
+		sleep _sleepDelay;
+	};
+};
+
+[this, true] execVM "mission_functions\snowmanGift.sqf";
+[this, false] execVM "mission_functions\snowmanGift.sqf";
+[this] execVM "mission_functions\snowmanExplode.sqf";

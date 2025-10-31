@@ -73,6 +73,57 @@ waitUntil {isNull _handleFnInit};
 _handleFnInit = execVM "mission_functions\cruiseMissile.sqf";
 waitUntil {isNull _handleFnInit};
 
+[] spawn {
+	private _sleepDelay = 0.5;
+	while {true} do {
+		waitUntil { !isNil "jamCar_1" };
+		waitUntil { missionNamespace getVariable ["initDone", false] };
+		private _currentPos = getPosATL jamCar_1;
+		private _lastPos = missionNamespace getVariable ["lastCarPos", [0,0,0]];
+		private _distance = _currentPos vectorDistance _lastPos;
+
+		if (_distance > 0.5) then {
+			if (missionNamespace getVariable ["isJammerOn", false]) then {
+				// Turn off the jammer
+				jamswitch_1 animateSource ["switchposition",1];  
+				jamswitch_1 animateSource ["light",0];
+
+				["Sound barrier is off due to vehicle movement"] remoteExec ["systemChat", 0];
+				missionNamespace setVariable ["isJammerOn", false, true];
+			};
+
+			_b1 = missionNamespace getVariable "fire_barrel_1";
+			_b2 = missionNamespace getVariable "fire_barrel_2";
+			private _isBarrelsDestroyed = false;
+			if (!(isNil "_b1")) then {
+				if (typeOf _b1 == "Land_MetalBarrel_empty_F") then {
+					deleteVehicle _b1;
+					missionNamespace setVariable ["fire_barrel_1", nil, true];
+					_isBarrelsDestroyed = true;
+				};
+			};
+
+			if (!(isNil "_b2")) then {
+				if (typeOf _b2 == "Land_MetalBarrel_empty_F") then {
+					deleteVehicle _b2;
+					missionNamespace setVariable ["fire_barrel_2", nil, true];
+					_isBarrelsDestroyed = true;
+				};
+			};
+			
+			if (_isBarrelsDestroyed) then {
+				missionNamespace setVariable ["isDeployed", false, true];
+				barrel_1 hideObjectGlobal false;
+				barrel_2 hideObjectGlobal false;
+				["Fire barrels have been packed up due to vehicle movement"] remoteExec ["systemChat", 0];
+			};
+		};
+
+		missionNamespace setVariable ["lastCarPos", _currentPos, true];
+		sleep _sleepDelay;
+	};
+};
+
 ["init"] call OFT_fnc_respawnHandle;
 
 missionNamespace setVariable ["playerSideVar", _playerSideVar, true];

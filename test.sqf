@@ -351,11 +351,6 @@ playSound3D [getMissionPath _soundFile, _laptop1, _isInside, getPosASL _laptop1,
 
 playSound3D [getMissionPath "files\wolf-howl-main.ogg", _this, false, getPosASL _this, 1, 1, 100];
 
-_path = getMissionPath "files\wolf-howl-main.ogg";
-_dist = 2000;
-playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
-playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
-
 _this addEventHandler ["Hit", {
 	params ["_unit", "_source", "_damage", "_instigator"];
 	[format ["%1 was hit by %2 with %3 cause %4 damage", _unit, _instigator, _source, _damage]] remoteExec ["systemChat", 0];
@@ -664,3 +659,23 @@ for "_i" from 1 to 30 do {_this addItemToBackpack "Titan_MIL_AP"};
 [this, true] execVM "mission_functions\snowmanGift.sqf";
 [this, false] execVM "mission_functions\snowmanGift.sqf";
 [this] execVM "mission_functions\snowmanExplode.sqf";
+
+_path = getMissionPath "files\wolf-howl-main.ogg";
+_dist = 2000;
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+_path = getMissionPath "files\wolf-howl1.ogg";
+_dist = 2000;
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+_path = getMissionPath "files\wolf-howl2.ogg";
+_dist = 2000;
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+_path = getMissionPath "files\woman-scream.ogg";
+_dist = 1000;
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];

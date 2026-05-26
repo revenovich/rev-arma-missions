@@ -328,10 +328,13 @@ AllPlayableUnitsItens = [];
 {
 	AllPlayableUnitsItens = AllPlayableUnitsItens + [(headgear _x)] + [(goggles _x)] + (assignedItems _x) + (backpackItems _x)+ [(backpack _x)] + (uniformItems _x) + [(uniform _x)] + (vestItems _x) + [(vest _x)] + (magazines _x) + (weapons _x) + (primaryWeaponItems _x)+ (primaryWeaponMagazine _x) + (handgunMagazine _x) + (handgunItems _x) + (secondaryWeaponItems _x) + (secondaryWeaponMagazine _x)
 } forEach (_notNullUnits);
+missionNamespace setVariable ["test1_AllPlayableUnitsItens", AllPlayableUnitsItens, true];
 AllPlayableUnitsItens = AllPlayableUnitsItens select {
 	count _x > 0
 };
+missionNamespace setVariable ["test2_AllPlayableUnitsItens", AllPlayableUnitsItens, true];
 AllPlayableUnitsItens = AllPlayableUnitsItens arrayIntersect AllPlayableUnitsItens;
+missionNamespace setVariable ["test3_AllPlayableUnitsItens", AllPlayableUnitsItens, true];
 
 {
 	_uniforms pushBack (uniform _x);
@@ -362,11 +365,14 @@ AllPlayableUnitsItens = AllPlayableUnitsItens arrayIntersect AllPlayableUnitsIte
 
 if (!(isNil "oft_addArsenalItems")) then {
 	additionalItems = oft_addArsenalItems call ace_arsenal_fnc_getVirtualItems;
+	missionNamespace setVariable ["test_additionalItems", additionalItems, true];
 	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
 	additionalItems = (toArray additionalItems)#0;
+	missionNamespace setVariable ["test_additionalItems_array", additionalItems, true];
 
 	// get unique items
 	AllPlayableUnitsItens = AllPlayableUnitsItens + additionalItems;
+	missionNamespace setVariable ["test4_AllPlayableUnitsItens", AllPlayableUnitsItens, true];
 
 	// Delete the box
 	deleteVehicle oft_addArsenalItems;
@@ -374,11 +380,14 @@ if (!(isNil "oft_addArsenalItems")) then {
 
 if (!(isNil "oft_removeArsenalItems")) then {
 	itemsRemove = oft_removeArsenalItems call ace_arsenal_fnc_getVirtualItems;
+	missionNamespace setVariable ["test_itemsRemove", itemsRemove, true];
 	// Convert because format return is: [["item1", any], ["item2", any], ["item3", any], ...]. Hashmap
 	itemsRemove = (toArray itemsRemove)#0;
+	missionNamespace setVariable ["test_itemsRemove_array", itemsRemove, true];
 
 	// Remove items
 	AllPlayableUnitsItens = AllPlayableUnitsItens - itemsRemove;
+	missionNamespace setVariable ["test5_AllPlayableUnitsItens", AllPlayableUnitsItens, true];
 
 	// Delete the box
 	deleteVehicle oft_removeArsenalItems;

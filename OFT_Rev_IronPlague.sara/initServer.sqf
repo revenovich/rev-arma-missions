@@ -70,6 +70,9 @@ waitUntil {isNull _handleFnInit};
 _handleFnInit = execVM "functions\betterText.sqf";
 waitUntil {isNull _handleFnInit};
 
+_handleFnInit = execVM "mission_functions\cruiseMissile.sqf";
+waitUntil {isNull _handleFnInit};
+
 ["init"] call OFT_fnc_respawnHandle;
 
 missionNamespace setVariable ["playerSideVar", _playerSideVar, true];

@@ -36,7 +36,6 @@ class cfgFunctions {
 		class functions
 		{
 			file = "functions";
-			class coverMap;
 			class customFillBox;
 			class fortificationBox;
 			class gearBox;
@@ -44,7 +43,6 @@ class cfgFunctions {
 			class holdActionAdd;
 			class holdActionAddFortification;
 			class respawnHandle;
-			class showFPS;
 			class healAction;
 		};
 	};

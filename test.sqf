@@ -679,3 +679,8 @@ _path = getMissionPath "files\woman-scream.ogg";
 _dist = 1000;
 playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
 playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
+
+["teleportThings", car_1, tp_car_1] call fn_oft_teleport;
+["teleportThings", car_2, tp_car_2] call fn_oft_teleport;
+["teleportThings", car_3, tp_car_3] call fn_oft_teleport;
+["teleportThings", car_4, tp_car_4] call fn_oft_teleport;

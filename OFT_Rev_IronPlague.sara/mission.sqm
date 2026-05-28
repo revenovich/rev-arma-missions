@@ -13,7 +13,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2937;
+		nextID=2939;
 	};
 	class MarkerIDProvider
 	{
@@ -21,14 +21,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=240;
+		nextID=264;
 	};
 	class Camera
 	{
-		pos[]={12446.564,254.15149,14965.804};
-		dir[]={0.63556814,-0.70116252,0.3232159};
-		up[]={0.62500167,0.7129885,0.31784204};
-		aside[]={0.45331025,-4.8251241e-07,-0.89138001};
+		pos[]={12805.13,224.89784,14392.671};
+		dir[]={0.43217498,-0.90002108,-0.057209849};
+		up[]={0.89225864,0.43579051,-0.11811472};
+		aside[]={-0.13124178,1.6436461e-06,-0.99139422};
 	};
 };
 binarizationWanted=0;
@@ -175,13 +175,14 @@ addons[]=
 	"A3_Weapons_F_Kart",
 	"ace_grenades",
 	"A3_Characters_F_Enoch_Facewear",
-	"ua_equipment_head"
+	"ua_equipment_head",
+	"rhs_c_mi28"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=93;
+		items=94;
 		class Item0
 		{
 			className="A3_Weapons_F";
@@ -815,6 +816,13 @@ class AddonsMetaData
 			className="ua_equipment";
 			name="ua_equipment_head";
 			author="combatant, Cenimarus, Seb";
+		};
+		class Item93
+		{
+			className="rhs_c_mi28";
+			name="Mi-28";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -30284,7 +30292,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=184;
+		items=186;
 		class Item0
 		{
 			dataType="Object";
@@ -48178,7 +48186,7 @@ class Mission
 				};
 			};
 			id=816;
-			atlOffset=3.1641846;
+			atlOffset=3.1661472;
 		};
 		class Item65
 		{
@@ -48200,7 +48208,7 @@ class Mission
 			};
 			id=817;
 			type="B_Radar_System_01_F";
-			atlOffset=3.1641846;
+			atlOffset=3.1661472;
 		};
 		class Item66
 		{
@@ -70167,7 +70175,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12572.205,181.6115,14938.814};
-				angles[]={0,1.89782,0};
+				angles[]={0,1.8978187,0};
 			};
 			side="Empty";
 			flags=4;
@@ -70176,6 +70184,23 @@ class Mission
 			};
 			id=2044;
 			type="C_Offroad_01_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_AdvancedDamage";
+					expression="if (local _this) then {parseSimpleArray _value params ['_hitpoints', '_damage']; {if ((_damage # _forEachIndex) == 0) then {continue}; _this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""hitlfwheel"",""hitlf2wheel"",""hitrfwheel"",""hitrf2wheel"",""hitfuel"",""hitengine"",""hitbody"",""hitglass1"",""hitglass2"",""hitrglass"",""hitlglass"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""hithull"",""#light_l"",""#light_r"",""#light_l"",""#light_r"",""#light_l"",""#light_r""],[1,0.583305,1,0.574975,0.574975,0.604132,0.633289,1,1,0.699933,0.712429,0.724925,0.724925,0.741586,0.770743,0.708264,0.716594,0.704099,0.687437,0.704099,0.712429,0.670776,0.670776,0.683272,0.695768,0.695768]]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item178
 		{
@@ -70183,7 +70208,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12489.956,181.72981,15008.135};
-				angles[]={0,6.1341085,0};
+				angles[]={0,6.1340995,0};
 			};
 			side="Empty";
 			flags=4;
@@ -70265,7 +70290,20 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="ENH_AdvancedDamage";
+					expression="if (local _this) then {parseSimpleArray _value params ['_hitpoints', '_damage']; {if ((_damage # _forEachIndex) == 0) then {continue}; _this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[""hitlfwheel"",""hitlf2wheel"",""hitrfwheel"",""hitrf2wheel"",""hitfuel"",""hithull"",""hitengine"",""hitbody"",""hitrglass"",""hitlglass"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""#light_1"",""#light_2""],[1,0.695768,1,0.57,0.59,0.62,0.64,0.56,0.6,0.62,0.6,0.54,0.62,0.69,0.65,0.67,0.66,0.7,0.64,0.73,0.75,0.75]]";
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item179
@@ -72682,8 +72720,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13962.535,325.16501,15699.986};
-				angles[]={6.2734809,0,0.25839198};
+				position[]={13963.566,325.45566,15707.03};
+				angles[]={0.11074521,0,0.13909568};
 			};
 			name="camp_ars_1";
 			id=2934;
@@ -72695,12 +72733,81 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13976.097,328.05927,15698.692};
+				position[]={13981.655,327.52982,15707.304};
+				angles[]={0.10738576,0,6.2542934};
 			};
 			name="camp_ars_2";
 			id=2936;
 			type="Logic";
-			atlOffset=3.0517578e-05;
+		};
+		class Item184
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12712.645,182.09175,14988.974};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=2937;
+			type="Land_rhs_mi28_wreck2";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item185
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12715.195,180.84602,14992.359};
+				angles[]={-0,1.5498285,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsLocalObject=1;
+				disableSimulation=1;
+			};
+			id=2938;
+			type="Land_Wreck_UAZ_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

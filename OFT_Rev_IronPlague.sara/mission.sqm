@@ -13,7 +13,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2934;
+		nextID=2937;
 	};
 	class MarkerIDProvider
 	{
@@ -21,14 +21,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=216;
+		nextID=240;
 	};
 	class Camera
 	{
-		pos[]={14737.794,126.34366,13896.393};
-		dir[]={0.72671157,-0.64152557,0.2456326};
-		up[]={0.60774738,0.76710159,0.20542204};
-		aside[]={0.32020867,0,-0.9473471};
+		pos[]={12446.564,254.15149,14965.804};
+		dir[]={0.63556814,-0.70116252,0.3232159};
+		up[]={0.62500167,0.7129885,0.31784204};
+		aside[]={0.45331025,-4.8251241e-07,-0.89138001};
 	};
 };
 binarizationWanted=0;
@@ -30284,7 +30284,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=182;
+		items=184;
 		class Item0
 		{
 			dataType="Object";
@@ -45999,11 +45999,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2105.259,162.72043,3233.0515};
+						position[]={1549.9242,162.73343,2660.719};
 					};
 					id=160;
 					type="ModuleStrategicMapORBAT_F";
-					atlOffset=178.75301;
+					atlOffset=167.76985;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -46063,7 +46063,7 @@ class Mission
 				};
 			};
 			id=161;
-			atlOffset=178.75301;
+			atlOffset=167.76985;
 		};
 		class Item20
 		{
@@ -72391,7 +72391,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14753.998,111.5086,13905.042};
-						angles[]={0,1.5746363,-0};
+						angles[]={0,1.5746363,0};
 					};
 					side="West";
 					flags=7;
@@ -72526,7 +72526,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={14754.117,111.5086,13901.735};
-						angles[]={0,1.7371477,-0};
+						angles[]={0,1.7371477,0};
 					};
 					side="West";
 					flags=5;
@@ -72676,6 +72676,31 @@ class Mission
 			{
 			};
 			id=2931;
+		};
+		class Item182
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={13962.535,325.16501,15699.986};
+				angles[]={6.2734809,0,0.25839198};
+			};
+			name="camp_ars_1";
+			id=2934;
+			type="Logic";
+			atlOffset=3.0517578e-05;
+		};
+		class Item183
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={13976.097,328.05927,15698.692};
+			};
+			name="camp_ars_2";
+			id=2936;
+			type="Logic";
+			atlOffset=3.0517578e-05;
 		};
 	};
 	class Connections

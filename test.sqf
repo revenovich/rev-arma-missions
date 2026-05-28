@@ -684,3 +684,7 @@ playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
 ["teleportThings", car_2, tp_car_2] call fn_oft_teleport;
 ["teleportThings", car_3, tp_car_3] call fn_oft_teleport;
 ["teleportThings", car_4, tp_car_4] call fn_oft_teleport;
+
+
+["teleportThings", main_arsenal_7, camp_ars_1] call fn_oft_teleport;
+["teleportThings", main_arsenal_8, camp_ars_2] call fn_oft_teleport;

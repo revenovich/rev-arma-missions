@@ -25,7 +25,7 @@ class CfgMusic
 	class song1
 	{
 		name="song1";
-		sound[] = {"files\song1.ogg", db-10, 1.0};
+		sound[] = {"files\song1.ogg", db+1, 1.0};
 	};
 };
 

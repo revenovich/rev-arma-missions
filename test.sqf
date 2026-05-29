@@ -688,3 +688,11 @@ playSound3D [_path, _this, false, getPosASL _this, 5, 1, _dist];
 
 ["teleportThings", main_arsenal_7, camp_ars_1] call fn_oft_teleport;
 ["teleportThings", main_arsenal_8, camp_ars_2] call fn_oft_teleport;
+
+for "_i" from 1 to 17 do {
+    private _unit = missionNamespace getVariable [format ["heli_%1", _i], objNull];
+
+    if (!isNull _unit) then {
+        _unit enableAI "PATH";
+    };
+};

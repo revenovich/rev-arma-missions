@@ -229,7 +229,7 @@ if (isNil "oft_vloader") then {
 
 // commander
 if (isNil "oft_vcommander") then {
-	_nullUnits pushBack "Commander";
+	_nullUnits pushBack "Vehicle Commander";
 } else {
 	[5, oft_vcommander, "LOADOUT VEHICLE COMMANDER"] call OFT_fnc_gearHandle;
 	_allAvailableLoadoutNames pushBack "LOADOUT VEHICLE COMMANDER";
